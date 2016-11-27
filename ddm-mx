@@ -640,7 +640,7 @@ function install_nvidia {
   #check for possible source install
   if [ -e /usr/bin/nvidia-installer ]; then
     echo $"Possible previous install from source or smxi/sgfxi detected."
-    echo $"Version Detected: " $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*/g')
+    echo $"Version Detected: " $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*//g')
     echo $"Latest Possible with this script : " $CANDIDATE
     echo $"Please remove with sudo nvidia-install --uninstall and reboot if you wish to proceed"
     exit 0

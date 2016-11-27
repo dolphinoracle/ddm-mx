@@ -1,3 +1,11 @@
+ddm-mx (16.11mx16+2) mx; urgency=medium
+
+  * revised source detection for nvidia
+  * added desktop menu entries
+  * removed bm files
+
+ -- dolphin_oracle <dolphinoracle@gmail.com>  Sun, 27 Nov 2016 17:10:00 -0400
+
 ddm-mx (16.11mx16+1) mx; urgency=medium
 
   * added source detection (possible) for nvidia
