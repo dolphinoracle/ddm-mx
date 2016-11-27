@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sat, 26 Nov 2016 19:10:00 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 16.11mx16+1
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (16.11mx16+1) mx; urgency=medium
+ .
+   * added source detection (possible) for nvidia
+Checksums-Sha1:
+ 5d8ec9543ae09671f42059e9d3e6317747a5ac0e 586 ddm-mx_16.11mx16+1.dsc
+ 7059b4dd965c7446514fd7ea136c251b377c6d5a 184288 ddm-mx_16.11mx16+1.tar.gz
+ 12aff70eaf820e4e1cc7f4eef1d78236c403144e 22148 ddm-mx_16.11mx16+1_all.deb
+Checksums-Sha256:
+ 8370968bd4fe68fa67024d15a7ad712f44542a2a29946824bb34117515d087db 586 ddm-mx_16.11mx16+1.dsc
+ 04dd6752a6e967e750a1ff02ef2e5e58b43be4f8e994d5b02d504c6431ecd80c 184288 ddm-mx_16.11mx16+1.tar.gz
+ cdaa1a6518a323f24bcdde4a956c413410a73db8d933bb8ede2e1a40884a8f01 22148 ddm-mx_16.11mx16+1_all.deb
+Files:
+ 115bc8042747e927773bed1350e4b5ec 586 admin optional ddm-mx_16.11mx16+1.dsc
+ f99eac021aa2051d8b461b671fb1fe00 184288 admin optional ddm-mx_16.11mx16+1.tar.gz
+ 9e9f5e8d25a891101f20d212f0f3dcc9 22148 admin optional ddm-mx_16.11mx16+1_all.deb

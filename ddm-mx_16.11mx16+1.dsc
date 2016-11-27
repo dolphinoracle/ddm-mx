@@ -1,8 +1,8 @@
-Format: 3.0 (native)
+Format: 1.0
 Source: ddm-mx
 Binary: ddm-mx
 Architecture: all
-Version: 16.11mx16
+Version: 16.11mx16+1
 Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
 Standards-Version: 3.9.5
 Vcs-Git: https://github.com/mx-linux/ddm-mx
@@ -10,8 +10,8 @@ Build-Depends: debhelper (>= 7.0.50~)
 Package-List:
  ddm-mx deb admin optional arch=all
 Checksums-Sha1:
- 555da4db36a97cf4c4a1ab1e6b8bea34674ab082 29008 ddm-mx_16.11mx16.tar.xz
+ 7059b4dd965c7446514fd7ea136c251b377c6d5a 184288 ddm-mx_16.11mx16+1.tar.gz
 Checksums-Sha256:
- 6a58021aff51778a386aec7563d88b2901f20c80c1f5da6f7582dc8b541f980a 29008 ddm-mx_16.11mx16.tar.xz
+ 04dd6752a6e967e750a1ff02ef2e5e58b43be4f8e994d5b02d504c6431ecd80c 184288 ddm-mx_16.11mx16+1.tar.gz
 Files:
- 5ae5ab5eccc670324d83c9f6ff41c289 29008 ddm-mx_16.11mx16.tar.xz
+ f99eac021aa2051d8b461b671fb1fe00 184288 ddm-mx_16.11mx16+1.tar.gz
