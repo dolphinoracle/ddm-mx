@@ -7,7 +7,7 @@ Standards-Version: 3.9.5
 Vcs-Git: https://github.com/mx-linux/ddm-mx
 
 Package: ddm-mx
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends}, ${shlibs:Depends}, cli-shell-utils, nvidia-detect
 Description: ddm-mx
  CLI app for installing nvidia and amd/ati/fglrx drivers
