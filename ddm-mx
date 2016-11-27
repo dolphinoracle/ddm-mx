@@ -438,6 +438,14 @@ function install_fglrx {
   CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
   INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
 
+  echo "Candidate is: " $CANDIDATE
+  echo "Installed is: " $INSTALLED
+
+  if [ "$INSTALLED" = "$CANDIDATE" ]; then
+    echo $"ati/amd driver already installed"
+    exit 0
+  fi
+
   if [ "$CANDIDATE" == "" ]; then
     exit 4
   fi
@@ -629,6 +637,15 @@ function install_nvidia {
   CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
   INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
 
+  #check for possible source install
+  if [ -e /usr/bin/nvidia-installer ]; then
+    echo $"Possible previous install from source or smxi/sgfxi detected."
+    echo $"Version Detected: " $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*//g')
+    echo $"Latest Possible with this script : " $CANDIDATE
+    echo $"Please remove with sudo nvidia-install --uninstall and reboot if you wish to proceed"
+    exit 0
+  fi
+
   # Check for Optimus
   OPTIMUS=$(lspci -vnn | grep '\[030[02]\]' | wc -l)
   if [ $OPTIMUS -eq 2 ]; then
@@ -637,8 +654,16 @@ function install_nvidia {
     INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
   fi
 
+  echo "Candidate is: " $CANDIDATE
+  echo "Installed is: " $INSTALLED
+
+  if [ "$INSTALLED" = "$CANDIDATE" ]; then
+    echo $"nvidia driver already installed"
+    exit 0
+  fi
 
   if [ "$DRIVER" == "" ] || [ "$CANDIDATE" == "" ]; then
+    echo $"nvidia driver not availabe, check your repo sources"
     exit 3
   fi
 
@@ -796,6 +821,8 @@ function install_open {
 clean_up()
 {
 unflock $LOCK_FILE
+echo ""
+echo ""
 echo -n $"Press <Enter> to exit"
 read x
 }

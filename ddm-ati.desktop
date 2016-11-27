@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Install ATI/AMD fglrx driver
+Comment=Install ATI/AMD fglrx driver
+Icon=preferences-system
+Type=Application
+Terminal=true
+Exec=sudo /usr/local/bin/ddm-mx -i ati
+Categories=ConsoleOnly;System;MX-Setup;

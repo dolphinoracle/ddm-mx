@@ -1,4 +1,4 @@
 LICENSE				usr/share/doc/ddm-mx
 ddm-mx				usr/local/bin
 nvidia-detect-mx		usr/local/bin
-*.bm				usr/share/mx-packageinstaller-pkglist
+*.desktop			usr/share/applications
