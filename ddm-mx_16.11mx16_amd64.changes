@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sat, 26 Nov 2016 19:10:00 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source amd64
+Version: 16.11mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (16.11mx16) mx; urgency=medium
+ .
+   * initial build for mx16
+Checksums-Sha1:
+ db081431f055fd5d6a99830f4bedfb40d777aae0 584 ddm-mx_16.11mx16.dsc
+ f981c462b474c0e5905e3e37995dbee4bcd318fa 29016 ddm-mx_16.11mx16.tar.xz
+ 80a00990d3123fef3eff508deb4841513eb7a560 21880 ddm-mx_16.11mx16_amd64.deb
+Checksums-Sha256:
+ 3000dde5113bf4df9a62f32aa993365e4c51c97efcd59b541d057c2a42aea0bf 584 ddm-mx_16.11mx16.dsc
+ 77bd10aa0945282d6c7e7c7783264d06f28f5a40a97d505ad7ea2ad1d0bf5a57 29016 ddm-mx_16.11mx16.tar.xz
+ 1cbe2a94832c7f9c4ea7136dcf830ff9b04ac55121ad2a72df534a384b9ad64e 21880 ddm-mx_16.11mx16_amd64.deb
+Files:
+ a496c2eb25defeb76f39f896f9c8e0d7 584 admin optional ddm-mx_16.11mx16.dsc
+ 8be2cfb10d29d14f6e9235c29c5ed94c 29016 admin optional ddm-mx_16.11mx16.tar.xz
+ 3908b2097aa640e7278ea7ee17fba600 21880 admin optional ddm-mx_16.11mx16_amd64.deb
