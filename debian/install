@@ -2,3 +2,4 @@ LICENSE				usr/share/doc/ddm-mx
 ddm-mx				usr/local/bin
 nvidia-detect-mx		usr/local/bin
 *.desktop			usr/share/applications
+*.png                           usr/share/pixmaps

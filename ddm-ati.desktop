@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=AMD/ATI fglrx driver installer
 Comment=Install AMD/ATI fglrx driver from repo
-Icon=preferences-system
+Icon=amd-ddm-mx
 Type=Application
 Terminal=true
 Exec=su-to-root -c "/usr/local/bin/ddm-mx -i ati"
