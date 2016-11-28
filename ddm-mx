@@ -37,12 +37,12 @@ ERR_FILE="/dev/null"
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
 
-UNKNOWN_ERROR=$"Unknown Error"
+UNKNOWN_ERROR=$"Unknown error"
 OPTION_ERROR1=$"Option-"
 OPTION_ERROR2=$"requires an argument."
-RUN_AS_ROOT=$"Run as Root"
+RUN_AS_ROOT=$"Run as root"
 INSTALL_DRIVERS_FOR=$"Install drivers for: "
-NO_ATI=$"No ATI card found - exiting"
+NO_ATI=$"No AMD/ATI card found - exiting"
 RADEON_DRIVER_NEED=$"Radeon HD %s needs driver %s"
 
 
@@ -95,7 +95,7 @@ while getopts ":bi:p:ht" opt; do
     \?)
       # Invalid option: start GUI
       #launch_gui $@
-      echo $"Invalid Option"
+      echo $"Invalid option"
       exit 0
       ;;
     :)
@@ -105,7 +105,7 @@ while getopts ":bi:p:ht" opt; do
     *)
       # Unknown error: start GUI
       #launch_gui $@
-      echo $"Invalid Option"
+      echo $"Invalid option"
       exit 0
       ;;
   esac
@@ -288,7 +288,7 @@ for DRV in $INSTALL; do
       fi
 
       if [ "$DEVICEIDS" == "" ]; then
-	echo $"No Nvidia card found - exiting" | tee -a $LOG
+	echo $"No nvidia card found - exiting" | tee -a $LOG
 	exit 0
       fi
 
@@ -472,7 +472,7 @@ function install_fglrx {
   
 echo $"AMD/ATI packages to install are : "$DRIVER
 
-echo -n $"Press <Enter> to continue or CTRL+c to exit"
+echo -n $"Press <Enter> to continue or Ctrl-c to exit"
 read x
 
   # Preseed debconf answers
@@ -640,9 +640,9 @@ function install_nvidia {
   #check for possible source install
   if [ -e /usr/bin/nvidia-installer ]; then
     echo $"Possible previous install from source or smxi/sgfxi detected."
-    echo $"Version Detected: " $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*//g')
-    echo $"Latest Possible with this script : " $CANDIDATE
-    echo $"Please remove with sudo nvidia-install --uninstall and reboot if you wish to proceed"
+    echo $"Version detected: " $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*//g')
+    echo $"Latest possible with this script : " $CANDIDATE
+    echo $"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed"
     exit 0
   fi
 
@@ -663,7 +663,7 @@ function install_nvidia {
   fi
 
   if [ "$DRIVER" == "" ] || [ "$CANDIDATE" == "" ]; then
-    echo $"nvidia driver not availabe, check your repo sources"
+    echo $"nvidia driver not available, check your repo sources"
     exit 3
   fi
 
@@ -739,7 +739,7 @@ function install_nvidia {
 
 echo "NVIDIA packages to install are " $DRIVER
 
-echo -n $"Press <Enter> to continue or CTRL+c to exit"
+echo -n $"Press <Enter> to continue or Ctrl-c to exit"
 read x
  
   # Preseed debconf answers
@@ -798,7 +798,7 @@ function purge_proprietary_drivers {
   apt-get purge -y $FORCE $(apt-cache pkgnames | grep fglrx | cut -d':' -f1) 2>&1 | tee -a $LOG
   apt-get purge -y $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
   
-  echo $"Propietary drivers removed" | tee -a $LOG
+  echo $"Proprietary drivers removed" | tee -a $LOG
 }
 
 function install_open {
