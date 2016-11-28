@@ -1,3 +1,9 @@
+ddm-mx (16.11mx16+3) mx; urgency=medium
+
+  * changes per Old Giza
+
+ -- dolphin_oracle <dolphinoracle@gmail.com>  Mon, 28 Nov 2016 09:10:00 -0400
+
 ddm-mx (16.11mx16+2) mx; urgency=medium
 
   * revised source detection for nvidia

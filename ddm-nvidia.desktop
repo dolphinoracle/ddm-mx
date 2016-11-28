@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Install Nvidia driver
-Comment=Install Nvidia driver
+Name=Nvidia driver installer
+Comment=Install proprietary nvidia driver from repo
 Icon=preferences-system
 Type=Application
 Terminal=true
-Exec=sudo /usr/local/bin/ddm-mx -i nvidia
+Exec=su-to-root -c "/usr/local/bin/ddm-mx -i nvidia"
 Categories=ConsoleOnly;System;MX-Setup;
