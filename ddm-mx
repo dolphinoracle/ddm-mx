@@ -701,7 +701,7 @@ function install_nvidia {
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
                                        # Bumblebee drivers
-                                       DRIVER="$DRIVER primus-libs-ia32:i386 nvidia-settings libgl1-nvidia-glx:i386"
+                                       DRIVER="$DRIVER nvidia-driver primus primus-libs-ia32:i386 nvidia-settings libgl1-nvidia-glx:i386"
                                        fi
                                        ;;
                                  *)
