@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 11 Dec 2016 09:35:00 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 16.12.02mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (16.12.02mx16) mx; urgency=medium
+ .
+   * added "reinstall" function
+Checksums-Sha1:
+ f1174838f668810f3ca638e0c96d2a9967bea187 593 ddm-mx_16.12.02mx16.dsc
+ c2e43233ca6c1c662eb39a744dc8b374f9b26f19 2725449 ddm-mx_16.12.02mx16.tar.gz
+ 1720189381304ecc21960c7326cdd7f5bea62237 31146 ddm-mx_16.12.02mx16_all.deb
+Checksums-Sha256:
+ 9380f1090976fddda08f2a8b4d914ff6d3b8dd1c64313fb4819576444ec25ec4 593 ddm-mx_16.12.02mx16.dsc
+ 7332c81f1aa606fec7b9b0505f3f37eb2927ef25a0f7693ae5802833ffd9aef6 2725449 ddm-mx_16.12.02mx16.tar.gz
+ dbb8a3b060b4efff314f41aad1b51927f6f5b2c4a31bda17abf76d5bc80dbc32 31146 ddm-mx_16.12.02mx16_all.deb
+Files:
+ 603ec2bdde76c67c569541089dee15e1 593 admin optional ddm-mx_16.12.02mx16.dsc
+ afb271e132a587adb9411992155ad413 2725449 admin optional ddm-mx_16.12.02mx16.tar.gz
+ 47c381c755abe1b0b35694b64676ec18 31146 admin optional ddm-mx_16.12.02mx16_all.deb

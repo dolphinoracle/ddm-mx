@@ -443,7 +443,20 @@ function install_fglrx {
 
   if [ "$INSTALLED" = "$CANDIDATE" ]; then
     echo $"ati/amd driver already installed"
-    exit 0
+    echo ""
+    echo $"Reinstall or quit?"
+    echo ""
+    echo 1: $"Reinstall"
+    echo 2: $"quit"
+    echo ""
+    echo "Enter Number of selection"
+    read -n 1 -e x
+
+    case $x in
+        1) echo $"reinstalling"... ;;
+        2) echo $"exiting"... && exit 0 ;;
+        *) echo $"invalid option."  $"exiting"... ;;
+    esac
   fi
 
   if [ "$CANDIDATE" == "" ]; then
@@ -631,7 +644,7 @@ function install_nvidia {
   
   # Testing
   if $TEST; then
-    DRIVER='nvidia-driver'
+    DRIVER='nvidia-legacy-340xx-driver'
   fi
   
   CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
@@ -659,7 +672,20 @@ function install_nvidia {
 
   if [ "$INSTALLED" = "$CANDIDATE" ]; then
     echo $"nvidia driver already installed"
-    exit 0
+    echo ""
+    echo $"Reinstall or quit?"
+    echo ""
+    echo 1: $"Reinstall"
+    echo 2: $"quit"
+    echo ""
+    echo "Enter Number of selection"
+    read -n 1 -e x
+
+     case $x in
+        1) echo $"reinstalling"... ;;
+        2) echo $"exiting"... && exit 0 ;;
+        *) echo $"invalid option."  $"exiting"... ;;
+    esac
   fi
 
   if [ "$DRIVER" == "" ] || [ "$CANDIDATE" == "" ]; then
@@ -779,8 +805,8 @@ read x
     else
       echo $"ERROR: Could not configure Bumblebee for user: " $USER | tee -a $LOG
     fi
-  else
-    nvidia-xconfig 2>/dev/null | tee -a $LOG
+#  else
+#    nvidia-xconfig 2>/dev/null | tee -a $LOG
   fi
   
   echo $"Finished" | tee -a $LOG
