@@ -1,3 +1,9 @@
+ddm-mx (16.12.03mx16) mx; urgency=medium
+
+  * fixed nvidia reinstall function
+
+ -- dolphin_oracle <dolphinoracle@gmail.com>  Sun, 11 Dec 2016 15:35:00 -0400
+
 ddm-mx (16.12.02mx16) mx; urgency=medium
 
   * added "reinstall" function

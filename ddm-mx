@@ -713,26 +713,26 @@ function install_nvidia {
   case $DRIVER in 
                      nvidia-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
 	                                   # Additional 32-bit drivers for 64-bit systems
-	                                   DRIVER="$DRIVER nvidia-settings libgl1-nvidia-glx:i386" 
+	                                   DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libgl1-nvidia-glx:i386" 
                                        else
-                                           DRIVER="$DRIVER nvidia-settings" 
+                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings" 
                                        fi
                                        ;;
         nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx libgl1-nvidia-legacy-340xx-glx:i386"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms libgl1-nvidia-legacy-340xx-glx:i386"
                                        else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms"
                                        fi
                                        ;;
         nvidia-legacy-304xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx libgl1-nvidia-legacy-304xx-glx:i386"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms libgl1-nvidia-legacy-304xx-glx:i386"
                                        else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms"
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
                                        # Bumblebee drivers
-                                       DRIVER="$DRIVER nvidia-driver primus primus-libs-ia32:i386 nvidia-settings libgl1-nvidia-glx:i386"
+                                       DRIVER="$DRIVER nvidia-driver nvidia-kernel-dkms primus primus-libs-ia32:i386 nvidia-settings libgl1-nvidia-glx:i386"
                                        fi
                                        ;;
                                  *)
