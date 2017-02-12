@@ -33,6 +33,7 @@ ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
+LOG="/var/log/ddm.log"
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
@@ -50,7 +51,7 @@ RADEON_DRIVER_NEED=$"Radeon HD %s needs driver %s"
 main(){
 # -------------------------------------------------------------------------
 ###file locking
-echo "creating lock ..."
+echo "creating lock ..." | tee -a $LOG
 trap clean_up EXIT
 do_flock 
 
@@ -95,7 +96,7 @@ while getopts ":bi:p:ht" opt; do
     \?)
       # Invalid option: start GUI
       #launch_gui $@
-      echo $"Invalid option"
+      echo $"Invalid option" | tee -a $LOG
       exit 0
       ;;
     :)
@@ -105,7 +106,7 @@ while getopts ":bi:p:ht" opt; do
     *)
       # Unknown error: start GUI
       #launch_gui $@
-      echo $"Invalid option"
+      echo $"Invalid option" | tee -a $LOG
       exit 0
       ;;
   esac
@@ -122,7 +123,7 @@ fi
 
 # From here onward: be root
 if [ $UID -ne 0 ]; then
-  echo $RUN_AS_ROOT
+  echo $RUN_AS_ROOT | tee -a $LOG
   exit 1
 fi
 
@@ -186,7 +187,7 @@ for DRV in $PURGE; do
     fixbumblebee)
       ;;
     *)
-      echo "ERROR: Unknown argument: $DRV"
+      echo "ERROR: Unknown argument: $DRV" | tee -a $LOG
       echo
       usage
       exit 2
@@ -331,7 +332,7 @@ for DRV in $INSTALL; do
 #	apt-get install --reinstall -y $FORCE linux-headers-686-pae linux-image-686-pae 2>&1 | tee -a $LOG
 #	echo "PAE kernel successfully installed" | tee -a $LOG
  #     else
-#	echo "amd64 machine: not installing"
+#	echo "amd64 machine: not installing" | tee -a $LOG
  #     fi
 #      ;;
     fixbumblebee)
@@ -340,7 +341,7 @@ for DRV in $INSTALL; do
       mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
       ;;
     *)
-      echo "ERROR: Unknown argument: $DRV"
+      echo "ERROR: Unknown argument: $DRV" | tee -a $LOG
       echo
       usage
       exit 2
@@ -437,32 +438,42 @@ function install_fglrx {
   ARCHITECTURE=$(uname -m)
   CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
   INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+  
+  if [ "$CANDIDATE" == "" ]; then
+    	##refresh sources and try again
+   	echo $"Refreshing Sources with apt-get update" | tee -a $LOG
+	echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
+	read x
+    	apt-get update | tee -a $LOG
+    	CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+    	INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+  fi 
 
-  echo "Candidate is: " $CANDIDATE
-  echo "Installed is: " $INSTALLED
+  echo "Candidate is: " $CANDIDATE | tee -a $LOG
+  echo "Installed is: " $INSTALLED | tee -a $LOG
 
   if [ "$CANDIDATE" != "" ]; then
       if [ "$INSTALLED" = "$CANDIDATE" ]; then
-        echo $"ati/amd driver already installed"
-        echo ""
-        echo $"Reinstall or quit?"
-        echo ""
-        echo 1: $"Reinstall"
-        echo 2: $"quit"
-        echo ""
-        echo "Enter Number of selection"
-        read -n 1 -e x
+        echo $"ati/amd driver already installed" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo $"Reinstall or quit?" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo 1: $"Reinstall" | tee -a $LOG
+        echo 2: $"quit" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo "Enter Number of selection" | tee -a $LOG
+        read -n 1 -e x 
 
         case $x in
-            1) echo $"reinstalling"... ;;
-            2) echo $"exiting"... && exit 0 ;;
-            *) echo $"invalid option."  $"exiting"... ;;
+            1) echo $"reinstalling"... | tee -a $LOG ;;
+            2) echo $"exiting"... | tee -a $LOG && exit 0 ;;
+            *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
         esac
       fi
   fi
 
   if [ "$CANDIDATE" == "" ]; then
-    echo $"fglrx driver not available, check your repo sources"
+    echo $"fglrx driver not available, check your repo sources" | tee -a $LOG
     exit 3
   fi
 
@@ -486,16 +497,16 @@ function install_fglrx {
   # In case this is a bybrid (by default installed on SolydXK)
   DRIVER="$DRIVER xserver-xorg-video-intel"
   
-echo $"AMD/ATI packages to install are : "$DRIVER
+echo $"AMD/ATI packages to install are : "$DRIVER | tee -a $LOG
 
-echo -n $"Press <Enter> to continue or Ctrl-c to exit"
+echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
 read x
 
   # Preseed debconf answers
   preseed_fglrx
 
   # Install the packages
-  apt-get update
+  apt-get update | tee -a $LOG
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
 ###removed backports for mx
@@ -653,12 +664,22 @@ function install_nvidia {
   CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
   INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
 
+  if [ "$CANDIDATE" == "" ]; then
+    	##refresh sources and try again
+   	echo $"Refreshing Sources with apt-get update" | tee -a $LOG
+	echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
+	read x
+    	apt-get update | tee -a $LOG
+	CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+  	INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+  fi
+
   #check for possible source install
   if [ -e /usr/bin/nvidia-installer ]; then
-    echo $"Possible previous install from source or smxi/sgfxi detected."
-    echo $"Version detected: " $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*//g')
-    echo $"Latest possible with this script : " $CANDIDATE
-    echo $"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed"
+    echo $"Possible previous install from source or smxi/sgfxi detected." | tee -a $LOG
+    echo $"Version detected: " $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*//g') | tee -a $LOG
+    echo $"Latest possible with this script : " $CANDIDATE | tee -a $LOG
+    echo $"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed" | tee -a $LOG
     exit 0
   fi
 
@@ -670,31 +691,31 @@ function install_nvidia {
     INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
   fi
 
-  echo "Candidate is: " $CANDIDATE
-  echo "Installed is: " $INSTALLED
+  echo "Candidate is: " $CANDIDATE | tee -a $LOG
+  echo "Installed is: " $INSTALLED | tee -a $LOG
 
   if [ "$CANDIDATE" != "" ]; then
       if [ "$INSTALLED" = "$CANDIDATE" ]; then
-        echo $"nvidia driver already installed"
-        echo ""
-        echo $"Reinstall or quit?"
-        echo ""
-        echo 1: $"Reinstall"
-        echo 2: $"quit"
-        echo ""
-        echo "Enter Number of selection"
+        echo $"nvidia driver already installed" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo $"Reinstall or quit?" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo 1: $"Reinstall" | tee -a $LOG
+        echo 2: $"quit" | tee -a $LOG
+        echo "" | tee -a $LOG
+        echo "Enter Number of selection" | tee -a $LOG
         read -n 1 -e x
 
         case $x in
-            1) echo $"reinstalling"... ;;
-            2) echo $"exiting"... && exit 0 ;;
-            *) echo $"invalid option."  $"exiting"... ;;
+           1) echo $"reinstalling"... | tee -a $LOG ;;
+           2) echo $"exiting"... | tee -a $LOG && exit 0 ;;
+           *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
         esac
       fi
   fi
 
   if [ "$DRIVER" == "" ] || [ "$CANDIDATE" == "" ]; then
-    echo $"nvidia driver not available, check your repo sources"
+    echo $"nvidia driver not available, check your repo sources" | tee -a $LOG 
     exit 3
   fi
 
@@ -736,8 +757,8 @@ function install_nvidia {
                                        fi
                                        ;;
                                  *)
-                                       echo $"ERROR: Unknown argument: " $DRV
-                                       echo
+                                       echo $"ERROR: Unknown argument: " $DRV | tee -a $LOG 
+                                       echo | tee -a $LOG 
                                        usage
                                        exit 2
    esac
@@ -768,16 +789,16 @@ function install_nvidia {
 #  # Configuration package
 #  DRIVER="$DRIVER nvidia-xconfig"
 
-echo "NVIDIA packages to install are " $DRIVER
+echo "NVIDIA packages to install are " $DRIVER | tee -a $LOG  
 
-echo -n $"Press <Enter> to continue or Ctrl-c to exit"
+echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG 
 read x
  
   # Preseed debconf answers
   preseed_nvidia $CANDIDATE
   
   # Install the packages
-  apt-get update
+  apt-get update | tee -a $LOG 
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
 #####removed backports for mx
@@ -852,9 +873,9 @@ function install_open {
 clean_up()
 {
 unflock $LOCK_FILE
-echo ""
-echo ""
-echo -n $"Press <Enter> to exit"
+echo "" | tee -a $LOG 
+echo "" | tee -a $LOG 
+echo -n $"Press <Enter> to exit" | tee -a $LOG 
 read x
 }
 
