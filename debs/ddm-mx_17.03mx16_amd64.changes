@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Tue, 14 Mar 2016 11:59:00 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 17.03mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (17.03mx16) mx; urgency=medium
+ .
+   * change optimus/bumblebee detection
+Checksums-Sha1:
+ 181a74bb0e3b92946c1cba861fd6cb721b8f4511 575 ddm-mx_17.03mx16.dsc
+ 8d8b3db641979a6bb3f1971c4f8bef977fb5fe30 36495 ddm-mx_17.03mx16.tar.gz
+ 940db13dbe6df849bc0bf0118fa2e7541389fd82 31342 ddm-mx_17.03mx16_all.deb
+Checksums-Sha256:
+ 6252355eb855500e62802ca8bddda58cd366818242e7b9ae665dd3e298f29d66 575 ddm-mx_17.03mx16.dsc
+ c7c2aeb7d75cac35995c2329f19e6158a8a5f194fbcad11e679461918ecec9e5 36495 ddm-mx_17.03mx16.tar.gz
+ c94d7a8e9aa1ba94fe052e40221157febae7f6fedcf987b913947964dfd1bf77 31342 ddm-mx_17.03mx16_all.deb
+Files:
+ 2059baa0b7718b5b9f2b0d593b08ac06 575 admin optional ddm-mx_17.03mx16.dsc
+ daf43b5d17304428bbf554ec900254d7 36495 admin optional ddm-mx_17.03mx16.tar.gz
+ 7f2468f1e1fd476234b4a4ec21c3952e 31342 admin optional ddm-mx_17.03mx16_all.deb
