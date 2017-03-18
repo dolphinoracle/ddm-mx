@@ -1,3 +1,9 @@
+ddm-mx (17.03mx16) mx; urgency=medium
+
+  * change optimus/bumblebee detection
+
+ -- dolphin_oracle <dolphinoracle@gmail.com>  Tue, 14 Mar 2016 11:59:00 -0400
+
 ddm-mx (17.02.02mx16) mx; urgency=medium
 
   * fixed permission problem

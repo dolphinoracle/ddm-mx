@@ -461,7 +461,7 @@ function install_fglrx {
         echo 1: $"Reinstall" | tee -a $LOG
         echo 2: $"quit" | tee -a $LOG
         echo "" | tee -a $LOG
-        echo "Enter Number of selection" | tee -a $LOG
+        echo $"Enter Number of selection" | tee -a $LOG
         read -n 1 -e x 
 
         case $x in
@@ -684,13 +684,20 @@ function install_nvidia {
   fi
 
   # Check for Optimus
-  OPTIMUS=$(lspci -vnn | grep '\[030[02]\]' | wc -l)
-  if [ $OPTIMUS -eq 2 ]; then
-    DRIVER='bumblebee-nvidia'
-    CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-    INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
-  fi
+    OPTIMUS=1
+    if lspci -vnn | grep Intel |grep -q 0300 ; then
+	if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
+	    echo $"nvidia-optimus detected"
+ 	    OPTIMUS=2
+	fi
+    fi
 
+    if [ $OPTIMUS = 2 ]; then
+        DRIVER='bumblebee-nvidia'    
+        CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+        INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+    fi
+   
   echo "Candidate is: " $CANDIDATE | tee -a $LOG
   echo "Installed is: " $INSTALLED | tee -a $LOG
 
