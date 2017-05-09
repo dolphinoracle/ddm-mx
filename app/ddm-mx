@@ -655,6 +655,7 @@ function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86)
   
   # Testing
   if $TEST; then
@@ -722,8 +723,15 @@ function install_nvidia {
   fi
 
   if [ "$DRIVER" == "" ] || [ "$CANDIDATE" == "" ]; then
-    echo $"nvidia driver not available, check your repo sources" | tee -a $LOG 
-    exit 3
+      if [ "$UNSUPPORTED_LEGACY" == "" ]
+         then
+              echo $"nvidia driver not available, check your repo sources" | tee -a $LOG
+              exit 3
+ 
+         else 
+	      echo $UNSUPPORTED_LEGACY | tee -a $LOG
+              exit 7
+      fi
   fi
 
   echo $"Need driver: "$DRIVER "($CANDIDATE)" | tee -a $LOG

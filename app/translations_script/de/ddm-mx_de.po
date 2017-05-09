@@ -10,16 +10,17 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-11 11:42-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: WPSchulz <fly@wp-schulz.de>, 2017\n"
+"Language-Team: German (https://www.transifex.com/anticapitalista/teams/10162/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ddm-mx:41
 msgid "Unknown error"
-msgstr "Unknown error"
+msgstr "Unbekannter Fehler"
 
 #: ddm-mx:42
 msgid "Option-"
@@ -27,140 +28,142 @@ msgstr "Option-"
 
 #: ddm-mx:43
 msgid "requires an argument."
-msgstr "requires an argument."
+msgstr "erfordert ein Argument."
 
 #: ddm-mx:44
 msgid "Run as root"
-msgstr "Run as root"
+msgstr "Als Root ausführen"
 
 #: ddm-mx:45
 msgid "Install drivers for: "
-msgstr "Install drivers for: "
+msgstr "Installiere Treiber für:"
 
 #: ddm-mx:46
 msgid "No AMD/ATI card found - exiting"
-msgstr "No AMD/ATI card found - exiting"
+msgstr "Keine AMD/ATI-Grafikkarte gefunden - verlasse das Programm"
 
 #: ddm-mx:47
 msgid "Radeon HD %s needs driver %s"
-msgstr "Radeon HD %s needs driver %s"
+msgstr "Radeon HD %s braucht den Treiber %s"
 
 #: ddm-mx:99 ddm-mx:109
 msgid "Invalid option"
-msgstr "Invalid option"
+msgstr "Ungültige Option"
 
 #: ddm-mx:268
 msgid "needs driver"
-msgstr "needs driver"
+msgstr "braucht einen Treiber"
 
 #: ddm-mx:273
 msgid "No driver for this card: "
-msgstr "No driver for this card: "
+msgstr "Kein Treiber für diese Karte:"
 
 #: ddm-mx:292
 msgid "No nvidia card found - exiting"
-msgstr "No nvidia card found - exiting"
+msgstr "Keine Nvidia-Karte gefunden - verlasse das Programm"
 
 #: ddm-mx:444 ddm-mx:669
 msgid "Refreshing Sources with apt-get update"
-msgstr "Refreshing Sources with apt-get update"
+msgstr ""
 
 #: ddm-mx:445 ddm-mx:502 ddm-mx:670 ddm-mx:801
 msgid "Press <Enter> to continue or Ctrl-c to exit"
-msgstr "Press <Enter> to continue or Ctrl-c to exit"
+msgstr ""
+"Drücke <Enter> um fortzufahre oder Ctrl-c zum verlassen des Programms."
 
 #: ddm-mx:457
 msgid "ati/amd driver already installed"
-msgstr "ati/amd driver already installed"
+msgstr "ATI/AMD-Treiber sind bereits installiert"
 
 #: ddm-mx:459 ddm-mx:708
 msgid "Reinstall or quit?"
-msgstr "Reinstall or quit?"
+msgstr ""
 
 #: ddm-mx:461 ddm-mx:710
 msgid "Reinstall"
-msgstr "Reinstall"
+msgstr ""
 
 #: ddm-mx:462 ddm-mx:711
 msgid "quit"
-msgstr "quit"
+msgstr "Beenden"
 
 #: ddm-mx:464
 msgid "Enter Number of selection"
-msgstr "Enter Number of selection"
+msgstr ""
 
 #: ddm-mx:468 ddm-mx:717
 msgid "reinstalling"
-msgstr "reinstalling"
+msgstr ""
 
 #: ddm-mx:469 ddm-mx:470 ddm-mx:718 ddm-mx:719
 msgid "exiting"
-msgstr "exiting"
+msgstr ""
 
 #: ddm-mx:470 ddm-mx:719
 msgid "invalid option."
-msgstr "invalid option."
+msgstr ""
 
 #: ddm-mx:476
 msgid "fglrx driver not available, check your repo sources"
-msgstr "fglrx driver not available, check your repo sources"
+msgstr ""
 
 #: ddm-mx:500
 msgid "AMD/ATI packages to install are : "
-msgstr "AMD/ATI packages to install are : "
+msgstr "Folgende AMD/ATI-Pakete sind zu installieren:"
 
 #: ddm-mx:526 ddm-mx:845
 msgid "Finished"
-msgstr "Finished"
+msgstr "Abgeschlossen"
 
 #: ddm-mx:679
 msgid "Possible previous install from source or smxi/sgfxi detected."
-msgstr "Possible previous install from source or smxi/sgfxi detected."
+msgstr ""
+"Mögliche frühere Installation aus dem Quellcode oder smxi/sgfci gefunden."
 
 #: ddm-mx:680
 msgid "Version detected: "
-msgstr "Version detected: "
+msgstr "Version gefunden:"
 
 #: ddm-mx:681
 msgid "Latest possible with this script : "
-msgstr "Latest possible with this script : "
+msgstr "Neueste mögliche mit diesem Script:"
 
 #: ddm-mx:682
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
-"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
-" to proceed"
+"Bitte entfernen Sie <sudo nvidia-install --uninstall> und starten Sie neu, "
+"wenn Sie fortfahren möchten."
 
 #: ddm-mx:690
 msgid "nvidia-optimus detected"
-msgstr "nvidia-optimus detected"
+msgstr ""
 
 #: ddm-mx:706
 msgid "nvidia driver already installed"
-msgstr "nvidia driver already installed"
+msgstr "Nvidia-Treiber sind bereits installiert"
 
 #: ddm-mx:725
 msgid "nvidia driver not available, check your repo sources"
-msgstr "nvidia driver not available, check your repo sources"
+msgstr "Nvidia-Treiber nicht verfügbar, prüfen Sie Ihre Repo-Quellen!"
 
 #: ddm-mx:729
 msgid "Need driver: "
-msgstr "Need driver: "
+msgstr "Treiber benötigt:"
 
 #: ddm-mx:767
 msgid "ERROR: Unknown argument: "
-msgstr "ERROR: Unknown argument: "
+msgstr "FEHLER: Unbekanntes Argument:"
 
 #: ddm-mx:839
 msgid "ERROR: Could not configure Bumblebee for user: "
-msgstr "ERROR: Could not configure Bumblebee for user: "
+msgstr "FEHLER: Konnte Bumblebee nicht konfigurieren für User:"
 
 #: ddm-mx:860
 msgid "Proprietary drivers removed"
-msgstr "Proprietary drivers removed"
+msgstr "Proprietäre Treiber wurden entfernt"
 
 #: ddm-mx:885
 msgid "Press <Enter> to exit"
-msgstr "Press <Enter> to exit"
+msgstr "Drücke <Enter> zum verlassen"

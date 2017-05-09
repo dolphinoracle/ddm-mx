@@ -8,89 +8,125 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-29 09:02-0500\n"
+"POT-Creation-Date: 2017-04-11 11:42-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Eadwine Rose <eadwine@gmail.com>, 2016\n"
+"Last-Translator: ko <ko.bros@gmail.com>, 2017\n"
 "Language-Team: Dutch (https://www.transifex.com/anticapitalista/teams/10162/nl/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ddm-mx:40
+#: ddm-mx:41
 msgid "Unknown error"
 msgstr "Onbekende fout"
 
-#: ddm-mx:41
+#: ddm-mx:42
 msgid "Option-"
 msgstr "Optie-"
 
-#: ddm-mx:42
+#: ddm-mx:43
 msgid "requires an argument."
 msgstr "vereist een argument."
 
-#: ddm-mx:43
+#: ddm-mx:44
 msgid "Run as root"
 msgstr "Als root uitvoeren"
 
-#: ddm-mx:44
+#: ddm-mx:45
 msgid "Install drivers for: "
 msgstr "Installeer drivers voor:"
 
-#: ddm-mx:45
+#: ddm-mx:46
 msgid "No AMD/ATI card found - exiting"
 msgstr "Geen AMD/Ati kaart gevonden - stoppen"
 
-#: ddm-mx:46
+#: ddm-mx:47
 msgid "Radeon HD %s needs driver %s"
 msgstr "Radeon HD %s heeft driver %s nodig"
 
-#: ddm-mx:98 ddm-mx:108
+#: ddm-mx:99 ddm-mx:109
 msgid "Invalid option"
 msgstr "Ongeldige optie"
 
-#: ddm-mx:267
+#: ddm-mx:268
 msgid "needs driver"
 msgstr "heeft driver nodig"
 
-#: ddm-mx:272
+#: ddm-mx:273
 msgid "No driver for this card: "
 msgstr "Geen driver voor deze kaart:"
 
-#: ddm-mx:291
+#: ddm-mx:292
 msgid "No nvidia card found - exiting"
 msgstr "Geen nvidia kaart gevonden - stoppen"
 
-#: ddm-mx:445
-msgid "ati/amd driver already installed"
-msgstr "ati/amd driver reeds geïnstalleerd"
+#: ddm-mx:444 ddm-mx:669
+msgid "Refreshing Sources with apt-get update"
+msgstr "Bronnen verversen met apt-get update"
 
-#: ddm-mx:473
-msgid "AMD/ATI packages to install are : "
-msgstr "AMD/ATI pakketten om te installeren zijn :"
-
-#: ddm-mx:475 ddm-mx:742
+#: ddm-mx:445 ddm-mx:502 ddm-mx:670 ddm-mx:801
 msgid "Press <Enter> to continue or Ctrl-c to exit"
 msgstr "Druk op <Enter> om verder te gaan of Ctrl-c om te stoppen"
 
-#: ddm-mx:499 ddm-mx:786
+#: ddm-mx:457
+msgid "ati/amd driver already installed"
+msgstr "ati/amd driver reeds geïnstalleerd"
+
+#: ddm-mx:459 ddm-mx:708
+msgid "Reinstall or quit?"
+msgstr "Opnieuw installeren of stoppen?"
+
+#: ddm-mx:461 ddm-mx:710
+msgid "Reinstall"
+msgstr "Opnieuw installeren"
+
+#: ddm-mx:462 ddm-mx:711
+msgid "quit"
+msgstr "stop"
+
+#: ddm-mx:464
+msgid "Enter Number of selection"
+msgstr "Type selectie nummer"
+
+#: ddm-mx:468 ddm-mx:717
+msgid "reinstalling"
+msgstr "herinstalleren"
+
+#: ddm-mx:469 ddm-mx:470 ddm-mx:718 ddm-mx:719
+msgid "exiting"
+msgstr "eindigen"
+
+#: ddm-mx:470 ddm-mx:719
+msgid "invalid option."
+msgstr "ongeldige optie."
+
+#: ddm-mx:476
+msgid "fglrx driver not available, check your repo sources"
+msgstr "fglrx driver niet beschikbaar, controleer uw pakketbronnen"
+
+#: ddm-mx:500
+msgid "AMD/ATI packages to install are : "
+msgstr "AMD/ATI pakketten om te installeren zijn :"
+
+#: ddm-mx:526 ddm-mx:845
 msgid "Finished"
 msgstr "Voltooid"
 
-#: ddm-mx:642
+#: ddm-mx:679
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr "Mogelijke eerdere installatie van bron of smxi/sgfxi gevonden."
 
-#: ddm-mx:643
+#: ddm-mx:680
 msgid "Version detected: "
 msgstr "Versie gevonden:"
 
-#: ddm-mx:644
+#: ddm-mx:681
 msgid "Latest possible with this script : "
 msgstr "Laatste mogelijk met dit script :"
 
-#: ddm-mx:645
+#: ddm-mx:682
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -98,30 +134,34 @@ msgstr ""
 "Verwijder aub met <sudo nvidia-install --uninstall> en herstart als u verder"
 " wilt gaan"
 
-#: ddm-mx:661
+#: ddm-mx:690
+msgid "nvidia-optimus detected"
+msgstr "nvidia-optimus gedetecteerd"
+
+#: ddm-mx:706
 msgid "nvidia driver already installed"
 msgstr "nvidia driver reeds geïnstalleerd"
 
-#: ddm-mx:666
+#: ddm-mx:725
 msgid "nvidia driver not available, check your repo sources"
 msgstr "nvidia driver niet beschikbaar, controleer uw pakketbronnen"
 
-#: ddm-mx:670
+#: ddm-mx:729
 msgid "Need driver: "
 msgstr "Heb driver nodig:"
 
-#: ddm-mx:708
+#: ddm-mx:767
 msgid "ERROR: Unknown argument: "
 msgstr "FOUT: Onbekend argument:"
 
-#: ddm-mx:780
+#: ddm-mx:839
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "FOUT: Kon Bumblebee niet configureren voor gebruiker:"
 
-#: ddm-mx:801
+#: ddm-mx:860
 msgid "Proprietary drivers removed"
 msgstr "Eigendomsdrivers verwijderd"
 
-#: ddm-mx:826
+#: ddm-mx:885
 msgid "Press <Enter> to exit"
 msgstr "Druk <Enter> om te beëindigen"
