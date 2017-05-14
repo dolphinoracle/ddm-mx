@@ -1,3 +1,9 @@
+ddm-mx (17.05mx16) mx; urgency=medium
+
+  * uh oh message for unsupported legacy parts (kmathern)
+
+ -- dolphin_oracle <dolphinoracle@gmail.com>  Sat, 13 May 2017 21:04:00 -0400
+
 ddm-mx (17.03mx16) mx; urgency=medium
 
   * change optimus/bumblebee detection

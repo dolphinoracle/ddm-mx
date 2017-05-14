@@ -729,7 +729,7 @@ function install_nvidia {
               exit 3
  
          else 
-	      echo $UNSUPPORTED_LEGACY | tee -a $LOG
+	      echo $"Uh oh. Your card is only supported by older legacy drivers which are not in any current Debian suite." | tee -a $LOG
               exit 7
       fi
   fi

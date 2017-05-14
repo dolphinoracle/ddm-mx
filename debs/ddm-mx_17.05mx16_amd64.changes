@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sat, 13 May 2017 21:04:00 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 17.05mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (17.05mx16) mx; urgency=medium
+ .
+   * uh oh message for unsupported legacy parts (kmathern)
+Checksums-Sha1:
+ 38462204c927f660c61a1c7e51ef15958e23ce1e 575 ddm-mx_17.05mx16.dsc
+ 406622584a9b71b1dd841aada8eac47f05933d36 42859 ddm-mx_17.05mx16.tar.gz
+ 3706836dcced0177aaec33796aec1b84b87dd24a 32530 ddm-mx_17.05mx16_all.deb
+Checksums-Sha256:
+ 7528190cbd97ee505c3546d4e5cc05b49aee500054c9844beb9811a479778296 575 ddm-mx_17.05mx16.dsc
+ ec1befd68f41c304bfd498f51f9fbcc29b5bf83909e450cf2c76fea64282592b 42859 ddm-mx_17.05mx16.tar.gz
+ a3c3998318b7f469725bb3f87e986506fd1ee29e5207016ad7ff3e32a240eb39 32530 ddm-mx_17.05mx16_all.deb
+Files:
+ 211b70711a76a23f81c5176efddce3e2 575 admin optional ddm-mx_17.05mx16.dsc
+ 89c31f90b6b05b03c8791711a2bf8440 42859 admin optional ddm-mx_17.05mx16.tar.gz
+ 319a32a8d5d7f46021694771db683b3f 32530 admin optional ddm-mx_17.05mx16_all.deb
