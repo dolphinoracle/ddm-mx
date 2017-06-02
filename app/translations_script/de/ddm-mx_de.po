@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-11 11:42-0400\n"
+"POT-Creation-Date: 2017-05-30 10:21-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: WPSchulz <fly@wp-schulz.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/anticapitalista/teams/10162/de/)\n"
@@ -62,11 +62,11 @@ msgstr "Kein Treiber für diese Karte:"
 msgid "No nvidia card found - exiting"
 msgstr "Keine Nvidia-Karte gefunden - verlasse das Programm"
 
-#: ddm-mx:444 ddm-mx:669
+#: ddm-mx:444 ddm-mx:670
 msgid "Refreshing Sources with apt-get update"
-msgstr ""
+msgstr "Aktualisiere Quellen mit apt-get update"
 
-#: ddm-mx:445 ddm-mx:502 ddm-mx:670 ddm-mx:801
+#: ddm-mx:445 ddm-mx:502 ddm-mx:671 ddm-mx:809
 msgid "Press <Enter> to continue or Ctrl-c to exit"
 msgstr ""
 "Drücke <Enter> um fortzufahre oder Ctrl-c zum verlassen des Programms."
@@ -75,60 +75,60 @@ msgstr ""
 msgid "ati/amd driver already installed"
 msgstr "ATI/AMD-Treiber sind bereits installiert"
 
-#: ddm-mx:459 ddm-mx:708
+#: ddm-mx:459 ddm-mx:709
 msgid "Reinstall or quit?"
-msgstr ""
+msgstr "Erneut installieren oder beenden?"
 
-#: ddm-mx:461 ddm-mx:710
+#: ddm-mx:461 ddm-mx:711
 msgid "Reinstall"
-msgstr ""
+msgstr "Erneut installieren"
 
-#: ddm-mx:462 ddm-mx:711
+#: ddm-mx:462 ddm-mx:712
 msgid "quit"
 msgstr "Beenden"
 
 #: ddm-mx:464
 msgid "Enter Number of selection"
-msgstr ""
+msgstr "Auswahlnummer eintragen"
 
-#: ddm-mx:468 ddm-mx:717
+#: ddm-mx:468 ddm-mx:718
 msgid "reinstalling"
-msgstr ""
+msgstr "Reinstalliere"
 
-#: ddm-mx:469 ddm-mx:470 ddm-mx:718 ddm-mx:719
+#: ddm-mx:469 ddm-mx:470 ddm-mx:719 ddm-mx:720
 msgid "exiting"
-msgstr ""
+msgstr "Beende"
 
-#: ddm-mx:470 ddm-mx:719
+#: ddm-mx:470 ddm-mx:720
 msgid "invalid option."
-msgstr ""
+msgstr "Ungültige Option."
 
 #: ddm-mx:476
 msgid "fglrx driver not available, check your repo sources"
-msgstr ""
+msgstr "fglrx Treiber nicht verfügbar, prüfen Sie Ihre Repo-Quellen!"
 
 #: ddm-mx:500
 msgid "AMD/ATI packages to install are : "
 msgstr "Folgende AMD/ATI-Pakete sind zu installieren:"
 
-#: ddm-mx:526 ddm-mx:845
+#: ddm-mx:526 ddm-mx:853
 msgid "Finished"
 msgstr "Abgeschlossen"
 
-#: ddm-mx:679
+#: ddm-mx:680
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 "Mögliche frühere Installation aus dem Quellcode oder smxi/sgfci gefunden."
 
-#: ddm-mx:680
+#: ddm-mx:681
 msgid "Version detected: "
 msgstr "Version gefunden:"
 
-#: ddm-mx:681
+#: ddm-mx:682
 msgid "Latest possible with this script : "
 msgstr "Neueste mögliche mit diesem Script:"
 
-#: ddm-mx:682
+#: ddm-mx:683
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -136,34 +136,40 @@ msgstr ""
 "Bitte entfernen Sie <sudo nvidia-install --uninstall> und starten Sie neu, "
 "wenn Sie fortfahren möchten."
 
-#: ddm-mx:690
+#: ddm-mx:691
 msgid "nvidia-optimus detected"
-msgstr ""
+msgstr "nvidia-optimus erkannt"
 
-#: ddm-mx:706
+#: ddm-mx:707
 msgid "nvidia driver already installed"
 msgstr "Nvidia-Treiber sind bereits installiert"
 
-#: ddm-mx:725
+#: ddm-mx:728
 msgid "nvidia driver not available, check your repo sources"
 msgstr "Nvidia-Treiber nicht verfügbar, prüfen Sie Ihre Repo-Quellen!"
 
-#: ddm-mx:729
+#: ddm-mx:732
+msgid ""
+"Uh oh. Your card is only supported by older legacy drivers which are not in "
+"any current Debian suite."
+msgstr ""
+
+#: ddm-mx:737
 msgid "Need driver: "
 msgstr "Treiber benötigt:"
 
-#: ddm-mx:767
+#: ddm-mx:775
 msgid "ERROR: Unknown argument: "
 msgstr "FEHLER: Unbekanntes Argument:"
 
-#: ddm-mx:839
+#: ddm-mx:847
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "FEHLER: Konnte Bumblebee nicht konfigurieren für User:"
 
-#: ddm-mx:860
+#: ddm-mx:868
 msgid "Proprietary drivers removed"
 msgstr "Proprietäre Treiber wurden entfernt"
 
-#: ddm-mx:885
+#: ddm-mx:893
 msgid "Press <Enter> to exit"
 msgstr "Drücke <Enter> zum verlassen"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-11 11:42-0400\n"
+"POT-Creation-Date: 2017-05-30 10:21-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Moo <moose@mail.ru>, 2016\n"
 "Language-Team: Lithuanian (https://www.transifex.com/anticapitalista/teams/10162/lt/)\n"
@@ -62,11 +62,11 @@ msgstr "Nėra tvarkyklės šiai plokštei: "
 msgid "No nvidia card found - exiting"
 msgstr "Nerasta nvidia plokštė - išeinama"
 
-#: ddm-mx:444 ddm-mx:669
+#: ddm-mx:444 ddm-mx:670
 msgid "Refreshing Sources with apt-get update"
-msgstr ""
+msgstr "Iš naujo įkeliami šaltiniai, naudojant apt-get update"
 
-#: ddm-mx:445 ddm-mx:502 ddm-mx:670 ddm-mx:801
+#: ddm-mx:445 ddm-mx:502 ddm-mx:671 ddm-mx:809
 msgid "Press <Enter> to continue or Ctrl-c to exit"
 msgstr ""
 
@@ -74,15 +74,15 @@ msgstr ""
 msgid "ati/amd driver already installed"
 msgstr "ati/amd tvarkyklė jau įdiegta"
 
-#: ddm-mx:459 ddm-mx:708
+#: ddm-mx:459 ddm-mx:709
 msgid "Reinstall or quit?"
 msgstr "Įdiegti iš naujo ar išeiti?"
 
-#: ddm-mx:461 ddm-mx:710
+#: ddm-mx:461 ddm-mx:711
 msgid "Reinstall"
 msgstr "Įdiegti iš naujo"
 
-#: ddm-mx:462 ddm-mx:711
+#: ddm-mx:462 ddm-mx:712
 msgid "quit"
 msgstr "išeiti"
 
@@ -90,76 +90,82 @@ msgstr "išeiti"
 msgid "Enter Number of selection"
 msgstr ""
 
-#: ddm-mx:468 ddm-mx:717
+#: ddm-mx:468 ddm-mx:718
 msgid "reinstalling"
-msgstr ""
+msgstr "įdiegiama iš naujo"
 
-#: ddm-mx:469 ddm-mx:470 ddm-mx:718 ddm-mx:719
+#: ddm-mx:469 ddm-mx:470 ddm-mx:719 ddm-mx:720
 msgid "exiting"
-msgstr ""
+msgstr "išeinama"
 
-#: ddm-mx:470 ddm-mx:719
+#: ddm-mx:470 ddm-mx:720
 msgid "invalid option."
-msgstr ""
+msgstr "neteisingas parametras."
 
 #: ddm-mx:476
 msgid "fglrx driver not available, check your repo sources"
-msgstr ""
+msgstr "fglrx tvarkyklė neprieinama, patikrinkite savo saugyklos šaltinius"
 
 #: ddm-mx:500
 msgid "AMD/ATI packages to install are : "
 msgstr "AMD/ATI paketai, kuriuos reikia įdiegti, yra : "
 
-#: ddm-mx:526 ddm-mx:845
+#: ddm-mx:526 ddm-mx:853
 msgid "Finished"
 msgstr "Užbaigta"
 
-#: ddm-mx:679
+#: ddm-mx:680
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 
-#: ddm-mx:680
+#: ddm-mx:681
 msgid "Version detected: "
 msgstr "Aptikta versija: "
 
-#: ddm-mx:681
+#: ddm-mx:682
 msgid "Latest possible with this script : "
 msgstr ""
 
-#: ddm-mx:682
+#: ddm-mx:683
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
 
-#: ddm-mx:690
+#: ddm-mx:691
 msgid "nvidia-optimus detected"
-msgstr ""
+msgstr "aptikta nvidia-optimus"
 
-#: ddm-mx:706
+#: ddm-mx:707
 msgid "nvidia driver already installed"
 msgstr "nvidia tvarkyklė jau įdiegta"
 
-#: ddm-mx:725
+#: ddm-mx:728
 msgid "nvidia driver not available, check your repo sources"
 msgstr "nvidia tvarkyklė neprieinama, patikrinkite savo saugyklos šaltinius"
 
-#: ddm-mx:729
+#: ddm-mx:732
+msgid ""
+"Uh oh. Your card is only supported by older legacy drivers which are not in "
+"any current Debian suite."
+msgstr ""
+
+#: ddm-mx:737
 msgid "Need driver: "
 msgstr "Reikia tvarkyklės: "
 
-#: ddm-mx:767
+#: ddm-mx:775
 msgid "ERROR: Unknown argument: "
 msgstr "KLAIDA: Nežinomas argumentas: "
 
-#: ddm-mx:839
+#: ddm-mx:847
 msgid "ERROR: Could not configure Bumblebee for user: "
-msgstr ""
+msgstr "KLAIDA: Nepavyko sukonfigūruoti Bumblebee naudotojui: "
 
-#: ddm-mx:860
+#: ddm-mx:868
 msgid "Proprietary drivers removed"
 msgstr "Nuosavybinės tvarkyklės pašalintos"
 
-#: ddm-mx:885
+#: ddm-mx:893
 msgid "Press <Enter> to exit"
 msgstr ""

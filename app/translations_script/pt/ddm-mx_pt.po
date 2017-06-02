@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-11 11:42-0400\n"
+"POT-Creation-Date: 2017-05-30 10:21-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Geoff Gigg <geoffgigg@hotmail.com>, 2017\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>, 2016\n"
 "Language-Team: Portuguese (https://www.transifex.com/anticapitalista/teams/10162/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +32,7 @@ msgstr "Requer um argumento."
 
 #: ddm-mx:44
 msgid "Run as root"
-msgstr "Executar como root"
+msgstr "Executar como administrador (root)"
 
 #: ddm-mx:45
 msgid "Install drivers for: "
@@ -62,11 +62,11 @@ msgstr "Não há controlador para esta placa:"
 msgid "No nvidia card found - exiting"
 msgstr "Nenhuma placa nvidia encontarda - a sair"
 
-#: ddm-mx:444 ddm-mx:669
+#: ddm-mx:444 ddm-mx:670
 msgid "Refreshing Sources with apt-get update"
-msgstr "A refrescar as Fontes (Sources) com apt-get update"
+msgstr "A actualizar com apt-get update, a partir das fontes"
 
-#: ddm-mx:445 ddm-mx:502 ddm-mx:670 ddm-mx:801
+#: ddm-mx:445 ddm-mx:502 ddm-mx:671 ddm-mx:809
 msgid "Press <Enter> to continue or Ctrl-c to exit"
 msgstr "Teclar  <Introduzir> (Enter) para continuar ou Ctrl-c para sair "
 
@@ -74,31 +74,31 @@ msgstr "Teclar  <Introduzir> (Enter) para continuar ou Ctrl-c para sair "
 msgid "ati/amd driver already installed"
 msgstr "controlador ati/amd já instalado"
 
-#: ddm-mx:459 ddm-mx:708
+#: ddm-mx:459 ddm-mx:709
 msgid "Reinstall or quit?"
 msgstr "Reinstalar ou sair?"
 
-#: ddm-mx:461 ddm-mx:710
+#: ddm-mx:461 ddm-mx:711
 msgid "Reinstall"
 msgstr "Reinstalar"
 
-#: ddm-mx:462 ddm-mx:711
+#: ddm-mx:462 ddm-mx:712
 msgid "quit"
-msgstr "sair"
+msgstr "Sair"
 
 #: ddm-mx:464
 msgid "Enter Number of selection"
 msgstr "Introduzir o número da opção seleccionada"
 
-#: ddm-mx:468 ddm-mx:717
+#: ddm-mx:468 ddm-mx:718
 msgid "reinstalling"
 msgstr "a reinstalar"
 
-#: ddm-mx:469 ddm-mx:470 ddm-mx:718 ddm-mx:719
+#: ddm-mx:469 ddm-mx:470 ddm-mx:719 ddm-mx:720
 msgid "exiting"
 msgstr "a sair"
 
-#: ddm-mx:470 ddm-mx:719
+#: ddm-mx:470 ddm-mx:720
 msgid "invalid option."
 msgstr "opção inválida."
 
@@ -110,24 +110,24 @@ msgstr "controlador (driver) fglrx não disponível; verificar os repositórios"
 msgid "AMD/ATI packages to install are : "
 msgstr "Os pacotes AMD/ATI a instalar são: "
 
-#: ddm-mx:526 ddm-mx:845
+#: ddm-mx:526 ddm-mx:853
 msgid "Finished"
 msgstr "Terminado"
 
-#: ddm-mx:679
+#: ddm-mx:680
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 "Detectada uma possível instalação anterior em código fonte ou smxi/sgfxi"
 
-#: ddm-mx:680
+#: ddm-mx:681
 msgid "Version detected: "
 msgstr "Versão detectada:"
 
-#: ddm-mx:681
+#: ddm-mx:682
 msgid "Latest possible with this script : "
 msgstr "Último possível com esta sequência de instruções (script):"
 
-#: ddm-mx:682
+#: ddm-mx:683
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -135,35 +135,41 @@ msgstr ""
 "Remover com <sudo nvidia-install --uninstall> e reiniciar se pretender "
 "prosseguir "
 
-#: ddm-mx:690
+#: ddm-mx:691
 msgid "nvidia-optimus detected"
 msgstr "detectado o nvidia-optimus"
 
-#: ddm-mx:706
+#: ddm-mx:707
 msgid "nvidia driver already installed"
 msgstr "controlador nvidia já instalado"
 
-#: ddm-mx:725
+#: ddm-mx:728
 msgid "nvidia driver not available, check your repo sources"
 msgstr ""
 "controlador nvidia não disponível; verificar se existe nos repositórios"
 
-#: ddm-mx:729
+#: ddm-mx:732
+msgid ""
+"Uh oh. Your card is only supported by older legacy drivers which are not in "
+"any current Debian suite."
+msgstr "A placa não é aceite por controladores (drivers) dos mais antigos."
+
+#: ddm-mx:737
 msgid "Need driver: "
 msgstr "Necessário controlador (driver):"
 
-#: ddm-mx:767
+#: ddm-mx:775
 msgid "ERROR: Unknown argument: "
 msgstr "ERRO: Argumento desconhecido:"
 
-#: ddm-mx:839
+#: ddm-mx:847
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "ERRO: Não foi possível configurar o Bumblebee para o utilizador:"
 
-#: ddm-mx:860
+#: ddm-mx:868
 msgid "Proprietary drivers removed"
 msgstr "Removidos os controladores não-livres"
 
-#: ddm-mx:885
+#: ddm-mx:893
 msgid "Press <Enter> to exit"
 msgstr "Teclar <Introduzir> (Enter) para sair"
