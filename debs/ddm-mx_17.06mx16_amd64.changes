@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Fri, 02 Jun 2017 21:16:22 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 17.06mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphin@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (17.06mx16) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ f488cd12cd21dac06f0b3740511c65cc42fa0079 575 ddm-mx_17.06mx16.dsc
+ fce78a57b4d9a93270fe0401c68aa8077663fffc 44922 ddm-mx_17.06mx16.tar.gz
+ 98b93a589b76891215a96e06acd4406b4c23934d 32934 ddm-mx_17.06mx16_all.deb
+Checksums-Sha256:
+ 226f92fb20fc68bc7eedb5ebcdd1fe6ecc655f0efed9474548a1998609b94845 575 ddm-mx_17.06mx16.dsc
+ 3c5701981483fb20c1efef44b035890ae75703784fdaa04d47a4fb9e7a6be2d5 44922 ddm-mx_17.06mx16.tar.gz
+ 470ac760d95b633796bc1d82726af3bae7ea9c68aa45f63c665cd903b451da2c 32934 ddm-mx_17.06mx16_all.deb
+Files:
+ 7c3a84e86515c7da58b8ed7008155938 575 admin optional ddm-mx_17.06mx16.dsc
+ 8c3232afe7dcb90efad37da768647a05 44922 admin optional ddm-mx_17.06mx16.tar.gz
+ 369bd9a691c8ceddcc0baf22d40f369b 32934 admin optional ddm-mx_17.06mx16_all.deb

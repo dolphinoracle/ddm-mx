@@ -5,7 +5,6 @@ nvidia-detect-mx		usr/local/bin
 *.png                           usr/share/pixmaps
 translations_script/ca/ddm-mx.mo     /usr/share/locale/ca/LC_MESSAGES
 translations_script/el/ddm-mx.mo     /usr/share/locale/el/LC_MESSAGES
-translations_script/en/ddm-mx.mo     /usr/share/locale/en/LC_MESSAGES
 translations_script/es/ddm-mx.mo     /usr/share/locale/es/LC_MESSAGES
 translations_script/fr/ddm-mx.mo     /usr/share/locale/fr/LC_MESSAGES
 translations_script/ja/ddm-mx.mo     /usr/share/locale/ja/LC_MESSAGES
