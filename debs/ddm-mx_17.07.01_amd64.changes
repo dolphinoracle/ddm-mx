@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 16 Jul 2017 09:25:22 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 17.07.01
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (17.07.01) mx; urgency=medium
+ .
+   * added stretch repos
+Checksums-Sha1:
+ 335828824070ebacc2273f738a8dc5e31193ef81 571 ddm-mx_17.07.01.dsc
+ b74ce9fc8c207b5cc78bf4d42e397660f8ec10c3 43699 ddm-mx_17.07.01.tar.gz
+ c1dbdf48674e998aadc1145379a4f320c787bf90 32454 ddm-mx_17.07.01_all.deb
+Checksums-Sha256:
+ 88ea78a5bad1fd0cfb87f5b065db1ac85b486c0c24c7be786fa89ac5a5ec2c9b 571 ddm-mx_17.07.01.dsc
+ ffcc74e99392bc32b546a7e361741e9d098dfe2f3142c3f90839eed26fd7bee6 43699 ddm-mx_17.07.01.tar.gz
+ 542e256f100ea00620acfc77b805c70d4f6b6c82ec4b811dc2218a3982e7420f 32454 ddm-mx_17.07.01_all.deb
+Files:
+ b17b87a77cc8dd7380bf720b649553a6 571 admin optional ddm-mx_17.07.01.dsc
+ ba505deb2d48cc9e923af24880b201e7 43699 admin optional ddm-mx_17.07.01.tar.gz
+ e9526a216335932c8a09f255b7a75809 32454 admin optional ddm-mx_17.07.01_all.deb
