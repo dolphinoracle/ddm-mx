@@ -1,3 +1,9 @@
+ddm-mx (17.07.02) mx; urgency=medium
+
+  * modified xorg.conf creation, cleaned up repo enabling
+
+ -- dolphin_oracle <dolphinoracle@gmail.com>  Sun, 16 Jul 2017 15:04:22 -0400
+
 ddm-mx (17.07.01) mx; urgency=medium
 
   * added stretch repos
