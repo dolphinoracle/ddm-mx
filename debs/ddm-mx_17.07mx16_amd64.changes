@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 16 Jul 2017 08:35:22 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 17.07mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphin@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (17.07mx16) mx; urgency=medium
+ .
+   * added backports repo use for more up-to-date drivers
+Checksums-Sha1:
+ 2d38ea2daf3c46f90b088b79c373186d229ba3a4 575 ddm-mx_17.07mx16.dsc
+ 74dffa846c8929135df81174c42ec42111c2069c 44606 ddm-mx_17.07mx16.tar.gz
+ f305a63558b3f8ad59251cb0b655ae2ef4a08334 33170 ddm-mx_17.07mx16_all.deb
+Checksums-Sha256:
+ 48f3ad128f6d1288b39524a39832e2bfa224dbe19f129fd85e74071dd54ddb5b 575 ddm-mx_17.07mx16.dsc
+ 8ba2600277ae32b396486c9d389dc7ee37a0b6fa2e82c70485c42c3f0aa897fb 44606 ddm-mx_17.07mx16.tar.gz
+ 73fd480fa2fc689f6be3c28102b092c3ecc962d817fc067027a4a80e5cfc1477 33170 ddm-mx_17.07mx16_all.deb
+Files:
+ adce7be49a1a5f3f54d6ec721cfba5f4 575 admin optional ddm-mx_17.07mx16.dsc
+ 638742c36d3837d2ca7c506c0c7a4563 44606 admin optional ddm-mx_17.07mx16.tar.gz
+ c88e6839d5f7713c327bd5ac816633bb 33170 admin optional ddm-mx_17.07mx16_all.deb
