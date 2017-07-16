@@ -870,7 +870,7 @@ read x
       echo $"ERROR: Could not configure Bumblebee for user: " $USER | tee -a $LOG
     fi
   else
-    nvidia-xconfig 2>/dev/null | tee -a $LOG
+    echo -e 'Section "Device"\n\tIdentifier "My GPU"\n\tDriver "nvidia"\nEndSection' > /etc/X11/xorg.conf| tee -a $LOG
   fi
   
   echo $"Finished" | tee -a $LOG
@@ -913,10 +913,12 @@ clean_up()
 unflock $LOCK_FILE
 echo "" | tee -a $LOG 
 echo "" | tee -a $LOG 
-echo -n $"Press <Enter> to exit" | tee -a $LOG 
 if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
   rm -f /etc/apt/sources.list.d/debian-backports-temp.list
+  apt-get update
+  echo ""
 fi
+echo -n $"Press <Enter> to exit" | tee -a $LOG 
 read x
 }
 
