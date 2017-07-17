@@ -34,7 +34,7 @@ CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
 LOG="/var/log/ddm.log"
-BP="jessie-backports"
+BP="stretch-backports"
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
@@ -58,7 +58,7 @@ do_flock
 
 
 # --force-yes is deprecated in stretch
-FORCE='--force-yes'
+#FORCE='--force-yes'
 source /etc/lsb-release
 
 ##commented out for mx 
@@ -158,9 +158,9 @@ for DRV in $PURGE; do
   echo "===================================" | tee -a $LOG
   
   case $DRV in
-    ati)
-      install_open
-      ;;
+    #ati)
+      #install_open
+      #;;
     nvidia)
       install_open
       ;;
@@ -205,79 +205,79 @@ for DRV in $INSTALL; do
   echo "===================================" | tee -a $LOG
   
   case $DRV in
-    ati)
-      # Get device ids for Ati
-      BCID='1002'
-      DEVICEIDS=$(lspci -n -d $BCID: | awk '{print $3}' | cut -d':' -f2)
+    #ati)
+      ## Get device ids for Ati
+      #BCID='1002'
+      #DEVICEIDS=$(lspci -n -d $BCID: | awk '{print $3}' | cut -d':' -f2)
       
-      # Testing
-      if $TEST; then
-        DEVICEIDS='6649'
-      fi
+      ## Testing
+      #if $TEST; then
+        #DEVICEIDS='6649'
+      #fi
 
-      if [ "$DEVICEIDS" == "" ]; then
-	echo $NO_ATI | tee -a $LOG
-	exit 0
-      fi
+      #if [ "$DEVICEIDS" == "" ]; then
+	#echo $NO_ATI | tee -a $LOG
+	#exit 0
+      #fi
 
-      HWCARD=`lspci | grep VGA`
-      HWCARD=${HWCARD#*: }
-      STARTSERIE=5000
-      DRIVER=''
-      RADEON=false
+      #HWCARD=`lspci | grep VGA`
+      #HWCARD=${HWCARD#*: }
+      #STARTSERIE=5000
+      #DRIVER=''
+      #RADEON=false
       
-      # Testing
-      if $TEST; then
-        HWCARD='00:02.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Bonaire [FirePro W5100]'
-      fi
+      ## Testing
+      #if $TEST; then
+        #HWCARD='00:02.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Bonaire [FirePro W5100]'
+      #fi
       
-      CARD=$(echo "$HWCARD" | egrep -i "radeon\s+[0-9a-z ]+|fire[a-z]+\s+[0-9a-z -]+")
-      if [ "$CARD" == "" ]; then
-	echo "$HWCARD is not supported" | tee -a $LOG
-	exit 7
-      fi
+      #CARD=$(echo "$HWCARD" | egrep -i "radeon\s+[0-9a-z ]+|fire[a-z]+\s+[0-9a-z -]+")
+      #if [ "$CARD" == "" ]; then
+	#echo "$HWCARD is not supported" | tee -a $LOG
+	#exit 7
+      #fi
       
-      if [ "$CARD" != "" ]; then
-        DRIVER='fglrx-driver'
-        if [[ "$CARD" =~ "HD" ]]; then
-	  # Split the card string into separate words and check for the Radeon series
-	  OLDIFS=$IFS
-	  IFS=" "
-	  set $CARD
-	  i=0
-	  for ITEM
-	  do
-	    # Is it a number?
-	    ITEM=${ITEM:0:4}
-	    if [[ "$ITEM" == ?(+|-)+([0-9]) ]]; then
-	      echo "$ITEM is number" | tee -a $LOG
-	      if [ $ITEM -ge $STARTSERIE ]; then
-		echo "Radeon HD $ITEM needs driver $DRIVER" | tee -a $LOG
-		break
-	      elif [ $ITEM -ge 1000 ] && [ $ITEM -lt $STARTSERIE ]; then
-		DRIVER='xserver-xorg-video-radeon'
-		RADEON=true
-                msg=$(printf "$RADEON_DRIVER_NEED" $ITEM $DRIVER)
-		echo $msg | tee -a $LOG
-		break
-	      fi
-	    fi
-	    ((i++))
-	  done
-	  IFS=$OLDIFS
-        else
-	  echo $CARD $"needs driver" $DRIVER | tee -a $LOG
-        fi
-      fi
+      #if [ "$CARD" != "" ]; then
+        #DRIVER='fglrx-driver'
+        #if [[ "$CARD" =~ "HD" ]]; then
+	  ## Split the card string into separate words and check for the Radeon series
+	  #OLDIFS=$IFS
+	  #IFS=" "
+	  #set $CARD
+	  #i=0
+	  #for ITEM
+	  #do
+	    ## Is it a number?
+	    #ITEM=${ITEM:0:4}
+	    #if [[ "$ITEM" == ?(+|-)+([0-9]) ]]; then
+	      #echo "$ITEM is number" | tee -a $LOG
+	      #if [ $ITEM -ge $STARTSERIE ]; then
+		#echo "Radeon HD $ITEM needs driver $DRIVER" | tee -a $LOG
+		#break
+	      #elif [ $ITEM -ge 1000 ] && [ $ITEM -lt $STARTSERIE ]; then
+		#DRIVER='xserver-xorg-video-radeon'
+		#RADEON=true
+                #msg=$(printf "$RADEON_DRIVER_NEED" $ITEM $DRIVER)
+		#echo $msg | tee -a $LOG
+		#break
+	      #fi
+	    #fi
+	    #((i++))
+	  #done
+	  #IFS=$OLDIFS
+        #else
+	  #echo $CARD $"needs driver" $DRIVER | tee -a $LOG
+        #fi
+      #fi
 
-      if [ "$DRIVER" == "" ]; then
-	echo $"No driver for this card: " $CARD | tee -a $LOG
-	exit 3
-      fi
+      #if [ "$DRIVER" == "" ]; then
+	#echo $"No driver for this card: " $CARD | tee -a $LOG
+	#exit 3
+      #fi
 
-      # Install the AMD/Ati drivers
-      install_fglrx $RADEON $DRIVER
-      ;;
+      ## Install the AMD/Ati drivers
+      #install_fglrx $RADEON $DRIVER
+      #;;
     nvidia)
       # Bumblebee: https://wiki.debian.org/Bumblebee
       # Get device ids for Nvidia
@@ -363,11 +363,11 @@ function usage() {
   echo
   echo "-i driver    Install given driver."
 #  echo "             drivers: ati, nvidia, broadcom, open, pae, fixbumblebee"
-  echo "             drivers: ati, nvidia, open, fixbumblebee"
+  echo "             drivers: nvidia, open, fixbumblebee"
   echo
   echo "-p driver    Purge given driver."
 #  echo "             driver: ati, nvidia, broadcom, pae"
-  echo "             driver: ati, nvidia"
+  echo "             driver: nvidia"
   echo
   echo "-f           Force DDM to start, even in a Live environment."
   echo
@@ -380,7 +380,7 @@ function usage() {
 #  echo "sudo ddm -i \"nvidia pae\" -p broadcom"
 #  echo "Both commands install nvidia and pae but purges broadcom."
    echo "sudo ddm-mx -i nvidia"
-   echo "sudo ddm-mx -i ati"
+   echo "sudo ddm-mx -i open"
   echo "======================================================================"
 }
 
@@ -425,218 +425,218 @@ function usage() {
 
 # fglrx -------------------------------------------------------------------------
 
-function preseed_fglrx {
-  echo 'libfglrx fglrx-driver/check-for-unsupported-gpu boolean false' | debconf-set-selections
-  echo 'fglrx-driver fglrx-driver/check-xorg-conf-on-removal boolean false' | debconf-set-selections
-  echo 'libfglrx fglrx-driver/install-even-if-unsupported-gpu-exists boolean false' | debconf-set-selections
-  echo 'fglrx-driver fglrx-driver/removed-but-enabled-in-xorg-conf note ' | debconf-set-selections
-  echo 'fglrx-driver fglrx-driver/needs-xorg-conf-to-enable note ' | debconf-set-selections
-}
+#function preseed_fglrx {
+  #echo 'libfglrx fglrx-driver/check-for-unsupported-gpu boolean false' | debconf-set-selections
+  #echo 'fglrx-driver fglrx-driver/check-xorg-conf-on-removal boolean false' | debconf-set-selections
+  #echo 'libfglrx fglrx-driver/install-even-if-unsupported-gpu-exists boolean false' | debconf-set-selections
+  #echo 'fglrx-driver fglrx-driver/removed-but-enabled-in-xorg-conf note ' | debconf-set-selections
+  #echo 'fglrx-driver fglrx-driver/needs-xorg-conf-to-enable note ' | debconf-set-selections
+#}
 
-function install_fglrx {
-  RADEON=$1
-  DRIVER=$2
-  ARCHITECTURE=$(uname -m)
-  CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-  INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+#function install_fglrx {
+  #RADEON=$1
+  #DRIVER=$2
+  #ARCHITECTURE=$(uname -m)
+  #CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+  #INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
   
-  if [ "$CANDIDATE" == "" ]; then
-    	##refresh sources and try again
-   	echo $"Refreshing Sources with apt-get update" | tee -a $LOG
-	echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
-	read x
-    	apt-get update | tee -a $LOG
-    	CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-    	INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
-  fi 
+  #if [ "$CANDIDATE" == "" ]; then
+    	###refresh sources and try again
+   	#echo $"Refreshing Sources with apt-get update" | tee -a $LOG
+	#echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
+	#read x
+    	#apt-get update | tee -a $LOG
+    	#CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+    	#INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+  #fi 
 
-  echo "Candidate is: " $CANDIDATE | tee -a $LOG
-  echo "Installed is: " $INSTALLED | tee -a $LOG
+  #echo "Candidate is: " $CANDIDATE | tee -a $LOG
+  #echo "Installed is: " $INSTALLED | tee -a $LOG
 
-  if [ "$CANDIDATE" != "" ]; then
-      if [ "$INSTALLED" = "$CANDIDATE" ]; then
-        echo $"ati/amd driver already installed" | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo $"Reinstall or quit?" | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo 1: $"Reinstall" | tee -a $LOG
-        echo 2: $"quit" | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo $"Enter Number of selection" | tee -a $LOG
-        read -n 1 -e x 
+  #if [ "$CANDIDATE" != "" ]; then
+      #if [ "$INSTALLED" = "$CANDIDATE" ]; then
+        #echo $"ati/amd driver already installed" | tee -a $LOG
+        #echo "" | tee -a $LOG
+        #echo $"Reinstall or quit?" | tee -a $LOG
+        #echo "" | tee -a $LOG
+        #echo 1: $"Reinstall" | tee -a $LOG
+        #echo 2: $"quit" | tee -a $LOG
+        #echo "" | tee -a $LOG
+        #echo $"Enter Number of selection" | tee -a $LOG
+        #read -n 1 -e x 
 
-        case $x in
-            1) echo $"reinstalling"... | tee -a $LOG ;;
-            2) echo $"exiting"... | tee -a $LOG && exit 0 ;;
-            *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
-        esac
-      fi
-  fi
+        #case $x in
+            #1) echo $"reinstalling"... | tee -a $LOG ;;
+            #2) echo $"exiting"... | tee -a $LOG && exit 0 ;;
+            #*) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
+        #esac
+      #fi
+  #fi
 
-  if [ "$CANDIDATE" == "" ]; then
-    echo $"fglrx driver not available, check your repo sources" | tee -a $LOG
-    exit 3
-  fi
+  #if [ "$CANDIDATE" == "" ]; then
+    #echo $"fglrx driver not available, check your repo sources" | tee -a $LOG
+    #exit 3
+  #fi
 
-  echo "Need driver: $DRIVER ($CANDIDATE)" | tee -a $LOG
+  #echo "Need driver: $DRIVER ($CANDIDATE)" | tee -a $LOG
 
-####removed backports function for mx  
-#  # Backport?
-#  BP=''
-#  if $BACKPORTS; then
-#    BP=$(get_backports_string $DRIVER)
-#  fi
+#####removed backports function for mx  
+##  # Backport?
+##  BP=''
+##  if $BACKPORTS; then
+##    BP=$(get_backports_string $DRIVER)
+##  fi
   
-  # Add additional packages
-  if ! $RADEON; then
-    DRIVER="$DRIVER fglrx-atieventsd fglrx-control fglrx-modules-dkms libgl1-fglrx-glx"
-    if [ "$ARCHITECTURE" == "x86_64" ]; then
-      DRIVER="$DRIVER libgl1-fglrx-glx-i386:i386";
-    fi
-  fi
+  ## Add additional packages
+  #if ! $RADEON; then
+    #DRIVER="$DRIVER fglrx-atieventsd fglrx-control fglrx-modules-dkms libgl1-fglrx-glx"
+    #if [ "$ARCHITECTURE" == "x86_64" ]; then
+      #DRIVER="$DRIVER libgl1-fglrx-glx-i386:i386";
+    #fi
+  #fi
   
-  # In case this is a bybrid (by default installed on SolydXK)
-  DRIVER="$DRIVER xserver-xorg-video-intel"
+  ## In case this is a bybrid (by default installed on SolydXK)
+  #DRIVER="$DRIVER xserver-xorg-video-intel"
   
-echo $"AMD/ATI packages to install are : "$DRIVER | tee -a $LOG
+#echo $"AMD/ATI packages to install are : "$DRIVER | tee -a $LOG
 
-echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
-read x
+#echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
+#read x
 
-  # Preseed debconf answers
-  preseed_fglrx
+  ## Preseed debconf answers
+  #preseed_fglrx
 
-  # Install the packages
-  apt-get update | tee -a $LOG
-  echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
+  ## Install the packages
+  #apt-get update | tee -a $LOG
+  #echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
-###removed backports for mx
-#  echo "Driver command = apt-get install --reinstall $BP -y $FORCE $DRIVER" | tee -a $LOG
-#  apt-get install --reinstall -y $FORCE linux-headers-$(uname -r) build-essential firmware-linux-nonfree amd-opencl-icd 2>&1 | tee -a $LOG
-#  apt-get install --reinstall $BP -y $FORCE $DRIVER 2>&1 | tee -a $LOG
+####removed backports for mx
+##  echo "Driver command = apt-get install --reinstall $BP -y $FORCE $DRIVER" | tee -a $LOG
+##  apt-get install --reinstall -y $FORCE linux-headers-$(uname -r) build-essential firmware-linux-nonfree amd-opencl-icd 2>&1 | tee -a $LOG
+##  apt-get install --reinstall $BP -y $FORCE $DRIVER 2>&1 | tee -a $LOG
 
-  echo "Driver command = apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
-  apt-get install --reinstall -y $FORCE linux-headers-$(uname -r) build-essential firmware-linux-nonfree amd-opencl-icd 2>&1 | tee -a $LOG
-  apt-get install --reinstall -y $FORCE $DRIVER 2>&1 | tee -a $LOG
+  #echo "Driver command = apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
+  #apt-get install --reinstall -y $FORCE linux-headers-$(uname -r) build-essential firmware-linux-nonfree amd-opencl-icd 2>&1 | tee -a $LOG
+  #apt-get install --reinstall -y $FORCE $DRIVER 2>&1 | tee -a $LOG
   
-  # Configure
-  if ! $RADEON; then
-    aticonfig --initial -f 2>&1 | tee -a $LOG
-  fi
+  ## Configure
+  #if ! $RADEON; then
+    #aticonfig --initial -f 2>&1 | tee -a $LOG
+  #fi
 
-  echo $"Finished" | tee -a $LOG
+  #echo $"Finished" | tee -a $LOG
   
-}
+#}
 
 # broadcom -------------------------------------------------------------------------
 
-function preseed_broadcom {
-  echo 'b43-fwcutter b43-fwcutter/install-unconditional boolean true' | debconf-set-selections
-}
+#function preseed_broadcom {
+  #echo 'b43-fwcutter b43-fwcutter/install-unconditional boolean true' | debconf-set-selections
+#}
 
-function add_broadcom_dependencies {
-  DRIVER=$1
-  HEADERS="linux-headers-$(uname -r)"
-  INSTALLED=`env LANG=C apt-cache policy $HEADERS | grep Installed | awk '{print $2}' | tr -d ' '`
-  if [ "$INSTALLED" == "" ]; then
-    DRIVER="$DRIVER $HEADER"
-  fi
-  DEPS=`apt-cache depends $DRIVER | grep Depends: | awk '{print $2}' | sed '/>/d' | tr '\n' ' '`
-  DRIVER="$DRIVER $DEPS"
-}
+#function add_broadcom_dependencies {
+  #DRIVER=$1
+  #HEADERS="linux-headers-$(uname -r)"
+  #INSTALLED=`env LANG=C apt-cache policy $HEADERS | grep Installed | awk '{print $2}' | tr -d ' '`
+  #if [ "$INSTALLED" == "" ]; then
+    #DRIVER="$DRIVER $HEADER"
+  #fi
+  #DEPS=`apt-cache depends $DRIVER | grep Depends: | awk '{print $2}' | sed '/>/d' | tr '\n' ' '`
+  #DRIVER="$DRIVER $DEPS"
+#}
 
-function install_broadcom {
-  DEVICEIDS=$1
+#function install_broadcom {
+  #DEVICEIDS=$1
   
-  # Get the appropriate driver
-  DRIVER=''
-  BLACKLIST=''
-  MODPROBE=''
-  for DID in $DEVICEIDS; do
-    if [[ "$B43" =~ "|$DID|" ]] ; then
-      DRIVER='firmware-b43-installer'
-      MODPROBE='b43'
-    elif [[ "$B43LEGACY" =~ "|$DID|" ]] ; then
-      DRIVER='firmware-b43legacy-installer'
-      MODPROBE='b43legacy'
-    elif [[ "$WLDEBIAN" =~ "|$DID|" ]] ; then
-      DRIVER='broadcom-sta-dkms'
-      BLACKLIST='blacklist b43 brcmsmac bcma ssb'
-      MODPROBE='wl'
-    elif [[ "$BRCMDEBIAN" =~ "|$DID|" ]] ; then
-      DRIVER='firmware-brcm80211'
-      MODPROBE='brcmsmac'
-    elif [[ "$UNKNOWN" =~ "|$DID|" ]] ; then
-      echo "This Broadcom device is not supported: $DID"
-    fi
-  done
+  ## Get the appropriate driver
+  #DRIVER=''
+  #BLACKLIST=''
+  #MODPROBE=''
+  #for DID in $DEVICEIDS; do
+    #if [[ "$B43" =~ "|$DID|" ]] ; then
+      #DRIVER='firmware-b43-installer'
+      #MODPROBE='b43'
+    #elif [[ "$B43LEGACY" =~ "|$DID|" ]] ; then
+      #DRIVER='firmware-b43legacy-installer'
+      #MODPROBE='b43legacy'
+    #elif [[ "$WLDEBIAN" =~ "|$DID|" ]] ; then
+      #DRIVER='broadcom-sta-dkms'
+      #BLACKLIST='blacklist b43 brcmsmac bcma ssb'
+      #MODPROBE='wl'
+    #elif [[ "$BRCMDEBIAN" =~ "|$DID|" ]] ; then
+      #DRIVER='firmware-brcm80211'
+      #MODPROBE='brcmsmac'
+    #elif [[ "$UNKNOWN" =~ "|$DID|" ]] ; then
+      #echo "This Broadcom device is not supported: $DID"
+    #fi
+  #done
   
-  if [ "$DRIVER" != "" ]; then
-    # Add the dependencies 
-    add_broadcom_dependencies $DRIVER
+  #if [ "$DRIVER" != "" ]; then
+    ## Add the dependencies 
+    #add_broadcom_dependencies $DRIVER
     
-    # Preseed debconf answers
-    preseed_broadcom
+    ## Preseed debconf answers
+    #preseed_broadcom
       
-    # Create download directory
-    CURDIR=$PWD
-    DLDIR='/tmp/dl'
-    mkdir -p $DLDIR 2>/dev/null
-    cd $DLDIR
-    rm -f *.deb 2>/dev/null
+    ## Create download directory
+    #CURDIR=$PWD
+    #DLDIR='/tmp/dl'
+    #mkdir -p $DLDIR 2>/dev/null
+    #cd $DLDIR
+    #rm -f *.deb 2>/dev/null
     
-    # Download the packages
-    LIVEDEBS=$(ls /lib/live/mount/medium/offline/broadcom*.deb 2>/dev/null)
-    if [ "$LIVEDEBS" != "" ] && [ "$DRIVER" == "broadcom-sta-dkms" ]; then
-      cp -v $LIVEDEBS ./ | tee -a $LOG
-    else
-      # Backport?
-      BP=''
-      if $BACKPORTS; then
-	BP=$(get_backports_string $DRIVER)
-      fi
-      apt-get update
-      echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
-      echo "Broadcom command = apt-get download $BP $DRIVER" | tee -a $LOG
-      apt-get download $BP $DRIVER 2>&1 | tee -a $LOG
-    fi
+    ## Download the packages
+    #LIVEDEBS=$(ls /lib/live/mount/medium/offline/broadcom*.deb 2>/dev/null)
+    #if [ "$LIVEDEBS" != "" ] && [ "$DRIVER" == "broadcom-sta-dkms" ]; then
+      #cp -v $LIVEDEBS ./ | tee -a $LOG
+    #else
+      ## Backport?
+      #BP=''
+      #if $BACKPORTS; then
+	#BP=$(get_backports_string $DRIVER)
+      #fi
+      #apt-get update
+      #echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
+      #echo "Broadcom command = apt-get download $BP $DRIVER" | tee -a $LOG
+      #apt-get download $BP $DRIVER 2>&1 | tee -a $LOG
+    #fi
     
-    # Check if packages were downloaded
-    CNT=`ls -1 *.deb 2>/dev/null | wc -l`
-    if [ $CNT -eq 0 ]; then
-      echo "No packages were downloaded - exiting" | tee -a $LOG
-      exit 5
-    fi
+    ## Check if packages were downloaded
+    #CNT=`ls -1 *.deb 2>/dev/null | wc -l`
+    #if [ $CNT -eq 0 ]; then
+      #echo "No packages were downloaded - exiting" | tee -a $LOG
+      #exit 5
+    #fi
     
-    # Remove modules
-    modprobe -rf b44
-    modprobe -rf b43
-    modprobe -rf b43legacy
-    modprobe -rf ssb
-    modprobe -rf brcmsmac
+    ## Remove modules
+    #modprobe -rf b44
+    #modprobe -rf b43
+    #modprobe -rf b43legacy
+    #modprobe -rf ssb
+    #modprobe -rf brcmsmac
     
-    # Install the downloaded packages
-    dpkg -i *.deb 2>&1 | tee -a $LOG
+    ## Install the downloaded packages
+    #dpkg -i *.deb 2>&1 | tee -a $LOG
     
-    # Remove download directory
-    cd $CURDIR
-    rm -r $DLDIR
+    ## Remove download directory
+    #cd $CURDIR
+    #rm -r $DLDIR
     
-    # Blacklist if needed
-    CONF='/etc/modprobe.d/blacklist-broadcom.conf'
-    if [ "$BLACKLIST" != "" ]; then
-      echo $BLACKLIST > $CONF
-    else
-      rm -f $CONF 2>/dev/null
-    fi
+    ## Blacklist if needed
+    #CONF='/etc/modprobe.d/blacklist-broadcom.conf'
+    #if [ "$BLACKLIST" != "" ]; then
+      #echo $BLACKLIST > $CONF
+    #else
+      #rm -f $CONF 2>/dev/null
+    #fi
     
-    # Start the new driver
-    modprobe $MODPROBE
+    ## Start the new driver
+    #modprobe $MODPROBE
 
-    echo "Broadcomm driver successfully installed" | tee -a $LOG
+    #echo "Broadcomm driver successfully installed" | tee -a $LOG
     
-  fi
-}
+  #fi
+#}
 
 # nvidia -------------------------------------------------------------------------
 
@@ -667,7 +667,7 @@ function install_nvidia {
   #enabling debian-backports
   echo $"Enabling backports repo"
   echo $"Running apt-get update..."
-  echo "deb http://httpredir.debian.org/debian $BP main contrib non-free">>/etc/apt/sources.list.d/debian-backports-temp.list
+  echo "deb http://ftp.debian.org/debian $BP main contrib non-free">>/etc/apt/sources.list.d/debian-backports-temp.list
   apt-get update |tee -a $LOG
   if [ $? = 100 ]; then
     echo $"There was a problem with the apt-get update.  See $LOG for details"
@@ -870,7 +870,7 @@ read x
       echo $"ERROR: Could not configure Bumblebee for user: " $USER | tee -a $LOG
     fi
   else
-    echo -e 'Section "Device"\n\tIdentifier "My GPU"\n\tDriver "nvidia"\nEndSection' > /etc/X11/xorg.conf| tee -a $LOG
+    echo -e 'Section "Device"\n\tIdentifier "My GPU"\n\tDriver "nvidia"\nEndSection' > /etc/X11/xorg.conf | tee -a $LOG
   fi
   
   echo $"Finished" | tee -a $LOG
@@ -885,7 +885,7 @@ function purge_proprietary_drivers {
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
   # Leave nvidia-detect and nvidia-installer-cleanup
   apt-get purge -y $FORCE $(apt-cache pkgnames | grep nvidia | grep -v detect | grep -v cleanup | cut -d':' -f1) 2>&1 | tee -a $LOG
-  apt-get purge -y $FORCE $(apt-cache pkgnames | grep fglrx | cut -d':' -f1) 2>&1 | tee -a $LOG
+  #apt-get purge -y $FORCE $(apt-cache pkgnames | grep fglrx | cut -d':' -f1) 2>&1 | tee -a $LOG
   apt-get purge -y $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
   
   echo $"Proprietary drivers removed" | tee -a $LOG
@@ -916,9 +916,8 @@ echo "" | tee -a $LOG
 if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
   rm -f /etc/apt/sources.list.d/debian-backports-temp.list
   apt-get update
-  echo ""
 fi
-echo -n $"Press <Enter> to exit" | tee -a $LOG 
+echo -n $"Press <Enter> to exit" | tee -a $LOG
 read x
 }
 

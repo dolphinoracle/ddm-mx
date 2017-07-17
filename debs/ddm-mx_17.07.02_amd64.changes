@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 16 Jul 2017 15:04:22 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 17.07.02
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (17.07.02) mx; urgency=medium
+ .
+   * modified xorg.conf creation, cleaned up repo enabling
+Checksums-Sha1:
+ 074ae8d05ab8837530e00fa2ff284484b8bdb723 571 ddm-mx_17.07.02.dsc
+ 5c17932df756d4489ba2e1adc18bcbe5d2b3eb73 43770 ddm-mx_17.07.02.tar.gz
+ 83a922ac9f09df141becf4cf6e2d616c2e4a6c1b 32532 ddm-mx_17.07.02_all.deb
+Checksums-Sha256:
+ a8d5e19c57532de5e1c04ac38c125cd787c979859ccfb4f5941ac08a5061505e 571 ddm-mx_17.07.02.dsc
+ ec68a1b9c999611a33deb642df7ab830f31c25ad3c6184c5ec22ef671af8f13e 43770 ddm-mx_17.07.02.tar.gz
+ 99c413774f843893904e7c9a0dcfd664d784c670fce6cc20326fb25270e77b7d 32532 ddm-mx_17.07.02_all.deb
+Files:
+ 3bddae4fec56feece4f668a4c7d9e40c 571 admin optional ddm-mx_17.07.02.dsc
+ 51a95aadb9041c839b28a482409cb1d3 43770 admin optional ddm-mx_17.07.02.tar.gz
+ 2b2fc0b908cd5cc98b03d9f4319579a5 32532 admin optional ddm-mx_17.07.02_all.deb
