@@ -34,6 +34,7 @@ CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
 LOG="/var/log/ddm.log"
+BP="jessie-backports"
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
@@ -659,10 +660,26 @@ function install_nvidia {
   
   # Testing
   if $TEST; then
-    DRIVER='nvidia-legacy-340xx-driver'
+    DRIVER='nvidia-driver'
+    TESTSWITCH="-s"
   fi
+
+  #enabling debian-backports
+  echo $"Enabling backports repo"
+  echo $"Running apt-get update..."
+  echo "deb http://httpredir.debian.org/debian $BP main contrib non-free">>/etc/apt/sources.list.d/debian-backports-temp.list
+  apt-get update |tee -a $LOG
+  if [ $? = 100 ]; then
+    echo $"There was a problem with the apt-get update.  See $LOG for details"
+    my_exit
+  fi
+  echo ""
+  echo $"Installing latest nvidia-detect package"
+  echo ""
+  apt-get install -t $BP nvidia-detect |tee -a $LOG  
+  echo ""
   
-  CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+  CANDIDATE=`env LANG=C apt-cache policy -t $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
   INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
 
   if [ "$CANDIDATE" == "" ]; then
@@ -671,9 +688,11 @@ function install_nvidia {
 	echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
 	read x
     	apt-get update | tee -a $LOG
-	CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+	CANDIDATE=`env LANG=C apt-cache policy -t $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
   	INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
   fi
+  
+echo ""
 
   #check for possible source install
   if [ -e /usr/bin/nvidia-installer ]; then
@@ -695,13 +714,14 @@ function install_nvidia {
 
     if [ $OPTIMUS = 2 ]; then
         DRIVER='bumblebee-nvidia'    
-        CANDIDATE=`env LANG=C apt-cache policy $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-        INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+        CANDIDATE=`env LANG=C apt-cache policy -t $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
+        INSTALLED=`env LANG=C apt-cache policy -t $BP $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
     fi
-   
+  echo ""
   echo "Candidate is: " $CANDIDATE | tee -a $LOG
   echo "Installed is: " $INSTALLED | tee -a $LOG
-
+  echo ""
+  
   if [ "$CANDIDATE" != "" ]; then
       if [ "$INSTALLED" = "$CANDIDATE" ]; then
         echo $"nvidia driver already installed" | tee -a $LOG
@@ -721,7 +741,9 @@ function install_nvidia {
         esac
       fi
   fi
-
+  
+  echo ""
+  
   if [ "$DRIVER" == "" ] || [ "$CANDIDATE" == "" ]; then
       if [ "$UNSUPPORTED_LEGACY" == "" ]
          then
@@ -733,7 +755,8 @@ function install_nvidia {
               exit 7
       fi
   fi
-
+  
+  echo ""
   echo $"Need driver: "$DRIVER "($CANDIDATE)" | tee -a $LOG
 
 ####removed backports function for mx  
@@ -749,21 +772,21 @@ function install_nvidia {
   case $DRIVER in 
                      nvidia-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
 	                                   # Additional 32-bit drivers for 64-bit systems
-	                                   DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libgl1-nvidia-glx:i386" 
+	                                   DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libgl1-nvidia-glx:i386 nvidia-xconfig" 
                                        else
-                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings" 
+                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings nvidia-xconfig" 
                                        fi
                                        ;;
         nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms libgl1-nvidia-legacy-340xx-glx:i386"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms libgl1-nvidia-legacy-340xx-glx:i386 nvidia-xconfig"
                                        else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms nvidia-xconfig"
                                        fi
                                        ;;
         nvidia-legacy-304xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms libgl1-nvidia-legacy-304xx-glx:i386"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms libgl1-nvidia-legacy-304xx-glx:i386 nvidia-xconfig"
                                        else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms nvidia-xconfig"
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
@@ -799,7 +822,7 @@ function install_nvidia {
 #  fi
   
   # In case this is a bybrid (by default installed on SolydXK)
-  DRIVER="$DRIVER xserver-xorg-video-intel"
+  #DRIVER="$DRIVER xserver-xorg-video-intel"
   
 #  # Configuration package
 #  DRIVER="$DRIVER nvidia-xconfig"
@@ -813,7 +836,7 @@ read x
   preseed_nvidia $CANDIDATE
   
   # Install the packages
-  apt-get update | tee -a $LOG 
+  #apt-get update | tee -a $LOG 
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
 #####removed backports for mx
@@ -822,8 +845,8 @@ read x
 #  apt-get install --reinstall $BP -y $FORCE $DRIVER 2>&1 | tee -a $LOG
   
   echo "Nvidia command = apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
-  apt-get install --reinstall -y $FORCE linux-headers-$(uname -r) build-essential firmware-linux-nonfree 2>&1 | tee -a $LOG
-  apt-get install --reinstall -y $FORCE $DRIVER 2>&1 | tee -a $LOG
+  apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
+  apt-get install --reinstall --install-recommends -y -t $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
 
 # Configure
@@ -846,8 +869,8 @@ read x
     else
       echo $"ERROR: Could not configure Bumblebee for user: " $USER | tee -a $LOG
     fi
-#  else
-#    nvidia-xconfig 2>/dev/null | tee -a $LOG
+  else
+    echo -e 'Section "Device"\n\tIdentifier "My GPU"\n\tDriver "nvidia"\nEndSection' > /etc/X11/xorg.conf| tee -a $LOG
   fi
   
   echo $"Finished" | tee -a $LOG
@@ -890,6 +913,11 @@ clean_up()
 unflock $LOCK_FILE
 echo "" | tee -a $LOG 
 echo "" | tee -a $LOG 
+if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
+  rm -f /etc/apt/sources.list.d/debian-backports-temp.list
+  apt-get update
+  echo ""
+fi
 echo -n $"Press <Enter> to exit" | tee -a $LOG 
 read x
 }

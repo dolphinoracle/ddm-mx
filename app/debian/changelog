@@ -1,3 +1,9 @@
+ddm-mx (17.07mx16) mx; urgency=medium
+
+  * added backports repo use for more up-to-date drivers
+
+ -- dolphin_oracle <dolphin@gmail.com>  Sun, 16 Jul 2017 08:35:22 -0400
+
 ddm-mx (17.06mx16) mx; urgency=medium
 
   * updated translations
