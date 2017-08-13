@@ -10,8 +10,8 @@ Build-Depends: debhelper (>= 7.0.50~)
 Package-List:
  ddm-mx deb admin optional arch=all
 Checksums-Sha1:
- 5c17932df756d4489ba2e1adc18bcbe5d2b3eb73 43770 ddm-mx_17.07.02.tar.gz
+ 14b96840e552e1e5041657e24937e4c172198961 41069 ddm-mx_17.07.02.tar.gz
 Checksums-Sha256:
- ec68a1b9c999611a33deb642df7ab830f31c25ad3c6184c5ec22ef671af8f13e 43770 ddm-mx_17.07.02.tar.gz
+ b7c889e5789724a423ca76c44841a6465fbed054de9b7510d618632f54841bd4 41069 ddm-mx_17.07.02.tar.gz
 Files:
- 51a95aadb9041c839b28a482409cb1d3 43770 ddm-mx_17.07.02.tar.gz
+ 9b747bcd03244a4bed8cc957297c6dd9 41069 ddm-mx_17.07.02.tar.gz
