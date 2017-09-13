@@ -11,7 +11,7 @@
 # 7 - Card not supported
 
 ###original code from the solydXK project.
-####MODIFICATIONS FOR MX by dolphin oracle
+####MODIFICATIONS FOR MX by dolphin oracle and kmathern
 ##depends: nvidia-detect-mx, nvidia-detect and cli-shell-utils
 ##modifications assume MX repos for the nvidia drivers
 ##
