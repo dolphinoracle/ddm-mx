@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Tue, 12 Sep 2017 21:31:22 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 17.07.03
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin_oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (17.07.03) mx; urgency=medium
+ .
+   * uniq checks per kmathern
+Checksums-Sha1:
+ 6a2d337f7b1298715dab19b77df1bed5405140b4 571 ddm-mx_17.07.03.dsc
+ b44e19481f8de8c0d3d3090a3a0c6c47a83ecb77 41294 ddm-mx_17.07.03.tar.gz
+ 6b3beb0fce760f6f209a645f2a8e645619ccc3d4 30098 ddm-mx_17.07.03_all.deb
+ b515ee4ed2232cb5828a75cee88b92f4d76b1536 4641 ddm-mx_17.07.03_amd64.buildinfo
+Checksums-Sha256:
+ 3c77ca8a916cb7d4cec9bd087d1d5abdcf7bc95453e56efefd80ecc601d270c7 571 ddm-mx_17.07.03.dsc
+ 12606a8dbb72764c8a53c9c8c33059dafff517ca8d7047f7f78881a8ef095f58 41294 ddm-mx_17.07.03.tar.gz
+ 1e6ef8e0bcd5fdbdbe38bb58ab5aed41182b6fc526a78fe2d064455f131f41af 30098 ddm-mx_17.07.03_all.deb
+ 78b9202d4370ed3dd2c90dde74f9ba7796a5206d75ddcd9152153d351860f64a 4641 ddm-mx_17.07.03_amd64.buildinfo
+Files:
+ a3f768dfa68941a429161f22c8f79c2b 571 admin optional ddm-mx_17.07.03.dsc
+ 391faec9129af55cc393ffcbb9d6d281 41294 admin optional ddm-mx_17.07.03.tar.gz
+ 8fd4eaf17fe66f767eb92e54e8922fed 30098 admin optional ddm-mx_17.07.03_all.deb
+ 00948e6e074de7141190228525b89316 4641 admin optional ddm-mx_17.07.03_amd64.buildinfo
