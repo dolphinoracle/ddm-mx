@@ -11,7 +11,7 @@
 # 7 - Card not supported
 
 ###original code from the solydXK project.
-####MODIFICATIONS FOR MX by dolphin oracle and kmathern
+####MODIFICATIONS FOR MX by dolphin oracle
 ##depends: nvidia-detect-mx, nvidia-detect and cli-shell-utils
 ##modifications assume MX repos for the nvidia drivers
 ##
@@ -261,26 +261,15 @@ function preseed_nvidia {
 function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
+  DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86)
   
-  
-  #test for multiple drivers
+  # Testing
   if $TEST; then
-    echo $"Test Mode"
     DRIVER='nvidia-driver'
     TESTSWITCH="-s"
-  else
-    if [ "$(nvidia-detect-mx | grep INSTALL: | tr -d ' ' | cut -d ':' -f2 | uniq | wc -l)" -ne "1" ]; then 
-         echo $"Nvidia cards requiring multiple drivers detected"|tee -a $LOG
-         echo $"This tool cannot install drivers in this case"|tee -a $LOG
-         echo $"Exiting..." |tee -a $LOG
-         exit 7
-    fi
-   fi
+  fi
 
-#do it again for real - need to do this after test for multiples
-    DRIVER=$(nvidia-detect-mx | grep INSTALL: | tr -d ' ' | cut -d ':' -f2 | uniq)
-    UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86)
-  
   check_cand
 
   if [ "$CANDIDATE" == "" ]; then
@@ -458,7 +447,12 @@ read x
       echo $"ERROR: Could not configure Bumblebee for user: " $USER | tee -a $LOG
     fi
   else
-    echo -e 'Section "Device"\n\tIdentifier "My GPU"\n\tDriver "nvidia"\nEndSection' > /etc/X11/xorg.conf| tee -a $LOG
+    if $TEST; then
+    echo "test enabled, not creating xorg.conf file"
+    #nvidia-xconfig | tee -a $LOG
+    else
+    nvidia-xconfig | tee -a $LOG
+    fi
   fi
   
   echo $"Finished" | tee -a $LOG
