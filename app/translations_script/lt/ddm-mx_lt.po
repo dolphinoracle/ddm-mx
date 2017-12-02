@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-14 22:34-0400\n"
+"POT-Creation-Date: 2017-11-04 11:21-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Moo <moose@mail.ru>, 2016\n"
 "Language-Team: Lithuanian (https://www.transifex.com/anticapitalista/teams/10162/lt/)\n"
@@ -18,55 +18,106 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ddm-mx_stretch:33
+#: ddm-mx:33
 msgid "Unknown error"
 msgstr "Nežinoma klaida"
 
-#: ddm-mx_stretch:34
+#: ddm-mx:34
 msgid "Option-"
 msgstr "Parametras-"
 
-#: ddm-mx_stretch:35
+#: ddm-mx:35
 msgid "requires an argument."
 msgstr "reikalauja argumento."
 
-#: ddm-mx_stretch:36
+#: ddm-mx:36
 msgid "Run as root"
 msgstr ""
 
-#: ddm-mx_stretch:37
+#: ddm-mx:37
 msgid "Install drivers for: "
 msgstr "Įdiegti tvarkykles, skirtas: "
 
-#: ddm-mx_stretch:80 ddm-mx_stretch:90
+#: ddm-mx:80 ddm-mx:90
 msgid "Invalid option"
 msgstr "Neteisingas parametras"
 
-#: ddm-mx_stretch:182
+#: ddm-mx:136
+#, sh-format
+msgid "Purge drivers for: $DRV"
+msgstr ""
+
+#: ddm-mx:137 ddm-mx:165
+msgid "Start at (m/d/y):"
+msgstr ""
+
+#: ddm-mx:152 ddm-mx:199
+#, sh-format
+msgid "ERROR: Unknown argument: $DRV"
+msgstr "KLAIDA: Nežinomas argumentas: $DRV"
+
+#: ddm-mx:182
 msgid "No nvidia card found - exiting"
 msgstr "Nerasta nvidia plokštė - išeinama"
 
-#: ddm-mx_stretch:277
+#: ddm-mx:218
+msgid "-i driver    Install given driver."
+msgstr ""
+
+#: ddm-mx:220
+msgid "             drivers: nvidia, open, fixbumblebee"
+msgstr "             tvarkyklės: nvidia, open, fixbumblebee"
+
+#: ddm-mx:222
+msgid "-p driver    Purge given driver."
+msgstr ""
+
+#: ddm-mx:224
+msgid "             driver: nvidia"
+msgstr "             tvarkyklė: nvidia"
+
+#: ddm-mx:226
+msgid "-f           Force DDM to start, even in a Live environment."
+msgstr ""
+
+#: ddm-mx:228
+msgid "-t           For development testing only!"
+msgstr ""
+
+#: ddm-mx:229
+msgid "             This will install drivers for pre-defined hardware."
+msgstr ""
+"             Tai įdiegs tvarkykles iš anksto apibrėžtai aparatinei įrangai."
+
+#: ddm-mx:230
+msgid "             Use with -i."
+msgstr ""
+
+#: ddm-mx:236
+msgid "sudo ddm-mx -i nvidia"
+msgstr "sudo ddm-mx -i nvidia"
+
+#: ddm-mx:277
 msgid "Refreshing Sources with apt-get update"
 msgstr "Iš naujo įkeliami šaltiniai, naudojant apt-get update"
 
-#: ddm-mx_stretch:278 ddm-mx_stretch:414
+#: ddm-mx:278 ddm-mx:414
 msgid "Press <Enter> to continue or Ctrl-c to exit"
 msgstr ""
 
-#: ddm-mx_stretch:288
+#: ddm-mx:288
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 
-#: ddm-mx_stretch:289
+#: ddm-mx:289
 msgid "Version detected: "
 msgstr "Aptikta versija: "
 
-#: ddm-mx_stretch:290
+#: ddm-mx:290
 msgid "Latest possible with this script : "
 msgstr ""
 
-#: ddm-mx_stretch:291
+#: ddm-mx:291
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -74,60 +125,63 @@ msgstr ""
 "Norėdami tęsti, pašalinkite, naudodami  <sudo nvidia-install --uninstall> ir"
 " paleiskite kompiuterį iš naujo"
 
-#: ddm-mx_stretch:299
+#: ddm-mx:299
 msgid "nvidia-optimus detected"
 msgstr "aptikta nvidia-optimus"
 
-#: ddm-mx_stretch:309 ddm-mx_stretch:319 ddm-mx_stretch:334
+#: ddm-mx:309 ddm-mx:319 ddm-mx:334
 msgid "Candidate is: "
 msgstr ""
 
-#: ddm-mx_stretch:310 ddm-mx_stretch:321 ddm-mx_stretch:328 ddm-mx_stretch:335
+#: ddm-mx:310 ddm-mx:321 ddm-mx:328 ddm-mx:335
 msgid "Installed is: "
 msgstr ""
 
-#: ddm-mx_stretch:320 ddm-mx_stretch:327
+#: ddm-mx:320 ddm-mx:327
 msgid "Debian backports candidate is:  "
 msgstr ""
 
-#: ddm-mx_stretch:326
+#: ddm-mx:326
 msgid "Main repo candidate is:  "
 msgstr ""
 
-#: ddm-mx_stretch:341
+#: ddm-mx:341
 msgid "nvidia driver already installed"
 msgstr "nvidia tvarkyklė jau įdiegta"
 
-#: ddm-mx_stretch:343
+#: ddm-mx:343
 msgid "Reinstall or quit?"
 msgstr "Įdiegti iš naujo ar išeiti?"
 
-#: ddm-mx_stretch:345
+#: ddm-mx:345
 msgid "Reinstall"
 msgstr "Įdiegti iš naujo"
 
-#: ddm-mx_stretch:346
+#: ddm-mx:346
 msgid "quit"
 msgstr "išeiti"
 
-#: ddm-mx_stretch:352
+#: ddm-mx:348 ddm-mx:541 ddm-mx:568
+msgid "Enter Number of selection"
+msgstr ""
+
+#: ddm-mx:352
 msgid "reinstalling"
 msgstr "įdiegiama iš naujo"
 
-#: ddm-mx_stretch:353 ddm-mx_stretch:354 ddm-mx_stretch:546 ddm-mx_stretch:572
-#: ddm-mx_stretch:574
+#: ddm-mx:353 ddm-mx:354 ddm-mx:552 ddm-mx:578 ddm-mx:580
 msgid "exiting"
 msgstr "išeinama"
 
-#: ddm-mx_stretch:354 ddm-mx_stretch:546 ddm-mx_stretch:574
+#: ddm-mx:354 ddm-mx:552 ddm-mx:580
 msgid "invalid option."
 msgstr "neteisingas parametras."
 
-#: ddm-mx_stretch:364
+#: ddm-mx:364
 msgid "nvidia driver not available, check your repo sources"
 msgstr "nvidia tvarkyklė neprieinama, patikrinkite savo saugyklos šaltinius"
 
-#: ddm-mx_stretch:368
+#: ddm-mx:368
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
@@ -135,85 +189,101 @@ msgstr ""
 "Oi. Jūsų plokštė yra palaikoma tik senesnių pasenusių tvarkyklių, kurių nėra"
 " jokiame esamos Debian rinkinyje."
 
-#: ddm-mx_stretch:374
+#: ddm-mx:374
 msgid "Need driver: "
 msgstr "Reikia tvarkyklės: "
 
-#: ddm-mx_stretch:406
+#: ddm-mx:406
 msgid "ERROR: Unknown argument: "
 msgstr "KLAIDA: Nežinomas argumentas: "
 
-#: ddm-mx_stretch:447
+#: ddm-mx:412
+msgid "NVIDIA packages to install are "
+msgstr ""
+
+#: ddm-mx:447
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "KLAIDA: Nepavyko sukonfigūruoti Bumblebee naudotojui: "
 
-#: ddm-mx_stretch:453
+#: ddm-mx:451
+msgid "test enabled, not creating xorg.conf file"
+msgstr ""
+
+#: ddm-mx:454
+msgid "creating /etc/X11/xorg.conf file"
+msgstr "kuriamas /etc/X11/xorg.conf failas"
+
+#: ddm-mx:459
 msgid "Finished"
 msgstr "Užbaigta"
 
-#: ddm-mx_stretch:467
+#: ddm-mx:473
 msgid "Proprietary drivers removed"
 msgstr "Nuosavybinės tvarkyklės pašalintos"
 
-#: ddm-mx_stretch:497
+#: ddm-mx:487
+msgid "Open drivers installed"
+msgstr ""
+
+#: ddm-mx:503
 msgid "Press <Enter> to exit"
 msgstr "Paspauskite <Enter>, norėdami išeiti"
 
-#: ddm-mx_stretch:511
+#: ddm-mx:517
 msgid "Enabling backports repo"
 msgstr ""
 
-#: ddm-mx_stretch:512
+#: ddm-mx:518
 msgid "Running apt-get update..."
 msgstr "Vykdoma apt-get update..."
 
-#: ddm-mx_stretch:516
+#: ddm-mx:522
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
 "Atsirado problemų su apt-get update komanda. Išsamesnei informacijai, "
 "žiūrėkite $LOG"
 
-#: ddm-mx_stretch:520
+#: ddm-mx:526
 msgid "Installing latest nvidia-detect package"
 msgstr "Įdiegiamas naujausias nvidia-detect paketas"
 
-#: ddm-mx_stretch:528
+#: ddm-mx:534
 msgid "Would you like to check debian-backports for a later version?"
 msgstr ""
 
-#: ddm-mx_stretch:530
+#: ddm-mx:536
 msgid "Yes or No?"
 msgstr "Taip ar Ne?"
 
-#: ddm-mx_stretch:532
+#: ddm-mx:538
 msgid "Yes"
 msgstr "Taip"
 
-#: ddm-mx_stretch:533
+#: ddm-mx:539
 msgid "No"
 msgstr "Ne"
 
-#: ddm-mx_stretch:539 ddm-mx_stretch:543 ddm-mx_stretch:566 ddm-mx_stretch:570
+#: ddm-mx:545 ddm-mx:549 ddm-mx:572 ddm-mx:576
 msgid "Ok"
 msgstr "Gerai"
 
-#: ddm-mx_stretch:552
+#: ddm-mx:558
 msgid "Which driver do you wish to install"
 msgstr "Kurią tvarkyklę norėtumėte įdiegti"
 
-#: ddm-mx_stretch:554
+#: ddm-mx:560
 msgid "Main repos or debian-backports?"
 msgstr ""
 
-#: ddm-mx_stretch:556
+#: ddm-mx:562
 msgid "Main"
 msgstr ""
 
-#: ddm-mx_stretch:558
+#: ddm-mx:564
 msgid "debian-backports"
 msgstr ""
 
-#: ddm-mx_stretch:560
+#: ddm-mx:566
 msgid "Exit"
 msgstr "Išeiti"
