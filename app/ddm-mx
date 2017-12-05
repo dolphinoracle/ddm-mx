@@ -40,7 +40,7 @@ INSTALL_DRIVERS_FOR=$"Install drivers for: "
 main(){
 # -------------------------------------------------------------------------
 ###file locking
-echo "creating lock ..." | tee -a $LOG
+echo $"creating lock ..." | tee -a $LOG
 trap clean_up EXIT
 do_flock 
 
@@ -133,8 +133,8 @@ fi
 for DRV in $PURGE; do
   # Start the log
   echo "===================================" | tee -a $LOG
-  echo "Purge drivers for: $DRV" | tee -a $LOG
-  echo "Start at (m/d/y):" $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
+  echo $"Purge drivers for: "$DRV | tee -a $LOG
+  echo $"Start at (m/d/y):" $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
   echo "===================================" | tee -a $LOG
   
   case $DRV in
@@ -149,7 +149,7 @@ for DRV in $PURGE; do
     fixbumblebee)
       ;;
     *)
-      echo "ERROR: Unknown argument: $DRV" | tee -a $LOG
+      echo $"ERROR: Unknown argument: $DRV" | tee -a $LOG
       echo
       usage
       exit 2
@@ -162,7 +162,7 @@ for DRV in $INSTALL; do
   # Start the log
   echo "===================================" | tee -a $LOG
   echo $INSTALL_DRIVERS_FOR $DRV | tee -a $LOG
-  echo "Start at (m/d/y):" $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
+  echo $"Start at (m/d/y):" $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
   echo "===================================" | tee -a $LOG
   
   case $DRV in
@@ -196,7 +196,7 @@ for DRV in $INSTALL; do
       mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
       ;;
     *)
-      echo "ERROR: Unknown argument: $DRV" | tee -a $LOG
+      echo $"ERROR: Unknown argument: " $DRV | tee -a $LOG
       echo
       usage
       exit 2
@@ -209,25 +209,25 @@ exit 0
 
 function usage() {
   echo "======================================================================"
-  echo "Device Driver Manager Help:"
+  echo $"Device Driver Manager Help:"
   echo "======================================================================"
-  echo "The following options are allowed:"
+  echo $"The following options are allowed:"
   echo
 # echo "-b           Use backported packages when available."
   echo
-  echo "-i driver    Install given driver."
+  echo $"-i driver    Install given driver."
 #  echo "             drivers: ati, nvidia, broadcom, open, pae, fixbumblebee"
-  echo "             drivers: nvidia, open, fixbumblebee"
+  echo $"             drivers: nvidia, open, fixbumblebee"
   echo
-  echo "-p driver    Purge given driver."
+  echo $"-p driver    Purge given driver."
 #  echo "             driver: ati, nvidia, broadcom, pae"
-  echo "             driver: nvidia"
+  echo $"             driver: nvidia"
   echo
-  echo "-f           Force DDM to start, even in a Live environment."
+  echo $"-f           Force DDM to start, even in a Live environment."
   echo
-  echo "-t           For development testing only!"
-  echo "             This will install drivers for pre-defined hardware."
-  echo "             Use with -i."
+  echo $"-t           For development testing only!"
+  echo $"             This will install drivers for pre-defined hardware."
+  echo $"             Use with -i."
   echo
   echo "----------------------------------------------------------------------"
 #  echo "sudo ddm - nvidia -i pae -p broadcom"
@@ -346,7 +346,7 @@ echo ""
         echo 1: $"Reinstall" | tee -a $LOG
         echo 2: $"quit" | tee -a $LOG
         echo "" | tee -a $LOG
-        echo "Enter Number of selection" | tee -a $LOG
+        echo $"Enter Number of selection" | tee -a $LOG
         read -n 1 -e x
 
         case $x in
@@ -410,7 +410,7 @@ echo ""
                                        exit 2
    esac
 
-echo "NVIDIA packages to install are " $DRIVER | tee -a $LOG  
+echo "$NVIDIA packages to install are " $DRIVER | tee -a $LOG  
 
 #echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG 
 #read x
@@ -423,7 +423,7 @@ YES_no $"Continue?"
   #apt-get update | tee -a $LOG 
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
-  echo "Nvidia command = apt-get install --reinstall -y $FORCE $SWITCH $ BP $DRIVER" | tee -a $LOG
+  echo $"Nvidia command " "= apt-get install --reinstall -y $FORCE $SWITCH $ BP $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
   apt-get install --reinstall --install-recommends -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
@@ -450,9 +450,10 @@ YES_no $"Continue?"
     fi
   else
     if $TEST; then
-    echo "test enabled, not creating xorg.conf file"
+    echo $"test enabled, not creating xorg.conf file"
     #nvidia-xconfig | tee -a $LOG
     else
+    $"creating /etc/X11/xorg.conf file"
     nvidia-xconfig | tee -a $LOG
     fi
   fi
@@ -482,10 +483,10 @@ function install_open {
   # Install the packages
   apt-get update
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
-  echo "Open command = apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
+  echo $"Open command " "= apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y $FORCE $DRIVER 2>&1 | tee -a $LOG
   
-  echo "Open drivers installed" | tee -a $LOG
+  echo $"Open drivers installed" | tee -a $LOG
   
   # Now cleanup
   purge_proprietary_drivers
@@ -566,7 +567,7 @@ echo $"Which driver do you wish to install" | tee -a $LOG
         echo "" | tee -a $LOG
 	echo 3: $"Exit" | tee -a $LOG
         echo "" | tee -a $LOG
-        echo "Enter Number of selection" | tee -a $LOG
+        echo $"Enter Number of selection" | tee -a $LOG
         read -n 1 -e x
 
         case $x in
