@@ -1,3 +1,9 @@
+ddm-mx (17.12) mx; urgency=medium
+
+  * modified exit dialogs (thanks BJ) 
+
+ -- dolphin_oracle <dolphinoracle@gmail.com>  Mon, 04 Dec 2017 19:43:24 -0500
+
 ddm-mx (17.10.01) mx; urgency=medium
 
   * fixed some translations trings
