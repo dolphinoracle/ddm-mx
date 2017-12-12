@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-04 11:21-0400\n"
+"POT-Creation-Date: 2017-12-05 20:24-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2017\n"
 "Language-Team: Dutch (https://www.transifex.com/anticapitalista/teams/10162/nl/)\n"
@@ -38,20 +38,23 @@ msgstr "Als root uitvoeren"
 msgid "Install drivers for: "
 msgstr "Installeer drivers voor:"
 
+#: ddm-mx:43
+msgid "creating lock ..."
+msgstr "slot creëren ..."
+
 #: ddm-mx:80 ddm-mx:90
 msgid "Invalid option"
 msgstr "Ongeldige optie"
 
 #: ddm-mx:136
-#, sh-format
-msgid "Purge drivers for: $DRV"
-msgstr "Verwijder drivers voor: $DRV"
+msgid "Purge drivers for: "
+msgstr "Verwijder drivers voor: "
 
 #: ddm-mx:137 ddm-mx:165
 msgid "Start at (m/d/y):"
 msgstr "Start op (m/d/j):"
 
-#: ddm-mx:152 ddm-mx:199
+#: ddm-mx:152
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
 msgstr "FOUT: Onbekend argument: $DRV"
@@ -59,6 +62,18 @@ msgstr "FOUT: Onbekend argument: $DRV"
 #: ddm-mx:182
 msgid "No nvidia card found - exiting"
 msgstr "Geen nvidia kaart gevonden - stoppen"
+
+#: ddm-mx:199 ddm-mx:407
+msgid "ERROR: Unknown argument: "
+msgstr "FOUT: Onbekend argument:"
+
+#: ddm-mx:212
+msgid "Device Driver Manager Help:"
+msgstr "Apparaat Stuurprogrammabeheer Hulp:"
+
+#: ddm-mx:214
+msgid "The following options are allowed:"
+msgstr "De volgende opties zijn toegestaan:"
 
 #: ddm-mx:218
 msgid "-i driver    Install given driver."
@@ -93,31 +108,27 @@ msgstr ""
 msgid "             Use with -i."
 msgstr "            Gebruik met -i."
 
-#: ddm-mx:236
-msgid "sudo ddm-mx -i nvidia"
-msgstr "sudo ddm-mx -i nvidia"
-
 #: ddm-mx:277
 msgid "Refreshing Sources with apt-get update"
 msgstr "Bronnen verversen met apt-get update"
 
-#: ddm-mx:278 ddm-mx:414
-msgid "Press <Enter> to continue or Ctrl-c to exit"
-msgstr "Druk op <Enter> om verder te gaan of Ctrl-c om te stoppen"
+#: ddm-mx:280 ddm-mx:417
+msgid "Continue?"
+msgstr "Doorgaan?"
 
-#: ddm-mx:288
+#: ddm-mx:289
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr "Mogelijke eerdere installatie van bron of smxi/sgfxi gevonden."
 
-#: ddm-mx:289
+#: ddm-mx:290
 msgid "Version detected: "
 msgstr "Versie gevonden:"
 
-#: ddm-mx:290
+#: ddm-mx:291
 msgid "Latest possible with this script : "
 msgstr "Laatste mogelijk met dit script :"
 
-#: ddm-mx:291
+#: ddm-mx:292
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -125,63 +136,63 @@ msgstr ""
 "Verwijder aub met <sudo nvidia-install --uninstall> en herstart als u verder"
 " wilt gaan"
 
-#: ddm-mx:299
+#: ddm-mx:300
 msgid "nvidia-optimus detected"
 msgstr "nvidia-optimus gedetecteerd"
 
-#: ddm-mx:309 ddm-mx:319 ddm-mx:334
+#: ddm-mx:310 ddm-mx:320 ddm-mx:335
 msgid "Candidate is: "
 msgstr "Kandidaat is:"
 
-#: ddm-mx:310 ddm-mx:321 ddm-mx:328 ddm-mx:335
+#: ddm-mx:311 ddm-mx:322 ddm-mx:329 ddm-mx:336
 msgid "Installed is: "
 msgstr "Geïnstalleerd is:"
 
-#: ddm-mx:320 ddm-mx:327
+#: ddm-mx:321 ddm-mx:328
 msgid "Debian backports candidate is:  "
 msgstr "Debian backports kandidaat is:"
 
-#: ddm-mx:326
+#: ddm-mx:327
 msgid "Main repo candidate is:  "
 msgstr "Hoofd pakketbronkandidaat is:"
 
-#: ddm-mx:341
+#: ddm-mx:342
 msgid "nvidia driver already installed"
 msgstr "nvidia driver reeds geïnstalleerd"
 
-#: ddm-mx:343
+#: ddm-mx:344
 msgid "Reinstall or quit?"
 msgstr "Opnieuw installeren of stoppen?"
 
-#: ddm-mx:345
+#: ddm-mx:346
 msgid "Reinstall"
 msgstr "Opnieuw installeren"
 
-#: ddm-mx:346
+#: ddm-mx:347
 msgid "quit"
 msgstr "stop"
 
-#: ddm-mx:348 ddm-mx:541 ddm-mx:568
+#: ddm-mx:349 ddm-mx:570
 msgid "Enter Number of selection"
 msgstr "Type selectie nummer"
 
-#: ddm-mx:352
+#: ddm-mx:353
 msgid "reinstalling"
 msgstr "herinstalleren"
 
-#: ddm-mx:353 ddm-mx:354 ddm-mx:552 ddm-mx:578 ddm-mx:580
+#: ddm-mx:354 ddm-mx:355 ddm-mx:554 ddm-mx:580 ddm-mx:582
 msgid "exiting"
 msgstr "eindigen"
 
-#: ddm-mx:354 ddm-mx:552 ddm-mx:580
+#: ddm-mx:355 ddm-mx:554 ddm-mx:582
 msgid "invalid option."
 msgstr "ongeldige optie."
 
-#: ddm-mx:364
+#: ddm-mx:365
 msgid "nvidia driver not available, check your repo sources"
 msgstr "nvidia driver niet beschikbaar, controleer uw pakketbronnen"
 
-#: ddm-mx:368
+#: ddm-mx:369
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
@@ -189,100 +200,100 @@ msgstr ""
 "Uh oh. Uw kaart wordt enkel ondersteund door oudere drivers die zich in geen"
 " enkele actuele Debian uitvoering bevinden."
 
-#: ddm-mx:374
+#: ddm-mx:375
 msgid "Need driver: "
 msgstr "Heb driver nodig:"
 
-#: ddm-mx:406
-msgid "ERROR: Unknown argument: "
-msgstr "FOUT: Onbekend argument:"
+#: ddm-mx:426
+msgid "Nvidia command "
+msgstr "Nvidia commando "
 
-#: ddm-mx:412
-msgid "NVIDIA packages to install are "
-msgstr "NVIDIA pakketten om te installeren zijn"
-
-#: ddm-mx:447
+#: ddm-mx:449
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "FOUT: Kon Bumblebee niet configureren voor gebruiker:"
 
-#: ddm-mx:451
+#: ddm-mx:453
 msgid "test enabled, not creating xorg.conf file"
 msgstr "test ingeschakeld, creëer geen xorg.conf bestand"
 
-#: ddm-mx:454
+#: ddm-mx:456
 msgid "creating /etc/X11/xorg.conf file"
 msgstr "creëren /etc/X11/xorg.conf bestand"
 
-#: ddm-mx:459
+#: ddm-mx:461
 msgid "Finished"
 msgstr "Voltooid"
 
-#: ddm-mx:473
+#: ddm-mx:475
 msgid "Proprietary drivers removed"
 msgstr "Eigendomsdrivers verwijderd"
 
-#: ddm-mx:487
+#: ddm-mx:486
+msgid "Open command "
+msgstr "Open commando "
+
+#: ddm-mx:489
 msgid "Open drivers installed"
 msgstr "Open drivers geïnstalleerd"
 
-#: ddm-mx:503
+#: ddm-mx:505
 msgid "Press <Enter> to exit"
 msgstr "Druk <Enter> om te beëindigen"
 
-#: ddm-mx:517
+#: ddm-mx:519
 msgid "Enabling backports repo"
 msgstr "Backports pakketbron inschakelen"
 
-#: ddm-mx:518
+#: ddm-mx:520
 msgid "Running apt-get update..."
 msgstr "Apt-get update uitvoeren..."
 
-#: ddm-mx:522
+#: ddm-mx:524
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
 "Er was een probleem met de apt-get opwaardering. Zie $LOG voor details"
 
-#: ddm-mx:526
+#: ddm-mx:528
 msgid "Installing latest nvidia-detect package"
 msgstr "Nieuwste nvidia-detect pakket installeren "
 
-#: ddm-mx:534
+#: ddm-mx:536
 msgid "Would you like to check debian-backports for a later version?"
 msgstr "Wilt u de debian-backports controleren voor een recentere versie?"
 
-#: ddm-mx:536
+#: ddm-mx:538
 msgid "Yes or No?"
 msgstr "Ja of Nee?"
 
-#: ddm-mx:538
+#: ddm-mx:540
 msgid "Yes"
 msgstr "Ja"
 
-#: ddm-mx:539
+#: ddm-mx:541
 msgid "No"
 msgstr "Nee"
 
-#: ddm-mx:545 ddm-mx:549 ddm-mx:572 ddm-mx:576
+#: ddm-mx:547 ddm-mx:551 ddm-mx:574 ddm-mx:578
 msgid "Ok"
 msgstr "Ok"
 
-#: ddm-mx:558
+#: ddm-mx:560
 msgid "Which driver do you wish to install"
 msgstr "Welke driver wilt u installeren?"
 
-#: ddm-mx:560
+#: ddm-mx:562
 msgid "Main repos or debian-backports?"
 msgstr "Hoofd pakketbronnen of debian-backports?"
 
-#: ddm-mx:562
+#: ddm-mx:564
 msgid "Main"
 msgstr "Hoofd"
 
-#: ddm-mx:564
+#: ddm-mx:566
 msgid "debian-backports"
 msgstr "debian-backports"
 
-#: ddm-mx:566
+#: ddm-mx:568
 msgid "Exit"
 msgstr "Afsluiten"
