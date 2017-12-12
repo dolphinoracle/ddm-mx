@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-14 22:34-0400\n"
+"POT-Creation-Date: 2017-12-05 20:24-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2016\n"
 "Language-Team: Greek (https://www.transifex.com/anticapitalista/teams/10162/el/)\n"
@@ -18,57 +18,118 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ddm-mx_stretch:33
+#: ddm-mx:33
 msgid "Unknown error"
 msgstr "Άγνωστο σφάλμα"
 
-#: ddm-mx_stretch:34
+#: ddm-mx:34
 msgid "Option-"
 msgstr "Επιλογή- "
 
-#: ddm-mx_stretch:35
+#: ddm-mx:35
 msgid "requires an argument."
 msgstr "απαιτεί ένα όρισμα"
 
-#: ddm-mx_stretch:36
+#: ddm-mx:36
 msgid "Run as root"
 msgstr "τρέχει ως root"
 
-#: ddm-mx_stretch:37
+#: ddm-mx:37
 msgid "Install drivers for: "
 msgstr "Εγκατάσταση προγραμμάτων οδήγησης για:"
 
-#: ddm-mx_stretch:80 ddm-mx_stretch:90
+#: ddm-mx:43
+msgid "creating lock ..."
+msgstr "Δημιουργία κλειδαριάς ..."
+
+#: ddm-mx:80 ddm-mx:90
 msgid "Invalid option"
 msgstr "Μη έγκυρο επιλογή"
 
-#: ddm-mx_stretch:182
+#: ddm-mx:136
+msgid "Purge drivers for: "
+msgstr "Καθάρισμα των drivers για: "
+
+#: ddm-mx:137 ddm-mx:165
+msgid "Start at (m/d/y):"
+msgstr "Ξεκίνα στις (m/d/y):"
+
+#: ddm-mx:152
+#, sh-format
+msgid "ERROR: Unknown argument: $DRV"
+msgstr "ΣΦΑΛΜΑ: Άγνωστη όρισματος: $DRV"
+
+#: ddm-mx:182
 msgid "No nvidia card found - exiting"
 msgstr "Δεν βρέθηκε κάρτα της nvidia - έξοδο"
 
-#: ddm-mx_stretch:277
+#: ddm-mx:199 ddm-mx:407
+msgid "ERROR: Unknown argument: "
+msgstr "ΣΦΑΛΜΑ: Άγνωστη όρισματος %s"
+
+#: ddm-mx:212
+msgid "Device Driver Manager Help:"
+msgstr "Βοήθεια διαχειριστή προγράμματος οδήγησης συσκευής:"
+
+#: ddm-mx:214
+msgid "The following options are allowed:"
+msgstr "Επιτρέπονται οι ακόλουθες επιλογές:"
+
+#: ddm-mx:218
+msgid "-i driver    Install given driver."
+msgstr "-i driver       Εγκατάσταση του δεδομένου driver"
+
+#: ddm-mx:220
+msgid "             drivers: nvidia, open, fixbumblebee"
+msgstr "drivers: nvidia, open, fixbumblebee"
+
+#: ddm-mx:222
+msgid "-p driver    Purge given driver."
+msgstr "-p driver      Καθαρισμό του driver."
+
+#: ddm-mx:224
+msgid "             driver: nvidia"
+msgstr " driver: nvidia"
+
+#: ddm-mx:226
+msgid "-f           Force DDM to start, even in a Live environment."
+msgstr "-f Αναγκάστε το DDM να ξεκινήσει, ακόμα και σε περιβάλλον Live."
+
+#: ddm-mx:228
+msgid "-t           For development testing only!"
+msgstr "-t Μόνο για δοκιμές!"
+
+#: ddm-mx:229
+msgid "             This will install drivers for pre-defined hardware."
+msgstr "Αυτό θα εγκαταστήσει προγράμματα οδήγησης για προκαθορισμένο υλικό."
+
+#: ddm-mx:230
+msgid "             Use with -i."
+msgstr "Χρήση με -i"
+
+#: ddm-mx:277
 msgid "Refreshing Sources with apt-get update"
 msgstr "Ενημέρωση πηγών apt-get update"
 
-#: ddm-mx_stretch:278 ddm-mx_stretch:414
-msgid "Press <Enter> to continue or Ctrl-c to exit"
-msgstr "Πατήστε το πλήκτρο ENTER για να συνεχίσετε η Ctrl-c για να βγείτε"
+#: ddm-mx:280 ddm-mx:417
+msgid "Continue?"
+msgstr "Να συνεχίσει"
 
-#: ddm-mx_stretch:288
+#: ddm-mx:289
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 "Πιθανή προηγούμενη εγκατάσταση από την πηγή ή από smxi/sgfxi έχει "
 "ανιχνευθεί."
 
-#: ddm-mx_stretch:289
+#: ddm-mx:290
 msgid "Version detected: "
 msgstr "Έκδοση:"
 
-#: ddm-mx_stretch:290
+#: ddm-mx:291
 msgid "Latest possible with this script : "
 msgstr "Τελευταία δυνατόν εκδοσή με αυτό το σενάριο:"
 
-#: ddm-mx_stretch:291
+#: ddm-mx:292
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -76,60 +137,63 @@ msgstr ""
 "Παρακαλώ αφαιρέστε με <sudo nvidia-install --uninstall> και κάντε "
 "επανεκκίνηση αν θέλετε να συνεχίσετε"
 
-#: ddm-mx_stretch:299
+#: ddm-mx:300
 msgid "nvidia-optimus detected"
 msgstr "ανιχνεύθηκε το nvidia-optimus"
 
-#: ddm-mx_stretch:309 ddm-mx_stretch:319 ddm-mx_stretch:334
+#: ddm-mx:310 ddm-mx:320 ddm-mx:335
 msgid "Candidate is: "
-msgstr ""
+msgstr "Υποψήφιος:"
 
-#: ddm-mx_stretch:310 ddm-mx_stretch:321 ddm-mx_stretch:328 ddm-mx_stretch:335
+#: ddm-mx:311 ddm-mx:322 ddm-mx:329 ddm-mx:336
 msgid "Installed is: "
-msgstr ""
+msgstr "Εγκατεστημένο:"
 
-#: ddm-mx_stretch:320 ddm-mx_stretch:327
+#: ddm-mx:321 ddm-mx:328
 msgid "Debian backports candidate is:  "
-msgstr ""
+msgstr "Υποψήφιος από Debian backports:"
 
-#: ddm-mx_stretch:326
+#: ddm-mx:327
 msgid "Main repo candidate is:  "
-msgstr ""
+msgstr "Υποψήφιος από κύρια repos:"
 
-#: ddm-mx_stretch:341
+#: ddm-mx:342
 msgid "nvidia driver already installed"
 msgstr "nvidia driver είναι ήδη εγκαταστημένο"
 
-#: ddm-mx_stretch:343
+#: ddm-mx:344
 msgid "Reinstall or quit?"
 msgstr "Εγκαταστήστε ξανά ή να τερματίσετε"
 
-#: ddm-mx_stretch:345
+#: ddm-mx:346
 msgid "Reinstall"
 msgstr "Επανεγκατάσταση"
 
-#: ddm-mx_stretch:346
+#: ddm-mx:347
 msgid "quit"
 msgstr "Έξοδος "
 
-#: ddm-mx_stretch:352
+#: ddm-mx:349 ddm-mx:570
+msgid "Enter Number of selection"
+msgstr "Εισαγωγή Αριθμός επιλογής"
+
+#: ddm-mx:353
 msgid "reinstalling"
 msgstr "Επανεγκατάσταση"
 
-#: ddm-mx_stretch:353 ddm-mx_stretch:354 ddm-mx_stretch:546 ddm-mx_stretch:572
-#: ddm-mx_stretch:574
+#: ddm-mx:354 ddm-mx:355 ddm-mx:554 ddm-mx:580 ddm-mx:582
 msgid "exiting"
 msgstr "Έξοδος."
 
-#: ddm-mx_stretch:354 ddm-mx_stretch:546 ddm-mx_stretch:574
+#: ddm-mx:355 ddm-mx:554 ddm-mx:582
 msgid "invalid option."
 msgstr "Μη έγκυρο επιλογή"
 
-#: ddm-mx_stretch:364
+#: ddm-mx:365
 msgid "nvidia driver not available, check your repo sources"
 msgstr "οδηγό nvidia δεν είναι διαθέσιμη, ελέγξτε τις πηγές"
 
-#: ddm-mx_stretch:368
+#: ddm-mx:369
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
@@ -138,83 +202,101 @@ msgstr ""
 "παλαιού τύπου που δεν βρίσκονται σε καμία από τις υπάρχουσες σουίτες του "
 "Debian."
 
-#: ddm-mx_stretch:374
+#: ddm-mx:375
 msgid "Need driver: "
 msgstr "χρειάζεται οδηγό"
 
-#: ddm-mx_stretch:406
-msgid "ERROR: Unknown argument: "
-msgstr "ΣΦΑΛΜΑ: Άγνωστη όρισματος %s"
+#: ddm-mx:426
+msgid "Nvidia command "
+msgstr "Εντολή Nvidia"
 
-#: ddm-mx_stretch:447
+#: ddm-mx:449
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "ΣΦΑΛΜΑ: δεν μπορει να διαμορφώσετε το Bumblebee για το χρήστη:"
 
-#: ddm-mx_stretch:453
+#: ddm-mx:453
+msgid "test enabled, not creating xorg.conf file"
+msgstr "Ενεργοποιημένη η δοκιμή , δε Θα δημιουργήσουμε ένα αρχείο xorg.conf"
+
+#: ddm-mx:456
+msgid "creating /etc/X11/xorg.conf file"
+msgstr "Δημιουργία νέου /etc/X11/xorg.conf"
+
+#: ddm-mx:461
 msgid "Finished"
 msgstr "Ολοκλήρωση"
 
-#: ddm-mx_stretch:467
+#: ddm-mx:475
 msgid "Proprietary drivers removed"
 msgstr "Ιδιόκτητο οδηγοί αφαιρούνται"
 
-#: ddm-mx_stretch:497
+#: ddm-mx:486
+msgid "Open command "
+msgstr "Εντολή Open"
+
+#: ddm-mx:489
+msgid "Open drivers installed"
+msgstr "Εγκατεστημένα είναι τα Open drivers"
+
+#: ddm-mx:505
 msgid "Press <Enter> to exit"
 msgstr "Πατήστε <Enter> για να βγείτε"
 
-#: ddm-mx_stretch:511
+#: ddm-mx:519
 msgid "Enabling backports repo"
-msgstr ""
+msgstr "Ενεργοποίηση των repos backports"
 
-#: ddm-mx_stretch:512
+#: ddm-mx:520
 msgid "Running apt-get update..."
 msgstr "Εκτελώντας την εντολή apt-get update ... "
 
-#: ddm-mx_stretch:516
+#: ddm-mx:524
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
+"Παρουσιάστηκε ένα πρόβλημα με την ενημέρωση apt-get.  Βλ. $LOG για "
+"λεπτομέρειες"
 
-#: ddm-mx_stretch:520
+#: ddm-mx:528
 msgid "Installing latest nvidia-detect package"
-msgstr ""
+msgstr "Εγκατάσταση το πιο πρόσφατου πακέτου nvidia-detect"
 
-#: ddm-mx_stretch:528
+#: ddm-mx:536
 msgid "Would you like to check debian-backports for a later version?"
-msgstr ""
+msgstr "Θέλετε να ελέγξετε τα debian-backports για μια πιο πρόσφατη έκδοση;"
 
-#: ddm-mx_stretch:530
+#: ddm-mx:538
 msgid "Yes or No?"
-msgstr ""
+msgstr "Ναι ή όχι?"
 
-#: ddm-mx_stretch:532
+#: ddm-mx:540
 msgid "Yes"
 msgstr "Ναι"
 
-#: ddm-mx_stretch:533
+#: ddm-mx:541
 msgid "No"
 msgstr "Όχι"
 
-#: ddm-mx_stretch:539 ddm-mx_stretch:543 ddm-mx_stretch:566 ddm-mx_stretch:570
+#: ddm-mx:547 ddm-mx:551 ddm-mx:574 ddm-mx:578
 msgid "Ok"
-msgstr ""
+msgstr "ΟΚ"
 
-#: ddm-mx_stretch:552
+#: ddm-mx:560
 msgid "Which driver do you wish to install"
-msgstr ""
+msgstr "Ποιο driver θέλετε να εγκαταστήσετε"
 
-#: ddm-mx_stretch:554
+#: ddm-mx:562
 msgid "Main repos or debian-backports?"
-msgstr ""
+msgstr "Κύρια repos ή debian-backports;"
 
-#: ddm-mx_stretch:556
+#: ddm-mx:564
 msgid "Main"
-msgstr ""
+msgstr "Κύριa"
 
-#: ddm-mx_stretch:558
+#: ddm-mx:566
 msgid "debian-backports"
-msgstr ""
+msgstr "debian-backports"
 
-#: ddm-mx_stretch:560
+#: ddm-mx:568
 msgid "Exit"
 msgstr "Έξοδος "
