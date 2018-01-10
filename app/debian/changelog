@@ -1,3 +1,9 @@
+ddm-mx (18.01.01) mx; urgency=medium
+
+  * modified backports install routine to eliminate nvidia-xconfig 
+
+ -- dolphin_oracle <dolphinoracle@gmail.com>  Tue, 09 Jan 2018 21:57:52 -0500
+
 ddm-mx (17.12.01) mx; urgency=medium
 
   * updated translations

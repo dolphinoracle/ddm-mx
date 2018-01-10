@@ -36,6 +36,8 @@ OPTION_ERROR2=$"requires an argument."
 RUN_AS_ROOT=$"Run as root"
 INSTALL_DRIVERS_FOR=$"Install drivers for: "
 
+NVIDIA_XCONFIG="nvidia-xconfig"
+
 
 main(){
 # -------------------------------------------------------------------------
@@ -381,21 +383,21 @@ echo ""
   case $DRIVER in 
                      nvidia-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
 	                                   # Additional 32-bit drivers for 64-bit systems
-	                                   DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libgl1-nvidia-glx:i386 nvidia-xconfig" 
+	                                   DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libgl1-nvidia-glx:i386 $NVIDIA_XCONFIG" 
                                        else
-                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings nvidia-xconfig" 
+                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings $NVIDIA_XCONFIG" 
                                        fi
                                        ;;
         nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms libgl1-nvidia-legacy-340xx-glx:i386 nvidia-xconfig"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms libgl1-nvidia-legacy-340xx-glx:i386 $NVIDIA_XCONFIG"
                                        else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms nvidia-xconfig"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $NVIDIA_XCONFIG"
                                        fi
                                        ;;
         nvidia-legacy-304xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms libgl1-nvidia-legacy-304xx-glx:i386 nvidia-xconfig"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms libgl1-nvidia-legacy-304xx-glx:i386 $NVIDIA_XCONFIG"
                                        else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms nvidia-xconfig"
+                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms $NVIDIA_XCONFIG"
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
@@ -453,8 +455,10 @@ YES_no $"Continue?"
     echo $"test enabled, not creating xorg.conf file"
     #nvidia-xconfig | tee -a $LOG
     else
-    $"creating /etc/X11/xorg.conf file"
-    nvidia-xconfig | tee -a $LOG
+        if [ "$NVIDIA_XCONFIG" = "nvidia-xconfig" ]; then
+            $"creating /etc/X11/xorg.conf file"
+            nvidia-xconfig | tee -a $LOG
+        fi
     fi
   fi
   
@@ -576,6 +580,7 @@ echo $"Which driver do you wish to install" | tee -a $LOG
               BP=""
 	      ;;
            2) echo $"Ok"... | tee -a $LOG
+                NVIDIA_XCONFIG=""
                      ;;
            3) echo $"exiting" |tee -a $LOG && exit 0;;
 
