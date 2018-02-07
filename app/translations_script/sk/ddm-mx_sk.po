@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-04 11:21-0400\n"
+"POT-Creation-Date: 2017-12-05 20:24-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2017\n"
 "Language-Team: Slovak (https://www.transifex.com/anticapitalista/teams/10162/sk/)\n"
@@ -38,20 +38,23 @@ msgstr "Spustiť ako root"
 msgid "Install drivers for: "
 msgstr "Inštalácia ovládačov pre:"
 
+#: ddm-mx:43
+msgid "creating lock ..."
+msgstr ""
+
 #: ddm-mx:80 ddm-mx:90
 msgid "Invalid option"
 msgstr "Neplatná voľba"
 
 #: ddm-mx:136
-#, sh-format
-msgid "Purge drivers for: $DRV"
+msgid "Purge drivers for: "
 msgstr ""
 
 #: ddm-mx:137 ddm-mx:165
 msgid "Start at (m/d/y):"
 msgstr ""
 
-#: ddm-mx:152 ddm-mx:199
+#: ddm-mx:152
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
 msgstr ""
@@ -59,6 +62,18 @@ msgstr ""
 #: ddm-mx:182
 msgid "No nvidia card found - exiting"
 msgstr "Nvidia karta nenájdená - ukončovanie"
+
+#: ddm-mx:199 ddm-mx:407
+msgid "ERROR: Unknown argument: "
+msgstr "CHYBA: Neznámy argument:"
+
+#: ddm-mx:212
+msgid "Device Driver Manager Help:"
+msgstr ""
+
+#: ddm-mx:214
+msgid "The following options are allowed:"
+msgstr ""
 
 #: ddm-mx:218
 msgid "-i driver    Install given driver."
@@ -92,32 +107,28 @@ msgstr ""
 msgid "             Use with -i."
 msgstr ""
 
-#: ddm-mx:236
-msgid "sudo ddm-mx -i nvidia"
-msgstr ""
-
 #: ddm-mx:277
 msgid "Refreshing Sources with apt-get update"
 msgstr "Obnovovanie zdrojov s apt-get update"
 
-#: ddm-mx:278 ddm-mx:414
-msgid "Press <Enter> to continue or Ctrl-c to exit"
-msgstr "Stlačte <Enter> pre pokračovanie alebo Ctrl-c pre ukončenie"
+#: ddm-mx:280 ddm-mx:417
+msgid "Continue?"
+msgstr ""
 
-#: ddm-mx:288
+#: ddm-mx:289
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 "Bola zistená možná skorejšia inštalácia zo zdrojákov alebo smxi/sgfxi."
 
-#: ddm-mx:289
+#: ddm-mx:290
 msgid "Version detected: "
 msgstr "Zistená verzia:"
 
-#: ddm-mx:290
+#: ddm-mx:291
 msgid "Latest possible with this script : "
 msgstr "Najnovši možný s týmto skriptom:"
 
-#: ddm-mx:291
+#: ddm-mx:292
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -125,65 +136,65 @@ msgstr ""
 "Prosím odstráňte príkazom <sudo nvidia-install --uninstall> a reštartujte PC"
 " ak si prajete pokračovať"
 
-#: ddm-mx:299
+#: ddm-mx:300
 msgid "nvidia-optimus detected"
 msgstr "Zistená Nvidia-optimus"
 
-#: ddm-mx:309 ddm-mx:319 ddm-mx:334
+#: ddm-mx:310 ddm-mx:320 ddm-mx:335
 msgid "Candidate is: "
 msgstr ""
 
-#: ddm-mx:310 ddm-mx:321 ddm-mx:328 ddm-mx:335
+#: ddm-mx:311 ddm-mx:322 ddm-mx:329 ddm-mx:336
 msgid "Installed is: "
 msgstr ""
 
-#: ddm-mx:320 ddm-mx:327
+#: ddm-mx:321 ddm-mx:328
 msgid "Debian backports candidate is:  "
 msgstr ""
 
-#: ddm-mx:326
+#: ddm-mx:327
 msgid "Main repo candidate is:  "
 msgstr ""
 
-#: ddm-mx:341
+#: ddm-mx:342
 msgid "nvidia driver already installed"
 msgstr "Nvidia ovládač je už nainštalovaný"
 
-#: ddm-mx:343
+#: ddm-mx:344
 msgid "Reinstall or quit?"
 msgstr "Preinštalovať alebo ukončiť?"
 
-#: ddm-mx:345
+#: ddm-mx:346
 msgid "Reinstall"
 msgstr "Preinštalovať"
 
-#: ddm-mx:346
+#: ddm-mx:347
 msgid "quit"
 msgstr "Koniec"
 
-#: ddm-mx:348 ddm-mx:541 ddm-mx:568
+#: ddm-mx:349 ddm-mx:570
 msgid "Enter Number of selection"
 msgstr "Zadajte čislo voľby"
 
-#: ddm-mx:352
+#: ddm-mx:353
 msgid "reinstalling"
 msgstr "preinštalácia"
 
-#: ddm-mx:353 ddm-mx:354 ddm-mx:552 ddm-mx:578 ddm-mx:580
+#: ddm-mx:354 ddm-mx:355 ddm-mx:554 ddm-mx:580 ddm-mx:582
 msgid "exiting"
 msgstr "ukončovanie"
 
-#: ddm-mx:354 ddm-mx:552 ddm-mx:580
+#: ddm-mx:355 ddm-mx:554 ddm-mx:582
 msgid "invalid option."
 msgstr "neplatná voľba."
 
-#: ddm-mx:364
+#: ddm-mx:365
 msgid "nvidia driver not available, check your repo sources"
 msgstr ""
 "ovládač Nvidia nie je k dispozícií, skontrolujte prosím zdroje "
 "softvéru/repozitáre"
 
-#: ddm-mx:368
+#: ddm-mx:369
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
@@ -191,99 +202,99 @@ msgstr ""
 "Ale nie! Vaša karta je podporovaná len skôr vydanými, staršími ovládačmi, "
 "ktoré sa nenachádzajú v aktuálnom vydaní Debian-u. "
 
-#: ddm-mx:374
+#: ddm-mx:375
 msgid "Need driver: "
 msgstr "Potrebuje ovládač:"
 
-#: ddm-mx:406
-msgid "ERROR: Unknown argument: "
-msgstr "CHYBA: Neznámy argument:"
-
-#: ddm-mx:412
-msgid "NVIDIA packages to install are "
+#: ddm-mx:426
+msgid "Nvidia command "
 msgstr ""
 
-#: ddm-mx:447
+#: ddm-mx:449
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "CHYBA: Nedá sa nakonfigurovať Bumblebee pre užívateľa:"
 
-#: ddm-mx:451
+#: ddm-mx:453
 msgid "test enabled, not creating xorg.conf file"
 msgstr ""
 
-#: ddm-mx:454
+#: ddm-mx:456
 msgid "creating /etc/X11/xorg.conf file"
 msgstr ""
 
-#: ddm-mx:459
+#: ddm-mx:461
 msgid "Finished"
 msgstr "Hotovo"
 
-#: ddm-mx:473
+#: ddm-mx:475
 msgid "Proprietary drivers removed"
 msgstr "Neslobodné ovládače boli odstránené."
 
-#: ddm-mx:487
+#: ddm-mx:486
+msgid "Open command "
+msgstr ""
+
+#: ddm-mx:489
 msgid "Open drivers installed"
 msgstr ""
 
-#: ddm-mx:503
+#: ddm-mx:505
 msgid "Press <Enter> to exit"
 msgstr "Stlačte <Enter> pre ukončenie"
 
-#: ddm-mx:517
+#: ddm-mx:519
 msgid "Enabling backports repo"
 msgstr ""
 
-#: ddm-mx:518
+#: ddm-mx:520
 msgid "Running apt-get update..."
 msgstr "Spúšťam apt-get update..."
 
-#: ddm-mx:522
+#: ddm-mx:524
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
 
-#: ddm-mx:526
+#: ddm-mx:528
 msgid "Installing latest nvidia-detect package"
 msgstr ""
 
-#: ddm-mx:534
+#: ddm-mx:536
 msgid "Would you like to check debian-backports for a later version?"
 msgstr ""
 
-#: ddm-mx:536
+#: ddm-mx:538
 msgid "Yes or No?"
 msgstr ""
 
-#: ddm-mx:538
+#: ddm-mx:540
 msgid "Yes"
 msgstr "Ano"
 
-#: ddm-mx:539
+#: ddm-mx:541
 msgid "No"
 msgstr "Nie"
 
-#: ddm-mx:545 ddm-mx:549 ddm-mx:572 ddm-mx:576
+#: ddm-mx:547 ddm-mx:551 ddm-mx:574 ddm-mx:578
 msgid "Ok"
 msgstr ""
 
-#: ddm-mx:558
+#: ddm-mx:560
 msgid "Which driver do you wish to install"
 msgstr ""
 
-#: ddm-mx:560
+#: ddm-mx:562
 msgid "Main repos or debian-backports?"
 msgstr ""
 
-#: ddm-mx:562
+#: ddm-mx:564
 msgid "Main"
 msgstr ""
 
-#: ddm-mx:564
+#: ddm-mx:566
 msgid "debian-backports"
 msgstr ""
 
-#: ddm-mx:566
+#: ddm-mx:568
 msgid "Exit"
 msgstr "Zatvoriť"
