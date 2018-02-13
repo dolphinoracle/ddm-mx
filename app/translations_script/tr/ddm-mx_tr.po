@@ -11,290 +11,283 @@ msgstr ""
 "POT-Creation-Date: 2017-12-05 20:24-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2017\n"
-"Language-Team: Catalan (https://www.transifex.com/anticapitalista/teams/10162/ca/)\n"
+"Language-Team: Turkish (https://www.transifex.com/anticapitalista/teams/10162/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ddm-mx:33
 msgid "Unknown error"
-msgstr "Error desconegut"
+msgstr "Bilinmeyen hata"
 
 #: ddm-mx:34
 msgid "Option-"
-msgstr "Opció-"
+msgstr "Seçenek-"
 
 #: ddm-mx:35
 msgid "requires an argument."
-msgstr "cal un argument."
+msgstr "Bir sav gerekli."
 
 #: ddm-mx:36
 msgid "Run as root"
-msgstr "Executa com a administrador"
+msgstr "Kök olarak çalıştır"
 
 #: ddm-mx:37
 msgid "Install drivers for: "
-msgstr "Instal·la controladors per: "
+msgstr ""
 
 #: ddm-mx:43
 msgid "creating lock ..."
-msgstr "creant bloqueig ..."
+msgstr ""
 
 #: ddm-mx:80 ddm-mx:90
 msgid "Invalid option"
-msgstr "Opció no vàlida"
+msgstr "Geçersiz seçenek"
 
 #: ddm-mx:136
 msgid "Purge drivers for: "
-msgstr "Purga els controladors per: "
+msgstr ""
 
 #: ddm-mx:137 ddm-mx:165
 msgid "Start at (m/d/y):"
-msgstr "Comença a (m/d/a) "
+msgstr ""
 
 #: ddm-mx:152
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
-msgstr "ERROR: Argument desconegut $DRV "
+msgstr ""
 
 #: ddm-mx:182
 msgid "No nvidia card found - exiting"
-msgstr "No he trobat cap tarja nvidia - sortint "
+msgstr ""
 
 #: ddm-mx:199 ddm-mx:407
 msgid "ERROR: Unknown argument: "
-msgstr "ERROR: argument desconegut: "
+msgstr ""
 
 #: ddm-mx:212
 msgid "Device Driver Manager Help:"
-msgstr "Ajuda del Device Driver Manager"
+msgstr ""
 
 #: ddm-mx:214
 msgid "The following options are allowed:"
-msgstr "Es permeten les opcions següents: "
+msgstr ""
 
 #: ddm-mx:218
 msgid "-i driver    Install given driver."
-msgstr "-i driver instal·la aquest controlador"
+msgstr ""
 
 #: ddm-mx:220
 msgid "             drivers: nvidia, open, fixbumblebee"
-msgstr "             controladors: nvidia, open, fixbumblebee"
+msgstr ""
 
 #: ddm-mx:222
 msgid "-p driver    Purge given driver."
-msgstr "-p driver   Purga el controlador driver"
+msgstr ""
 
 #: ddm-mx:224
 msgid "             driver: nvidia"
-msgstr "             controlador: nvidia"
+msgstr "             sürücü: nvidia"
 
 #: ddm-mx:226
 msgid "-f           Force DDM to start, even in a Live environment."
-msgstr "-f           Força que comenci DDM, fins i tot en entorn autònom."
+msgstr ""
 
 #: ddm-mx:228
 msgid "-t           For development testing only!"
-msgstr "-t           Només per proves de desenvolupament!"
+msgstr ""
 
 #: ddm-mx:229
 msgid "             This will install drivers for pre-defined hardware."
 msgstr ""
-"             Això instal·larà els controladors pel maquinari predefinit."
 
 #: ddm-mx:230
 msgid "             Use with -i."
-msgstr "             Useu amb -i."
+msgstr ""
 
 #: ddm-mx:277
 msgid "Refreshing Sources with apt-get update"
-msgstr "Refrescant les fonts amb apt-get update"
+msgstr ""
 
 #: ddm-mx:280 ddm-mx:417
 msgid "Continue?"
-msgstr "Continuo? "
+msgstr "Devam mı? "
 
 #: ddm-mx:289
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
-"S'ha detectat una possible instal·lació a partir de la font o smxi/sgfxi."
 
 #: ddm-mx:290
 msgid "Version detected: "
-msgstr "Versió detectada: "
+msgstr "Sürüm algılandı:"
 
 #: ddm-mx:291
 msgid "Latest possible with this script : "
-msgstr "Més recent possible amb aquest script: "
+msgstr ""
 
 #: ddm-mx:292
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
-"Si us plau, elimineu-la amb  <sudo nvidia-install --uninstall> i torneu a "
-"arrencar si voleu continuar"
 
 #: ddm-mx:300
 msgid "nvidia-optimus detected"
-msgstr "detectat nvidia-optimus "
+msgstr "nvidia-optimus algılandı"
 
 #: ddm-mx:310 ddm-mx:320 ddm-mx:335
 msgid "Candidate is: "
-msgstr "El candidat és: "
+msgstr ""
 
 #: ddm-mx:311 ddm-mx:322 ddm-mx:329 ddm-mx:336
 msgid "Installed is: "
-msgstr "L'instal·lat és: "
+msgstr ""
 
 #: ddm-mx:321 ddm-mx:328
 msgid "Debian backports candidate is:  "
-msgstr "El candidat de Debian backports és: "
+msgstr ""
 
 #: ddm-mx:327
 msgid "Main repo candidate is:  "
-msgstr "El candidat del dipòsit principal és: "
+msgstr ""
 
 #: ddm-mx:342
 msgid "nvidia driver already installed"
-msgstr "Controlador nvidia ja instal·lat"
+msgstr ""
 
 #: ddm-mx:344
 msgid "Reinstall or quit?"
-msgstr "Reinstal·la o surt?"
+msgstr "Yeniden mi kursun yoksa çıksın mı? "
 
 #: ddm-mx:346
 msgid "Reinstall"
-msgstr "Reinstal·la"
+msgstr "Yeniden kur"
 
 #: ddm-mx:347
 msgid "quit"
-msgstr "surt"
+msgstr "çıkış"
 
 #: ddm-mx:349 ddm-mx:570
 msgid "Enter Number of selection"
-msgstr "Entreu el número de la selecció"
+msgstr ""
 
 #: ddm-mx:353
 msgid "reinstalling"
-msgstr "reinstal·lant "
+msgstr "yeniden kuruluyor"
 
 #: ddm-mx:354 ddm-mx:355 ddm-mx:554 ddm-mx:580 ddm-mx:582
 msgid "exiting"
-msgstr "sortint "
+msgstr ""
 
 #: ddm-mx:355 ddm-mx:554 ddm-mx:582
 msgid "invalid option."
-msgstr "opció no vàlida. "
+msgstr "Geçersiz seçenek"
 
 #: ddm-mx:365
 msgid "nvidia driver not available, check your repo sources"
 msgstr ""
-"No es pot obtenir el controlador nvidia. Reviseu els dipòsits de programari"
 
 #: ddm-mx:369
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
 msgstr ""
-"Ho sento, la vostra tarja només té suport de controladors antics que ja no "
-"són en cap distribució Debian actual."
 
 #: ddm-mx:375
 msgid "Need driver: "
-msgstr "Cal el controlador: "
+msgstr ""
 
 #: ddm-mx:426
 msgid "Nvidia command "
-msgstr "Ordre nVidia "
+msgstr "Nvidia komutu"
 
 #: ddm-mx:449
 msgid "ERROR: Could not configure Bumblebee for user: "
-msgstr "ERROR: No es pot configurar Bumblebee per l'usuari: "
+msgstr ""
 
 #: ddm-mx:453
 msgid "test enabled, not creating xorg.conf file"
-msgstr "activat el mode test, no es crearà el fitxer xorg.conf"
+msgstr ""
 
 #: ddm-mx:456
 msgid "creating /etc/X11/xorg.conf file"
-msgstr "creant el fitxer de configuració /etc/X11/xorg.conf "
+msgstr ""
 
 #: ddm-mx:461
 msgid "Finished"
-msgstr "Finalitzat"
+msgstr "Bitti"
 
 #: ddm-mx:475
 msgid "Proprietary drivers removed"
-msgstr "Eliminats els controladors propietaris "
+msgstr ""
 
 #: ddm-mx:486
 msgid "Open command "
-msgstr "Ordre obert"
+msgstr ""
 
 #: ddm-mx:489
 msgid "Open drivers installed"
-msgstr "Instal·lats els controladors lliures "
+msgstr ""
 
 #: ddm-mx:505
 msgid "Press <Enter> to exit"
-msgstr "Premeu [Retorn] per sortir "
+msgstr ""
 
 #: ddm-mx:519
 msgid "Enabling backports repo"
-msgstr "Activant el dipòsit Backports "
+msgstr ""
 
 #: ddm-mx:520
 msgid "Running apt-get update..."
-msgstr "Executant apt-get update..."
+msgstr ""
 
 #: ddm-mx:524
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
-msgstr "Hi ha hagut un problema amb apt-get update. Vegeu $LOG per detalls."
+msgstr ""
 
 #: ddm-mx:528
 msgid "Installing latest nvidia-detect package"
-msgstr "Instal·lant el darrer paquet nvidia-detect "
+msgstr ""
 
 #: ddm-mx:536
 msgid "Would you like to check debian-backports for a later version?"
-msgstr "Voldreu comprovar debian-backports per una versió més actual?"
+msgstr ""
 
 #: ddm-mx:538
 msgid "Yes or No?"
-msgstr "Si o No?"
+msgstr ""
 
 #: ddm-mx:540
 msgid "Yes"
-msgstr "Sí "
+msgstr "Evet"
 
 #: ddm-mx:541
 msgid "No"
-msgstr "No "
+msgstr "Hayır"
 
 #: ddm-mx:547 ddm-mx:551 ddm-mx:574 ddm-mx:578
 msgid "Ok"
-msgstr "D'acord"
+msgstr "Tamam"
 
 #: ddm-mx:560
 msgid "Which driver do you wish to install"
-msgstr "Quin controlador voleu instal·lar? "
+msgstr ""
 
 #: ddm-mx:562
 msgid "Main repos or debian-backports?"
-msgstr "Dipòsit principal o debian-backports?"
+msgstr ""
 
 #: ddm-mx:564
 msgid "Main"
-msgstr "Principal "
+msgstr ""
 
 #: ddm-mx:566
 msgid "debian-backports"
-msgstr "debian-backports"
+msgstr ""
 
 #: ddm-mx:568
 msgid "Exit"
-msgstr "Surt"
+msgstr "Çıkış"
