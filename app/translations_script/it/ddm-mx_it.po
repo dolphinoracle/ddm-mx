@@ -48,7 +48,7 @@ msgstr "Opzione non valida"
 
 #: ddm-mx:136
 msgid "Purge drivers for: "
-msgstr ""
+msgstr "Eliminazione completa dei drivers per:"
 
 #: ddm-mx:137 ddm-mx:165
 msgid "Start at (m/d/y):"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ddm-mx:214
 msgid "The following options are allowed:"
-msgstr ""
+msgstr "Sono consentite le seguenti opzioni:"
 
 #: ddm-mx:218
 msgid "-i driver    Install given driver."
@@ -113,7 +113,7 @@ msgstr "Aggiorna le fonti dei repository con apt-get update"
 
 #: ddm-mx:280 ddm-mx:417
 msgid "Continue?"
-msgstr ""
+msgstr "Continuare?"
 
 #: ddm-mx:289
 msgid "Possible previous install from source or smxi/sgfxi detected."
@@ -199,8 +199,8 @@ msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
 msgstr ""
-"Ahi ahi !. La tua scheda è supportata solamente dai drivers legacy più "
-"vecchi  che non sono più disponibili nei repository Debian correnti."
+"Ahi ahi! La tua scheda è supportata solamente dai drivers legacy più vecchi"
+"  che non sono più disponibili nei repository Debian correnti."
 
 #: ddm-mx:375
 msgid "Need driver: "
@@ -208,7 +208,7 @@ msgstr "E' necessario il driver:"
 
 #: ddm-mx:426
 msgid "Nvidia command "
-msgstr ""
+msgstr "Comando Nvidia"
 
 #: ddm-mx:449
 msgid "ERROR: Could not configure Bumblebee for user: "
@@ -232,7 +232,7 @@ msgstr "Drivers proprietari rimossi"
 
 #: ddm-mx:486
 msgid "Open command "
-msgstr ""
+msgstr "Apri comando"
 
 #: ddm-mx:489
 msgid "Open drivers installed"
