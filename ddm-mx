@@ -280,7 +280,10 @@ function install_nvidia {
 #	echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
 #	read x
     YES_no $"Continue?"
-    	apt-get update | tee -a $LOG
+    if [ "$?" = "1" ]; then 
+        exit 0
+    fi
+    apt-get update | tee -a $LOG
 	check_cand
   fi
   
@@ -298,10 +301,16 @@ echo ""
   # Check for Optimus
     OPTIMUS=1
     if lspci -vnn | grep Intel |grep -q 0300 ; then
-	if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
-	    echo $"nvidia-optimus detected"
- 	    OPTIMUS=2
-	fi
+        if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
+            echo $"nvidia-optimus detected"
+            OPTIMUS=2
+        else
+            YES_no $"Is this a NVIDIA/INTEL Optimus system?"
+            if [ $? = 0 ]; then
+                OPTIMUS=2
+            fi
+            
+        fi
     fi
 
     if [ $OPTIMUS = 2 ]; then
@@ -418,6 +427,9 @@ echo "$NVIDIA packages to install are " $DRIVER | tee -a $LOG
 #echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG 
 #read x
 YES_no $"Continue?"
+    if [ "$?" = "1" ]; then 
+        exit 0
+    fi
  
   # Preseed debconf answers
   preseed_nvidia $CANDIDATE
@@ -594,6 +606,8 @@ check_cand()
 CANDIDATE=`env LANG=C apt-cache policy $SWITCH $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
 INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
 }
+
+
 
 main "$@"
 
