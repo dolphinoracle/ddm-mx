@@ -486,10 +486,12 @@ function purge_proprietary_drivers {
   rm /etc/modprobe.d/nvidia* 2>/dev/null
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
   # Leave nvidia-detect and nvidia-installer-cleanup
-  apt-get purge -y $FORCE $(apt-cache pkgnames | grep nvidia | grep -v detect | grep -v cleanup | cut -d':' -f1) 2>&1 | tee -a $LOG
-  apt-get purge -y $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
-  
-  echo $"Proprietary drivers removed" | tee -a $LOG
+  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v detect | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
+# apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
+
+  if [ "$?" = "0" ]; then 
+      echo $"Proprietary drivers removed" | tee -a $LOG
+  fi
 }
 
 function install_open {
@@ -501,9 +503,11 @@ function install_open {
   apt-get update
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
   echo $"Open command " "= apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
-  apt-get install --reinstall -y $FORCE $DRIVER 2>&1 | tee -a $LOG
+  apt-get install --reinstall $FORCE $DRIVER 2>&1 | tee -a $LOG
   
-  echo $"Open drivers installed" | tee -a $LOG
+  if [ "$?" = "0" ]; then 
+      echo $"Open drivers installed" | tee -a $LOG
+  fi
   
   # Now cleanup
   purge_proprietary_drivers
