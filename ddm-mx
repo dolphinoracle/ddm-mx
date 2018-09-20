@@ -393,9 +393,9 @@ echo ""
                      nvidia-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
 	                                   # Additional 32-bit drivers for 64-bit systems
 	                                   #DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libgl1-nvidia-glx:i386 $NVIDIA_XCONFIG" 
-                                       DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms $NVIDIA_XCONFIG" 
+                                       DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libnvidia-encode1 $NVIDIA_XCONFIG" 
                                        else
-                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings $NVIDIA_XCONFIG" 
+                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings libnvidia-encode1 $NVIDIA_XCONFIG" 
                                        fi
                                        ;;
         nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then

@@ -1,3 +1,9 @@
+ddm-mx (18.09.01) mx; urgency=medium
+
+  * added nvenc (libnvidia-encode1) to nvidia-driver install 
+
+ -- dolphin <dolphin@littlebyte>  Wed, 19 Sep 2018 21:33:31 -0400
+
 ddm-mx (18.08.01) mx; urgency=medium
 
   * remove automatic "yes" on purge function
