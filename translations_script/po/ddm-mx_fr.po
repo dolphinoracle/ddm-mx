@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-05 20:24-0500\n"
+"POT-Creation-Date: 2018-06-17 09:41-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2017\n"
 "Language-Team: French (https://www.transifex.com/anticapitalista/teams/10162/fr/)\n"
@@ -38,99 +38,99 @@ msgstr "Lancer en tant qu'administrateur"
 msgid "Install drivers for: "
 msgstr "Installer les pilotes pour:"
 
-#: ddm-mx:43
+#: ddm-mx:45
 msgid "creating lock ..."
 msgstr "verrouillage en cours..."
 
-#: ddm-mx:80 ddm-mx:90
+#: ddm-mx:82 ddm-mx:92
 msgid "Invalid option"
 msgstr "Option non valide"
 
-#: ddm-mx:136
+#: ddm-mx:138
 msgid "Purge drivers for: "
 msgstr "Purger les pilotes de:"
 
-#: ddm-mx:137 ddm-mx:165
+#: ddm-mx:139 ddm-mx:167
 msgid "Start at (m/d/y):"
 msgstr "Démarrage le (m/j/a)"
 
-#: ddm-mx:152
+#: ddm-mx:154
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
 msgstr "ERREUR: Argument inconnu: $DRV"
 
-#: ddm-mx:182
+#: ddm-mx:184
 msgid "No nvidia card found - exiting"
 msgstr "Aucune carte Nvidia trouvée - terminé"
 
-#: ddm-mx:199 ddm-mx:407
+#: ddm-mx:201 ddm-mx:419
 msgid "ERROR: Unknown argument: "
 msgstr "ERREUR:  Argument inconnu:"
 
-#: ddm-mx:212
+#: ddm-mx:214
 msgid "Device Driver Manager Help:"
 msgstr "Aide du gestionnaire des pilotes de périphériques:"
 
-#: ddm-mx:214
+#: ddm-mx:216
 msgid "The following options are allowed:"
 msgstr "Les options suivantes sont autorisées:"
 
-#: ddm-mx:218
+#: ddm-mx:220
 msgid "-i driver    Install given driver."
 msgstr "-i driver    Installer le pilote donné."
 
-#: ddm-mx:220
+#: ddm-mx:222
 msgid "             drivers: nvidia, open, fixbumblebee"
 msgstr "             pilotes: nvidia, open, fixbumblebee"
 
-#: ddm-mx:222
+#: ddm-mx:224
 msgid "-p driver    Purge given driver."
 msgstr "-p driver    Purge le pilote donné."
 
-#: ddm-mx:224
+#: ddm-mx:226
 msgid "             driver: nvidia"
 msgstr "             pilote: nvidia"
 
-#: ddm-mx:226
+#: ddm-mx:228
 msgid "-f           Force DDM to start, even in a Live environment."
 msgstr ""
 "-f           Force le lancement de DDM, même dans un environnement Live."
 
-#: ddm-mx:228
+#: ddm-mx:230
 msgid "-t           For development testing only!"
 msgstr "-t           Uniquement à but de test de développement!"
 
-#: ddm-mx:229
+#: ddm-mx:231
 msgid "             This will install drivers for pre-defined hardware."
 msgstr "             Ceci installera les pilotes pour le matériel pré-défini."
 
-#: ddm-mx:230
+#: ddm-mx:232
 msgid "             Use with -i."
 msgstr "             Utiliser -i avec."
 
-#: ddm-mx:277
+#: ddm-mx:279
 msgid "Refreshing Sources with apt-get update"
 msgstr "Rafraichissement des Sources avec apt-get update"
 
-#: ddm-mx:280 ddm-mx:417
+#: ddm-mx:282 ddm-mx:429
 msgid "Continue?"
 msgstr "Poursuivre?"
 
-#: ddm-mx:289
+#: ddm-mx:294
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
 "Détection probable d'une précédente installation depuis une source ou "
 "smxi/sgfxi"
 
-#: ddm-mx:290
+#: ddm-mx:295
 msgid "Version detected: "
 msgstr "Version détectée:"
 
-#: ddm-mx:291
+#: ddm-mx:296
 msgid "Latest possible with this script : "
 msgstr "Toute dernière possible à l'aide de ce script :"
 
-#: ddm-mx:292
+#: ddm-mx:297
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -138,63 +138,67 @@ msgstr ""
 "Veuillez désinstaller à l'aide de <sudo nvidia-install --uninstall> puis "
 "redémarrer si vous souhaitez continuer"
 
-#: ddm-mx:300
+#: ddm-mx:305
 msgid "nvidia-optimus detected"
 msgstr "nvidia optimus détecté"
 
-#: ddm-mx:310 ddm-mx:320 ddm-mx:335
+#: ddm-mx:308
+msgid "Is this a NVIDIA/INTEL Optimus system?"
+msgstr "Votre système utilise-t-il la technologie Optimus de NVIDIA/INTEL?"
+
+#: ddm-mx:321 ddm-mx:331 ddm-mx:346
 msgid "Candidate is: "
 msgstr "Version candidate:"
 
-#: ddm-mx:311 ddm-mx:322 ddm-mx:329 ddm-mx:336
+#: ddm-mx:322 ddm-mx:333 ddm-mx:340 ddm-mx:347
 msgid "Installed is: "
 msgstr "Version installée:"
 
-#: ddm-mx:321 ddm-mx:328
+#: ddm-mx:332 ddm-mx:339
 msgid "Debian backports candidate is:  "
 msgstr "Version candidate des rétroportages Debian:"
 
-#: ddm-mx:327
+#: ddm-mx:338
 msgid "Main repo candidate is:  "
 msgstr "Version candidate du dépôt principal:"
 
-#: ddm-mx:342
+#: ddm-mx:353
 msgid "nvidia driver already installed"
 msgstr "Pilote Nvidia déjà installé"
 
-#: ddm-mx:344
+#: ddm-mx:355
 msgid "Reinstall or quit?"
 msgstr "Réinstaller ou quitter?"
 
-#: ddm-mx:346
+#: ddm-mx:357
 msgid "Reinstall"
 msgstr "Réinstaller"
 
-#: ddm-mx:347
+#: ddm-mx:358
 msgid "quit"
 msgstr "quitter"
 
-#: ddm-mx:349 ddm-mx:570
+#: ddm-mx:360 ddm-mx:587
 msgid "Enter Number of selection"
 msgstr "Entrer le Nombre de sélection"
 
-#: ddm-mx:353
+#: ddm-mx:364
 msgid "reinstalling"
 msgstr "Réinstallation"
 
-#: ddm-mx:354 ddm-mx:355 ddm-mx:554 ddm-mx:580 ddm-mx:582
+#: ddm-mx:365 ddm-mx:366 ddm-mx:571 ddm-mx:598 ddm-mx:600
 msgid "exiting"
 msgstr "Sortie"
 
-#: ddm-mx:355 ddm-mx:554 ddm-mx:582
+#: ddm-mx:366 ddm-mx:571 ddm-mx:600
 msgid "invalid option."
 msgstr "option invalide."
 
-#: ddm-mx:365
+#: ddm-mx:376
 msgid "nvidia driver not available, check your repo sources"
 msgstr "Pilote Nvidia indisponible, vérifier les sources de vos dépôts"
 
-#: ddm-mx:369
+#: ddm-mx:380
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
@@ -202,102 +206,102 @@ msgstr ""
 "Oh oh. Votre carte est uniquement supportée par les pilotes hérités (legacy)"
 " plus anciens qui ne se trouvent dans aucune suite Debian actuelle."
 
-#: ddm-mx:375
+#: ddm-mx:386
 msgid "Need driver: "
 msgstr "Pilote nécessaire:"
 
-#: ddm-mx:426
+#: ddm-mx:441
 msgid "Nvidia command "
 msgstr "Commande Nvidia"
 
-#: ddm-mx:449
+#: ddm-mx:464
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "ERREUR: Impossible de configurer Bumblebee pour l'utilisateur:"
 
-#: ddm-mx:453
+#: ddm-mx:468
 msgid "test enabled, not creating xorg.conf file"
 msgstr "test en cours, pas de création du fichier xorg.conf"
 
-#: ddm-mx:456
+#: ddm-mx:472
 msgid "creating /etc/X11/xorg.conf file"
 msgstr "création du fichier /etc/X11/xorg.conf"
 
-#: ddm-mx:461
+#: ddm-mx:478
 msgid "Finished"
 msgstr "Terminé"
 
-#: ddm-mx:475
+#: ddm-mx:492
 msgid "Proprietary drivers removed"
 msgstr "Pilotes propriétaires retirés"
 
-#: ddm-mx:486
+#: ddm-mx:503
 msgid "Open command "
 msgstr "Commande Ouvrir"
 
-#: ddm-mx:489
+#: ddm-mx:506
 msgid "Open drivers installed"
 msgstr "Pilotes libres installés"
 
-#: ddm-mx:505
+#: ddm-mx:522
 msgid "Press <Enter> to exit"
 msgstr "Appuyer sur <Entrée> pour quitter"
 
-#: ddm-mx:519
+#: ddm-mx:536
 msgid "Enabling backports repo"
 msgstr "Activation du dépôt de rétroportage"
 
-#: ddm-mx:520
+#: ddm-mx:537
 msgid "Running apt-get update..."
 msgstr "Exécution de apt-get update..."
 
-#: ddm-mx:524
+#: ddm-mx:541
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
 "apt-get update a rencontré un problème. Consultez $LOG pour plus de détails"
 
-#: ddm-mx:528
+#: ddm-mx:545
 msgid "Installing latest nvidia-detect package"
 msgstr "Installation du dernier paquet nvidia-detect en cours"
 
-#: ddm-mx:536
+#: ddm-mx:553
 msgid "Would you like to check debian-backports for a later version?"
 msgstr ""
 "Voulez-vous vérifier si une version plus récente se trouve dans les dépôts "
 "de rétroportages Debian?"
 
-#: ddm-mx:538
+#: ddm-mx:555
 msgid "Yes or No?"
 msgstr "Oui ou Non?"
 
-#: ddm-mx:540
+#: ddm-mx:557
 msgid "Yes"
 msgstr "Oui"
 
-#: ddm-mx:541
+#: ddm-mx:558
 msgid "No"
 msgstr "Non"
 
-#: ddm-mx:547 ddm-mx:551 ddm-mx:574 ddm-mx:578
+#: ddm-mx:564 ddm-mx:568 ddm-mx:591 ddm-mx:595
 msgid "Ok"
 msgstr "Ok"
 
-#: ddm-mx:560
+#: ddm-mx:577
 msgid "Which driver do you wish to install"
 msgstr "Quel pilote souhaitez-vous installer?"
 
-#: ddm-mx:562
+#: ddm-mx:579
 msgid "Main repos or debian-backports?"
 msgstr "Dépots principaux ou de rétroportages Debian ?"
 
-#: ddm-mx:564
+#: ddm-mx:581
 msgid "Main"
 msgstr "Principal"
 
-#: ddm-mx:566
+#: ddm-mx:583
 msgid "debian-backports"
 msgstr "rétroportages Debian"
 
-#: ddm-mx:568
+#: ddm-mx:585
 msgid "Exit"
 msgstr "Quitter "
