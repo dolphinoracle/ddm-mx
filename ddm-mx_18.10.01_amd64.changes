@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sun, 14 Oct 2018 19:29:16 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 18.10.01
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin <dolphin@littlebyte>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (18.10.01) mx; urgency=medium
+ .
+   * update translations
+Checksums-Sha1:
+ effc17625efbfd8a84573e37069e5b80e8b8f93c 577 ddm-mx_18.10.01.dsc
+ a607fd0b5b21c7c17dffa80e4a019bcf210c1572 8245583 ddm-mx_18.10.01.tar.gz
+ 1c0c2dc5cc77b4b42605d5e2caf1136a10369f2f 44060 ddm-mx_18.10.01_all.deb
+ c99a24263988d45a7f978498018209ec38abd934 4915 ddm-mx_18.10.01_amd64.buildinfo
+Checksums-Sha256:
+ 0f13ccb9f50e81005e8cf784f2d73aa6eedbf8e046239424fa2c009fb936634f 577 ddm-mx_18.10.01.dsc
+ 63de3afca81d37f87b4f45eaf3b2d7eb0c9c05d702f562f6a53003424be80709 8245583 ddm-mx_18.10.01.tar.gz
+ e1afb32bbafc26fa77e3604a66120fffe065fd59bb7a3b85999030ab90c6bde2 44060 ddm-mx_18.10.01_all.deb
+ 756b506245774739b7bfcdbcee8541727f2f4872e4d1db2cbc5b6c8d343e9bca 4915 ddm-mx_18.10.01_amd64.buildinfo
+Files:
+ 51bfb3a6676cbc0895342ccfa661b184 577 admin optional ddm-mx_18.10.01.dsc
+ 4d677925a275aa4f7cadd09098069485 8245583 admin optional ddm-mx_18.10.01.tar.gz
+ bb46cf69b77ec36adaa0376d246c6d69 44060 admin optional ddm-mx_18.10.01_all.deb
+ 7313948fb2152beb2e5fd9aef76ac8ae 4915 admin optional ddm-mx_18.10.01_amd64.buildinfo
