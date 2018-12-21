@@ -412,7 +412,7 @@ echo ""
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
                                        # Bumblebee drivers
-                                       DRIVER="$DRIVER nvidia-driver nvidia-kernel-dkms primus primus-libs-ia32:i386 nvidia-settings"
+                                       DRIVER="$DRIVER nvidia-driver nvidia-kernel-dkms primus primus-libs-ia32:i386 nvidia-settings virtualgl virtualgl-libs:i386"
                                        fi
                                        ;;
                                  *)
