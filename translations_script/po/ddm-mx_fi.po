@@ -3,13 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# anticapitalista <anticapitalista@riseup.net>, 2017
+# LinuxIRC Darude <linux@disroot.org>, 2018
+# En Kerro <inactive+ekeimaja@transifex.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-17 09:41-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-11-29 14:08+0000\n"
 "Last-Translator: En Kerro <inactive+ekeimaja@transifex.com>, 2018\n"
 "Language-Team: Finnish (https://www.transifex.com/anticapitalista/teams/10162/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -139,7 +144,7 @@ msgstr "nvidia-optimus havaittu"
 
 #: ddm-mx:308
 msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr ""
+msgstr "Onko tämä NVIDIA/INTEL Optimus järjestelmä?"
 
 #: ddm-mx:321 ddm-mx:331 ddm-mx:346
 msgid "Candidate is: "
@@ -179,7 +184,7 @@ msgstr ""
 
 #: ddm-mx:364
 msgid "reinstalling"
-msgstr ""
+msgstr "asennetaan uudelleen"
 
 #: ddm-mx:365 ddm-mx:366 ddm-mx:571 ddm-mx:598 ddm-mx:600
 msgid "exiting"
@@ -187,7 +192,7 @@ msgstr "poistutaan"
 
 #: ddm-mx:366 ddm-mx:571 ddm-mx:600
 msgid "invalid option."
-msgstr ""
+msgstr "Virheellinen valinta."
 
 #: ddm-mx:376
 msgid "nvidia driver not available, check your repo sources"
@@ -198,6 +203,8 @@ msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
 msgstr ""
+"Voi ei. Näytönohjaimesi on vanhaa mallia eikä sille enää löydy ajureita "
+"nykyisestä Debianin versiosta."
 
 #: ddm-mx:386
 msgid "Need driver: "
@@ -221,7 +228,7 @@ msgstr ""
 
 #: ddm-mx:478
 msgid "Finished"
-msgstr ""
+msgstr "Viimeistelty"
 
 #: ddm-mx:492
 msgid "Proprietary drivers removed"
