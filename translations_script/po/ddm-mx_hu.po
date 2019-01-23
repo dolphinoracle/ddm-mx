@@ -3,14 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# anticapitalista <anticapitalista@riseup.net>, 2017
+# Tamas Szarvas <szarvy@gmail.com>, 2018
+# Gabor Drot <gdrot@yahoo.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-17 09:41-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Tamas Szarvas <szarvy@gmail.com>, 2018\n"
+"PO-Revision-Date: 2016-11-29 14:08+0000\n"
+"Last-Translator: Gabor Drot <gdrot@yahoo.com>, 2019\n"
 "Language-Team: Hungarian (https://www.transifex.com/anticapitalista/teams/10162/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,19 +25,19 @@ msgstr ""
 
 #: ddm-mx:33
 msgid "Unknown error"
-msgstr ""
+msgstr "Ismeretlen hiba"
 
 #: ddm-mx:34
 msgid "Option-"
-msgstr ""
+msgstr "Opció-"
 
 #: ddm-mx:35
 msgid "requires an argument."
-msgstr ""
+msgstr "argumentum szükséges"
 
 #: ddm-mx:36
 msgid "Run as root"
-msgstr ""
+msgstr "Futtatás root felhasználóként"
 
 #: ddm-mx:37
 msgid "Install drivers for: "
@@ -44,7 +49,7 @@ msgstr ""
 
 #: ddm-mx:82 ddm-mx:92
 msgid "Invalid option"
-msgstr ""
+msgstr "Érvénytelen opció"
 
 #: ddm-mx:138
 msgid "Purge drivers for: "
@@ -52,7 +57,7 @@ msgstr ""
 
 #: ddm-mx:139 ddm-mx:167
 msgid "Start at (m/d/y):"
-msgstr ""
+msgstr "Indítás (hónap/nap/év):"
 
 #: ddm-mx:154
 #, sh-format
@@ -65,7 +70,7 @@ msgstr ""
 
 #: ddm-mx:201 ddm-mx:419
 msgid "ERROR: Unknown argument: "
-msgstr ""
+msgstr "HIBA: Ismeretlen argumentum"
 
 #: ddm-mx:214
 msgid "Device Driver Manager Help:"
@@ -113,7 +118,7 @@ msgstr ""
 
 #: ddm-mx:282 ddm-mx:429
 msgid "Continue?"
-msgstr ""
+msgstr "Folytatja?"
 
 #: ddm-mx:294
 msgid "Possible previous install from source or smxi/sgfxi detected."
@@ -121,7 +126,7 @@ msgstr ""
 
 #: ddm-mx:295
 msgid "Version detected: "
-msgstr ""
+msgstr "Azonosítot verzió:"
 
 #: ddm-mx:296
 msgid "Latest possible with this script : "
@@ -135,11 +140,11 @@ msgstr ""
 
 #: ddm-mx:305
 msgid "nvidia-optimus detected"
-msgstr ""
+msgstr "nvidia-optimus találat"
 
 #: ddm-mx:308
 msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr ""
+msgstr "Ez egy NVIDIA/INTEL Optimus rendszer?"
 
 #: ddm-mx:321 ddm-mx:331 ddm-mx:346
 msgid "Candidate is: "
@@ -159,19 +164,19 @@ msgstr ""
 
 #: ddm-mx:353
 msgid "nvidia driver already installed"
-msgstr ""
+msgstr "nvidia meghajtóprogram már telepítve van"
 
 #: ddm-mx:355
 msgid "Reinstall or quit?"
-msgstr ""
+msgstr "Újratelepítés vagy kilépés?"
 
 #: ddm-mx:357
 msgid "Reinstall"
-msgstr ""
+msgstr "Újratelepítés"
 
 #: ddm-mx:358
 msgid "quit"
-msgstr ""
+msgstr "kilépés"
 
 #: ddm-mx:360 ddm-mx:587
 msgid "Enter Number of selection"
@@ -179,7 +184,7 @@ msgstr ""
 
 #: ddm-mx:364
 msgid "reinstalling"
-msgstr ""
+msgstr "újratelepíteni"
 
 #: ddm-mx:365 ddm-mx:366 ddm-mx:571 ddm-mx:598 ddm-mx:600
 msgid "exiting"
@@ -187,7 +192,7 @@ msgstr ""
 
 #: ddm-mx:366 ddm-mx:571 ddm-mx:600
 msgid "invalid option."
-msgstr ""
+msgstr "érvénytelen választás"
 
 #: ddm-mx:376
 msgid "nvidia driver not available, check your repo sources"
@@ -262,7 +267,7 @@ msgstr ""
 
 #: ddm-mx:555
 msgid "Yes or No?"
-msgstr ""
+msgstr "Igen, vagy Nem?"
 
 #: ddm-mx:557
 msgid "Yes"
@@ -274,7 +279,7 @@ msgstr "Nem"
 
 #: ddm-mx:564 ddm-mx:568 ddm-mx:591 ddm-mx:595
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: ddm-mx:577
 msgid "Which driver do you wish to install"
@@ -286,7 +291,7 @@ msgstr ""
 
 #: ddm-mx:581
 msgid "Main"
-msgstr ""
+msgstr "Fő"
 
 #: ddm-mx:583
 msgid "debian-backports"
