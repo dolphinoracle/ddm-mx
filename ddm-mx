@@ -40,6 +40,8 @@ INSTALL_DRIVERS_FOR=$"Install drivers for: "
 
 NVIDIA_XCONFIG="nvidia-xconfig"
 
+ARCH=$(dpkg --print-architecture)
+
 
 main(){
 # -------------------------------------------------------------------------
