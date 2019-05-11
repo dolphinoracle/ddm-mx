@@ -3,6 +3,7 @@ ddm-mx				usr/local/bin
 nvidia-detect-mx		usr/local/bin
 *.desktop			usr/share/applications
 *.png                           usr/share/pixmaps
+PIDS/*              usr/share/ddm-mx
 translations_script/mo/am/ddm-mx.mo     /usr/share/locale/am/LC_MESSAGES
 translations_script/mo/ar/ddm-mx.mo     /usr/share/locale/ar/LC_MESSAGES
 translations_script/mo/bg/ddm-mx.mo     /usr/share/locale/bg/LC_MESSAGES

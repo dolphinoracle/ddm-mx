@@ -24,9 +24,9 @@ CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
 LOG="/var/log/ddm.log"
-BP_REPO="stretch-backports"
+BP_REPO="buster-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
-MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ stretch test"
+MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ buster test"
 
 
 TEXTDOMAINDIR=/usr/share/locale 
@@ -39,6 +39,8 @@ RUN_AS_ROOT=$"Run as root"
 INSTALL_DRIVERS_FOR=$"Install drivers for: "
 
 NVIDIA_XCONFIG="nvidia-xconfig"
+
+ARCH=$(dpkg --print-architecture)
 
 
 main(){
@@ -266,21 +268,9 @@ function install_nvidia {
     TESTSWITCH="-s"
   fi
 
+  update_sources
   check_cand
 
-  if [ "$CANDIDATE" == "" ]; then
-    	##refresh sources and try again
-   	echo $"Refreshing Sources with apt-get update" | tee -a $LOG
-#	echo -n $"Press <Enter> to continue or Ctrl-c to exit" | tee -a $LOG
-#	read x
-    YES_no $"Continue?"
-    if [ "$?" = "1" ]; then 
-        exit 0
-    fi
-    apt-get update | tee -a $LOG
-	check_cand
-  fi
-  
 echo ""
 
   #check for possible source install
@@ -411,11 +401,10 @@ echo ""
 
   case $DRIVER in 
                      nvidia-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-	                                   # Additional 32-bit drivers for 64-bit systems
-	                                   #DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libgl1-nvidia-glx:i386 $NVIDIA_XCONFIG" 
-                                       DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libnvidia-encode1 $NVIDIA_XCONFIG" 
+                                           NVIDA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libnvidia-encode1" 
                                        else
-                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings libnvidia-encode1 $NVIDIA_XCONFIG" 
+                                           DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings libnvidia-encode1" 
                                        fi
                                        ;;
         nvidia-legacy-340xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
@@ -424,8 +413,8 @@ echo ""
                                            DRIVER="$DRIVER nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $NVIDIA_XCONFIG"
                                        fi
                                        ;;
-        nvidia-legacy-304xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms $NVIDIA_XCONFIG"
+        nvidia-legacy-390xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms $NVIDIA_XCONFIG"
                                        else
                                            DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms $NVIDIA_XCONFIG"
                                        fi
@@ -458,7 +447,7 @@ YES_no $"Continue?"
   #apt-get update | tee -a $LOG 
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
-  echo $"Nvidia command " "= apt-get install --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
+  echo $"Nvidia command " "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
   apt-get install --reinstall --install-recommends -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
@@ -520,7 +509,7 @@ function install_open {
   DRIVER="xserver-xorg-video-nouveau xserver-xorg-video-vesa xserver-xorg-video-intel xserver-xorg-video-fbdev xserver-xorg-video-radeon xserver-xorg-video-ati xserver-xorg-video-nouveau"
   
   # Install the packages
-  apt-get update
+  update_sources
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
   echo $"Open command " "= apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
   apt-get install --reinstall $FORCE $DRIVER 2>&1 | tee -a $LOG
@@ -540,11 +529,13 @@ echo "" | tee -a $LOG
 echo "" | tee -a $LOG 
 if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
   rm -f /etc/apt/sources.list.d/debian-backports-temp.list
+  echo $"Resetting sources"
   apt-get update
   echo ""
 fi
 if [ -f /etc/apt/sources.list.d/mx-test-repo-temp.list ]; then
     rm -f /etc/apt/sources.list.d/mx-test-repo-temp.list
+    echo $"Resetting sources"
     apt-get update
     echo ""
 fi
@@ -565,16 +556,14 @@ enable_debian_backports()
   echo $"Enabling backports repo"
   echo $"Running apt-get update..."
   echo "$BP_REPO_ADDRESS $BP main contrib non-free">>/etc/apt/sources.list.d/debian-backports-temp.list
-  apt-get update |tee -a $LOG
-  if [ $? = 100 ]; then
-    echo $"There was a problem with the apt-get update.  See $LOG for details"
-    my_exit
+  update_sources
+  echo ""
+  if [ "$ARCH" = "amd64" ]; then
+    echo $"Installing latest nvidia-detect package"|tee -a $LOG
+    echo ""
+    apt-get install $SWITCH $BP nvidia-detect |tee -a $LOG  
+    echo ""
   fi
-  echo ""
-  echo $"Installing latest nvidia-detect package"|tee -a $LOG
-  echo ""
-  apt-get install $SWITCH $BP nvidia-detect |tee -a $LOG  
-  echo ""
 }
 
 enable_mx_test_repo()
@@ -583,16 +572,14 @@ enable_mx_test_repo()
   echo $"Enabling MX Test repo"
   echo $"Running apt-get update..."
   echo "$MX_TEST_REPO_ADDRESS">>/etc/apt/sources.list.d/mx-test-repo-temp.list
-  apt-get update |tee -a $LOG
-  if [ $? = 100 ]; then
-    echo $"There was a problem with the apt-get update.  See $LOG for details"
-    my_exit
+  update_sources
+  echo ""
+  if [ "$ARCH" = "amd64" ]; then
+    echo $"Installing latest nvidia-detect package"|tee -a $LOG
+    echo ""
+    apt-get install nvidia-detect |tee -a $LOG  
+    echo ""
   fi
-  echo ""
-  echo $"Installing latest nvidia-detect package"|tee -a $LOG
-  echo ""
-  apt-get install nvidia-detect |tee -a $LOG  
-  echo ""
 }
 
 debian_backports_dialog()
@@ -713,7 +700,24 @@ CANDIDATE=`env LANG=C apt-cache policy $SWITCH $BP $DRIVER | grep Candidate | aw
 INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
 }
 
-
+update_sources()
+{
+    local ret
+    echo ""
+    echo $"Refreshing Sources with apt-get update" | tee -a $LOG
+    YES_no $"Continue?"
+    if [ "$?" = "0" ]; then 
+        apt-get update
+        if [ "$?" != "0" ]; then
+            echo ""
+            echo ""
+            echo $"There was a problem with the apt-get update.  See $LOG for details" | tee -a $LOG
+            echo ""
+            echo ""
+            my_exit
+        fi
+    fi
+}
 
 main "$@"
 
