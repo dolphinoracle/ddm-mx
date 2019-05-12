@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sun, 12 May 2019 11:30:35 -0400
+Source: ddm-mx
+Binary: ddm-mx
+Architecture: source all
+Version: 19.04.04
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ ddm-mx     - ddm-mx
+Changes:
+ ddm-mx (19.04.04) mx; urgency=medium
+ .
+   * added -b backports override
+Checksums-Sha1:
+ 7a3554fdc00c87ccd27e5f59af3edb4c65e82f72 571 ddm-mx_19.04.04.dsc
+ 852fbdcf8c3385fb10b274d6feb0078a292f6a3c 88424 ddm-mx_19.04.04.tar.gz
+ 29798210a286d7248de224ed17b3b9ab700a9351 49914 ddm-mx_19.04.04_all.deb
+ c9fa6cd1ebc0bb944e65f336a92c170a2fc02058 4956 ddm-mx_19.04.04_amd64.buildinfo
+Checksums-Sha256:
+ a9edff4d003a9c20951b128df2b206f45274cc23504ee8b81ea92c4158d1745b 571 ddm-mx_19.04.04.dsc
+ 339c93be95ac6f682495985e8c8ab1564c15a191eaf1bc1fc5cb3ee7d507815a 88424 ddm-mx_19.04.04.tar.gz
+ 8dc3314a72866b08589b876a0b95233074393adfa696d38bf9e0dc3e3943306a 49914 ddm-mx_19.04.04_all.deb
+ 198a100e3393f3fa7f902f55f69c74b8854460c31b4e3aed3d6086ce3eff05cb 4956 ddm-mx_19.04.04_amd64.buildinfo
+Files:
+ 6e6b48a3d8971edc761b584fba5bbf01 571 admin optional ddm-mx_19.04.04.dsc
+ bb48f7a49d939fcc8954e46fb32c5800 88424 admin optional ddm-mx_19.04.04.tar.gz
+ 2ee506741b1c2c42bb36438a3b02d7b9 49914 admin optional ddm-mx_19.04.04_all.deb
+ 340a9961b86af746ff2e5dd322ecda68 4956 admin optional ddm-mx_19.04.04_amd64.buildinfo
