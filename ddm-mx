@@ -27,7 +27,7 @@ LOG="/var/log/ddm.log"
 BP_REPO="stretch-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
 MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ stretch test"
-
+BACKPORTS_OVERRIDE=false
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
@@ -78,6 +78,10 @@ while getopts ":bi:p:ht" opt; do
     t)
       # Testing
       TEST=true
+      ;;
+      b)
+      # Testing
+      BACKPORTS_OVERRIDE=true
       ;;
     \?)
       # Invalid option: start GUI
@@ -318,7 +322,11 @@ echo ""
 
   MAIN_CAND=$CANDIDATE
   if [ "$DISTRIB_ID" = "MX" ]; then
-    mx_test_repo_dialog
+    if [ BACKPORTS_OVERRIDE ]; then
+        debian_backports_dialog
+    else
+        mx_test_repo_dialog
+    fi
   else
     debian_backports_dialog
   fi
