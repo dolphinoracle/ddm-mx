@@ -213,7 +213,7 @@ function usage() {
   echo "======================================================================"
   echo $"The following options are allowed:"
   echo
-# echo "-b           Use backported packages when available."
+  echo "-b           Offer debian-backports as an alternate"
   echo
   echo $"-i driver    Install given driver."
 #  echo "             drivers: ati, nvidia, broadcom, open, pae, fixbumblebee"
