@@ -312,7 +312,7 @@ echo ""
 
   MAIN_CAND=$CANDIDATE
   if [ "$DISTRIB_ID" = "MX" ]; then
-    if [ BACKPORTS_OVERRIDE ]; then
+    if [ "$BACKPORTS_OVERRIDE" = "true" ]; then
         debian_backports_dialog
     else
         mx_test_repo_dialog
