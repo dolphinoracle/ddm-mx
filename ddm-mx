@@ -691,8 +691,8 @@ echo $"Which driver do you wish to install" | tee -a $LOG
                 apt-get update
                     ;;
            2)   echo $"Ok"... | tee -a $LOG
-                SWITCH=""
-                BP=""
+                SWITCH="-t"
+                BP="\"a=mx,c=test\""
                 #NVIDIA_XCONFIG=""
                      ;;
            3) echo $"exiting" |tee -a $LOG && exit 0;;
