@@ -27,7 +27,7 @@ LOG="/var/log/ddm.log"
 BP_REPO="buster-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
 MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ buster test"
-
+BACKPORTS_OVERRIDE=false
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
@@ -80,6 +80,10 @@ while getopts ":bi:p:ht" opt; do
     t)
       # Testing
       TEST=true
+      ;;
+    b)
+      # Testing
+      BACKPORTS_OVERRIDE=true
       ;;
     \?)
       # Invalid option: start GUI
@@ -211,7 +215,7 @@ function usage() {
   echo "======================================================================"
   echo $"The following options are allowed:"
   echo
-# echo "-b           Use backported packages when available."
+  echo "-b            Offer debian-backports alternative"
   echo
   echo $"-i driver    Install given driver."
 #  echo "             drivers: ati, nvidia, broadcom, open, pae, fixbumblebee"
@@ -308,7 +312,11 @@ echo ""
 
   MAIN_CAND=$CANDIDATE
   if [ "$DISTRIB_ID" = "MX" ]; then
-    mx_test_repo_dialog
+    if [ BACKPORTS_OVERRIDE ]; then
+        debian_backports_dialog
+    else
+        mx_test_repo_dialog
+    fi
   else
     debian_backports_dialog
   fi
@@ -683,8 +691,8 @@ echo $"Which driver do you wish to install" | tee -a $LOG
                 apt-get update
                     ;;
            2)   echo $"Ok"... | tee -a $LOG
-                SWITCH=""
-                BP=""
+                SWITCH="-t"
+                BP="\"a=mx,c=test\""
                 #NVIDIA_XCONFIG=""
                      ;;
            3) echo $"exiting" |tee -a $LOG && exit 0;;
