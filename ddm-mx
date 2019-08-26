@@ -409,9 +409,10 @@ echo ""
 
   case $DRIVER in 
                      nvidia-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           NVIDA_XCONFIG=""
+                                           NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-settings nvidia-kernel-dkms libnvidia-encode1" 
                                        else
+										   NVIDIA_XCONFIG=""
                                            DRIVER="$DRIVER nvidia-kernel-dkms nvidia-settings libnvidia-encode1" 
                                        fi
                                        ;;
@@ -422,9 +423,11 @@ echo ""
                                        fi
                                        ;;
         nvidia-legacy-390xx-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
-                                           DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms $NVIDIA_XCONFIG"
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms"
                                        else
-                                           DRIVER="$DRIVER nvidia-settings-legacy-304xx nvidia-legacy-304xx-kernel-dkms $NVIDIA_XCONFIG"
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms"
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
