@@ -1,3 +1,15 @@
+ddm-mx (19.08.01) mx; urgency=medium
+
+  * fix some typos 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 26 Aug 2019 19:33:22 -0400
+
+ddm-mx (19.07.02) mx; urgency=medium
+
+  * revise test repo function, fix type 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 05 Jul 2019 01:11:45 -0400
+
 ddm-mx (19.07.01) mx; urgency=medium
 
   * added support for mx testrepo permissions
