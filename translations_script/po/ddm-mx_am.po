@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-20 22:34-0400\n"
+"POT-Creation-Date: 2019-08-21 15:51-0400\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>, 2018\n"
 "Language-Team: Amharic (https://www.transifex.com/anticapitalista/teams/10162/am/)\n"
@@ -41,281 +41,285 @@ msgstr "እንደ root ያስኪዱ"
 msgid "Install drivers for: "
 msgstr "drivers መግጠሚያ ለ: "
 
-#: ddm-mx:47
+#: ddm-mx:49
 msgid "creating lock ..."
 msgstr "መቆለፊያ በ መፍጠር ላይ ..."
 
-#: ddm-mx:85 ddm-mx:95
+#: ddm-mx:91 ddm-mx:101
 msgid "Invalid option"
 msgstr "ዋጋ የሌለው ምርጫ "
 
-#: ddm-mx:132
+#: ddm-mx:138
 msgid "Purge drivers for: "
 msgstr "drivers ማስወገጃ ለ: "
 
-#: ddm-mx:133 ddm-mx:161
+#: ddm-mx:139 ddm-mx:167
 msgid "Start at (m/d/y):"
 msgstr "መጀመሪያ በ (m/d/y):"
 
-#: ddm-mx:148
+#: ddm-mx:154
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
 msgstr "ስህተት: ያልታወቀ ክርክር: $DRV"
 
-#: ddm-mx:178
+#: ddm-mx:184
 msgid "No nvidia card found - exiting"
 msgstr "ምንም የ nvidia ካርድ አልተገኘም - በ መውጣት ላይ"
 
-#: ddm-mx:195 ddm-mx:439
+#: ddm-mx:201 ddm-mx:436
 msgid "ERROR: Unknown argument: "
 msgstr "ስህተት: ያልታወቀ ክርክር:"
 
-#: ddm-mx:208
+#: ddm-mx:214
 msgid "Device Driver Manager Help:"
 msgstr "የ አካል Driver አስተዳዳሪ እርዳታ:"
 
-#: ddm-mx:210
+#: ddm-mx:216
 msgid "The following options are allowed:"
 msgstr "የሚቀጥሉትን ምርጫዎች አስችለዋል"
 
-#: ddm-mx:214
+#: ddm-mx:220
 msgid "-i driver    Install given driver."
 msgstr "-i driver    የ ተሰጠውን driver መግጠሚያ"
 
-#: ddm-mx:216
+#: ddm-mx:222
 msgid "             drivers: nvidia, open, fixbumblebee"
 msgstr "             drivers: nvidia, መክፈቻ: fixbumblebee"
 
-#: ddm-mx:218
+#: ddm-mx:224
 msgid "-p driver    Purge given driver."
 msgstr "-p driver    የ ተሰጠውን driver ማስወገጃ"
 
-#: ddm-mx:220
+#: ddm-mx:226
 msgid "             driver: nvidia"
 msgstr "             driver: nvidia"
 
-#: ddm-mx:222
+#: ddm-mx:228
 msgid "-f           Force DDM to start, even in a Live environment."
 msgstr "-f           DDM እንዲጀምር ማስገደጃ: በ ቀጥታ ዘዴ ቢሆንም እንኳን"
 
-#: ddm-mx:224
+#: ddm-mx:230
 msgid "-t           For development testing only!"
 msgstr "-t           ለ አበልፃጊዎች መሞከሪያ ብቻ!"
 
-#: ddm-mx:225
+#: ddm-mx:231
 msgid "             This will install drivers for pre-defined hardware."
 msgstr "             ይህ መግጠሚያ የሚገጥመው drivers ለ በቅድሚያ-ለተገለጸ ጠንካራ አካል ነው"
 
-#: ddm-mx:226
+#: ddm-mx:232
 msgid "             Use with -i."
 msgstr "             ይጠቀሙ በ -i."
 
-#: ddm-mx:273
-msgid "Refreshing Sources with apt-get update"
-msgstr "በ apt-get update ምንጩን ማሻሻያ"
-
-#: ddm-mx:276 ddm-mx:449
-msgid "Continue?"
-msgstr "ልቀጥል?"
-
-#: ddm-mx:288
+#: ddm-mx:282
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr "ከ ምንጭ ውስጥ ወይንም smxi/sgfxi ከ ቀደም ብሎ የ ተገጠመ ተገኝቷል"
 
-#: ddm-mx:289
+#: ddm-mx:283
 msgid "Version detected: "
 msgstr "እትም ተገኝቷል: "
 
-#: ddm-mx:290
+#: ddm-mx:284
 msgid "Latest possible with this script : "
 msgstr "በዚህ ጽሁፍ የሚቻለው ዘመናዊ"
 
-#: ddm-mx:291
+#: ddm-mx:285
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
 "እባክዎን ያስወግዱ h <sudo nvidia-install --uninstall> እና እንደገና ያስነሱ መቀጠል ከ ፈለጉ"
 
-#: ddm-mx:299
+#: ddm-mx:293
 msgid "nvidia-optimus detected"
 msgstr "nvidia-optimus ተገኝቷል: "
 
-#: ddm-mx:302
+#: ddm-mx:296
 msgid "Is this a NVIDIA/INTEL Optimus system?"
 msgstr ""
 
-#: ddm-mx:315 ddm-mx:329 ddm-mx:344 ddm-mx:351 ddm-mx:366
+#: ddm-mx:309 ddm-mx:327 ddm-mx:342 ddm-mx:349 ddm-mx:364
 msgid "Candidate is: "
 msgstr "ይህ እጩ ነው:"
 
-#: ddm-mx:316 ddm-mx:331 ddm-mx:338 ddm-mx:345 ddm-mx:353 ddm-mx:360
-#: ddm-mx:367
+#: ddm-mx:310 ddm-mx:329 ddm-mx:336 ddm-mx:343 ddm-mx:351 ddm-mx:358
+#: ddm-mx:365
 msgid "Installed is: "
 msgstr "የ ተገጠመው በ:"
 
-#: ddm-mx:330 ddm-mx:337
+#: ddm-mx:328 ddm-mx:335
 msgid "Debian backports candidate is:  "
 msgstr "ይህ የ Debian backports እጩ ነው:  "
 
-#: ddm-mx:336 ddm-mx:358
+#: ddm-mx:334 ddm-mx:356
 msgid "Main repo candidate is:  "
 msgstr "ዋናው የrepo  እጩ ይህ ነው:"
 
-#: ddm-mx:352 ddm-mx:359
+#: ddm-mx:350 ddm-mx:357
 msgid "MX Test repo candidate is:  "
 msgstr ""
 
-#: ddm-mx:373
+#: ddm-mx:371
 msgid "nvidia driver already installed"
 msgstr "የ nvidia driver ቀደም ብሎ ተገጥሟል"
 
-#: ddm-mx:375
+#: ddm-mx:373
 msgid "Reinstall or quit?"
 msgstr "እንደገና ልግጠመው ወይንም ላጥፋው?"
 
-#: ddm-mx:377
+#: ddm-mx:375
 msgid "Reinstall"
 msgstr "እንደገና መግጠሚያ"
 
-#: ddm-mx:378
+#: ddm-mx:376
 msgid "quit"
 msgstr "ማጥፊያ"
 
-#: ddm-mx:380 ddm-mx:659 ddm-mx:688
+#: ddm-mx:378 ddm-mx:654 ddm-mx:683
 msgid "Enter Number of selection"
 msgstr "የ ምርጫውን ቁጥር ያስገቡ"
 
-#: ddm-mx:384
+#: ddm-mx:382
 msgid "reinstalling"
 msgstr "እንደገና በ መግጠም ላይ "
 
-#: ddm-mx:385 ddm-mx:386 ddm-mx:618 ddm-mx:642 ddm-mx:670 ddm-mx:672
-#: ddm-mx:703 ddm-mx:705
+#: ddm-mx:383 ddm-mx:384 ddm-mx:613 ddm-mx:637 ddm-mx:665 ddm-mx:667
+#: ddm-mx:698 ddm-mx:700
 msgid "exiting"
 msgstr "በ መውጣት ላይ"
 
-#: ddm-mx:386 ddm-mx:618 ddm-mx:642 ddm-mx:672 ddm-mx:705
+#: ddm-mx:384 ddm-mx:613 ddm-mx:637 ddm-mx:667 ddm-mx:700
 msgid "invalid option."
 msgstr "ዋጋ የሌለው ምርጫ "
 
-#: ddm-mx:396
+#: ddm-mx:394
 msgid "nvidia driver not available, check your repo sources"
 msgstr "nvidia driver ዝግጁ አይደለም: የ እርስዎን ማጠራቀሚያ ምንጮች ይመርምሩ"
 
-#: ddm-mx:400
+#: ddm-mx:398
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
 msgstr ""
 "የ እርስዎ ካርድ የ ተደገፈው በ አሮጌው legacy drivers  ነው: በ አሁኑ የ ዴቢያን ክፍል ውስጥ የለም"
 
-#: ddm-mx:406
+#: ddm-mx:404
 msgid "Need driver: "
 msgstr "driver ያስፈልጋል: "
 
-#: ddm-mx:461
+#: ddm-mx:446 ddm-mx:716
+msgid "Continue?"
+msgstr "ልቀጥል?"
+
+#: ddm-mx:458
 msgid "Nvidia command "
 msgstr "Nvidia command "
 
-#: ddm-mx:484
+#: ddm-mx:481
 msgid "ERROR: Could not configure Bumblebee for user: "
 msgstr "ስህተት: Bumblebee ለ ተጠቃሚ ማሰናዳት አልተቻለም: "
 
-#: ddm-mx:488
+#: ddm-mx:485
 msgid "test enabled, not creating xorg.conf file"
 msgstr "መሞከሪያ አስችለዋል: የ xorg.conf ፋይል በ መፍጠር ላይ"
 
-#: ddm-mx:492
+#: ddm-mx:489
 msgid "creating /etc/X11/xorg.conf file"
 msgstr "በ መፍጠር ላይ /etc/X11/xorg.conf file"
 
-#: ddm-mx:498
+#: ddm-mx:495
 msgid "Finished"
 msgstr "ጨርሷል"
 
-#: ddm-mx:513
+#: ddm-mx:510
 msgid "Proprietary drivers removed"
 msgstr "Proprietary drivers ተወግዷል"
 
-#: ddm-mx:525
+#: ddm-mx:522
 msgid "Open command "
 msgstr "ትእዛዝ መክፈቻ"
 
-#: ddm-mx:529
+#: ddm-mx:526
 msgid "Open drivers installed"
 msgstr "Open drivers ተገጥሟል"
 
-#: ddm-mx:551
+#: ddm-mx:540 ddm-mx:546
+msgid "Resetting sources"
+msgstr ""
+
+#: ddm-mx:550
 msgid "Press <Enter> to exit"
 msgstr "ይጫኑ <Enter> ለ መውጣት"
 
-#: ddm-mx:565
+#: ddm-mx:564
 msgid "Enabling backports repo"
 msgstr "የ backports repo ማስቻያ"
 
-#: ddm-mx:566 ddm-mx:584
+#: ddm-mx:565 ddm-mx:581
 msgid "Running apt-get update..."
 msgstr "በ apt-get update በ ማስኬድ ላይ"
 
-#: ddm-mx:570 ddm-mx:588
-#, sh-format
-msgid "There was a problem with the apt-get update.  See $LOG for details"
-msgstr "በ apt-get ማሻሻያ ውስጥ ችግር ተፈጥሯል:  ለ ዝርዝር $LOG ይህን ይመልከቱ"
-
-#: ddm-mx:574 ddm-mx:592
+#: ddm-mx:570 ddm-mx:586
 msgid "Installing latest nvidia-detect package"
 msgstr "ዘመናዊ የ nvidia-ጥቅል ተገኝቷል: በ መግጠም ላይ "
 
-#: ddm-mx:583
+#: ddm-mx:580
 msgid "Enabling MX Test repo"
 msgstr ""
 
-#: ddm-mx:600
+#: ddm-mx:595
 msgid "Would you like to check debian-backports for a later version?"
 msgstr "እርስዎ የ debian-backports ላለፈ እትም መመርመር ይፈልጋሉ?"
 
-#: ddm-mx:602 ddm-mx:626
+#: ddm-mx:597 ddm-mx:621
 msgid "Yes or No?"
 msgstr "አዎ ወይንም አይ?"
 
-#: ddm-mx:604 ddm-mx:628
+#: ddm-mx:599 ddm-mx:623
 msgid "Yes"
 msgstr "አዎ"
 
-#: ddm-mx:605 ddm-mx:629
+#: ddm-mx:600 ddm-mx:624
 msgid "No"
 msgstr "አይ"
 
-#: ddm-mx:611 ddm-mx:615 ddm-mx:635 ddm-mx:639 ddm-mx:663 ddm-mx:667
-#: ddm-mx:692 ddm-mx:698
+#: ddm-mx:606 ddm-mx:610 ddm-mx:630 ddm-mx:634 ddm-mx:658 ddm-mx:662
+#: ddm-mx:687 ddm-mx:693
 msgid "Ok"
 msgstr "እሺ"
 
-#: ddm-mx:624
+#: ddm-mx:619
 msgid "Would you like to check MX Test Repo for a later version?"
 msgstr ""
 
-#: ddm-mx:649 ddm-mx:678
+#: ddm-mx:644 ddm-mx:673
 msgid "Which driver do you wish to install"
 msgstr "የትኛውን driver ነው መግጠም የሚፈልጉት"
 
-#: ddm-mx:651
+#: ddm-mx:646
 msgid "Main repos or debian-backports?"
 msgstr "ዋናው ማጠራቀሚያ ወይንም debian-backports?"
 
-#: ddm-mx:653 ddm-mx:682
+#: ddm-mx:648 ddm-mx:677
 msgid "Main"
 msgstr "ዋናው"
 
-#: ddm-mx:655
+#: ddm-mx:650
 msgid "debian-backports"
 msgstr "debian-backports"
 
-#: ddm-mx:657 ddm-mx:686
+#: ddm-mx:652 ddm-mx:681
 msgid "Exit"
 msgstr "መውጫ"
 
-#: ddm-mx:680
+#: ddm-mx:675
 msgid "Main repos or MX Test"
 msgstr ""
+
+#: ddm-mx:715
+msgid "Refreshing Sources with apt-get update"
+msgstr "በ apt-get update ምንጩን ማሻሻያ"
+
+#: ddm-mx:722
+#, sh-format
+msgid "There was a problem with the apt-get update.  See $LOG for details"
+msgstr "በ apt-get ማሻሻያ ውስጥ ችግር ተፈጥሯል:  ለ ዝርዝር $LOG ይህን ይመልከቱ"
