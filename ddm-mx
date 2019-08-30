@@ -42,7 +42,6 @@ NVIDIA_XCONFIG="nvidia-xconfig"
 
 ARCH=$(dpkg --print-architecture)
 
-
 main(){
 # -------------------------------------------------------------------------
 ###file locking
@@ -126,6 +125,9 @@ if [ -f $LOG ]; then
     mv -f $LOG $LOG2
   fi
 fi 
+
+##disable installation of nvidia-persistenced
+cp /usr/share/ddm-mx/apt/nvidia* /etc/apt/preferences.d
 
 # =========================================================================
 # =========================================================================
@@ -550,6 +552,11 @@ if [ -f /etc/apt/sources.list.d/mx-test-repo-temp.list ]; then
     apt-get update
     echo ""
 fi
+
+##re-enable nvidia-peristenced availability
+
+rm /etc/apt/preferences.d/nvidia-ddm-temp*
+
 echo -n $"Press <Enter> to exit" | tee -a $LOG 
 read x
 }
