@@ -304,6 +304,7 @@ echo ""
     fi
 
     if [ $OPTIMUS = 2 ]; then
+		BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
         DRIVER='bumblebee-nvidia'    
         check_cand
     fi
@@ -433,8 +434,15 @@ echo ""
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
+											NVIDIA_XCONFIG=""
                                        # Bumblebee drivers
-                                       DRIVER="$DRIVER nvidia-driver nvidia-kernel-dkms primus primus-libs-ia32:i386 nvidia-settings virtualgl virtualgl-libs:i386"
+                                            if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-390xx-driver" ]; then
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-390xx-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+											else
+												if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-driver" ]; then
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+												fi
+									       fi
                                        fi
                                        ;;
                                  *)
@@ -455,6 +463,10 @@ YES_no $"Continue?"
  
   # Preseed debconf answers
   preseed_nvidia $CANDIDATE
+  INSTALL_RECOMMENDS="--install-recommends"
+  if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-390xx-driver" ]; then
+	INSTALL_RECOMMENDS=""
+  fi
   
   # Install the packages
   #apt-get update | tee -a $LOG 
@@ -462,7 +474,7 @@ YES_no $"Continue?"
 
   echo $"Nvidia command " "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
-  apt-get install --reinstall --install-recommends -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
+  apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
 
 # Configure
@@ -481,7 +493,7 @@ YES_no $"Continue?"
       fi
       # purge nvidia-xconfig and move xorg.conf away
       apt-get purge -y $FORCE nvidia-xconfig 2>&1 | tee -a $LOG
-      mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
+      #mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
     else
       echo $"ERROR: Could not configure Bumblebee for user: " $USER | tee -a $LOG
     fi
