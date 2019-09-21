@@ -1,3 +1,10 @@
+ddm-mx (19.09.02) mx; urgency=medium
+
+  * expanded test output
+  * added -f force driver switch 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 20 Sep 2019 22:42:49 -0400
+
 ddm-mx (19.09.01) mx; urgency=medium
 
   * add experimental support for bumble-bee with nvidia-legacy-390xx-driver 

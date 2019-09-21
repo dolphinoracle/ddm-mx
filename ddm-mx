@@ -61,8 +61,9 @@ echo
 BACKPORTS=false
 PURGE=''
 INSTALL=''
+FORCEDRIVER=''
 TEST=false
-while getopts ":bi:p:ht" opt; do
+while getopts ":f:bi:p:ht" opt; do
   case $opt in
     h)
       usage
@@ -70,7 +71,8 @@ while getopts ":bi:p:ht" opt; do
       ;;
     i)
       # Install
-      INSTALL="$INSTALL $OPTARG"
+      INSTALL="$INSTALL$OPTARG"
+      echo "INSTALL IS $INSTALL"
       ;;
     p)
       # Purge
@@ -78,11 +80,17 @@ while getopts ":bi:p:ht" opt; do
       ;;
     t)
       # Testing
+      echo "TEST Install"
       TEST=true
       ;;
     b)
       # Testing
       BACKPORTS_OVERRIDE=true
+      ;;
+    f)
+      # Testing
+      FORCEDRIVER="$FORCEDRIVER$OPTARG"
+      echo "FORCE DRIVER is $FORCEDRIVER"
       ;;
     \?)
       # Invalid option: start GUI
@@ -114,7 +122,7 @@ if [ $UID -ne 0 ]; then
   exit 1
 fi
 
-# Log file for traceback
+# Log file for tracebackBACKPORTS_OVERRIDE
 MAX_SIZE_KB=5120
 LOG_SIZE_KB=0
 LOG=/var/log/ddm.log
@@ -270,7 +278,11 @@ function install_nvidia {
   
   # Testing
   if $TEST; then
-    DRIVER='nvidia-driver'
+    if [ -z "$FORCEDRIVER" ]; then
+		DRIVER='nvidia-driver'
+		else
+		DRIVER="$FORCEDRIVER"
+	fi	
     TESTSWITCH="-s"
   fi
 
@@ -446,7 +458,7 @@ echo ""
                                        fi
                                        ;;
                                  *)
-                                       echo $"ERROR: Unknown argument: " $DRV | tee -a $LOG 
+                                       echo "2" $"ERROR: Unknown argument: " $DRV | tee -a $LOG 
                                        echo | tee -a $LOG 
                                        usage
                                        exit 2
