@@ -7,6 +7,7 @@
 # Caner Başaran <basaran.caner@protonmail.com>, 2017
 # anticapitalista <anticapitalista@riseup.net>, 2017
 # mahmut özcan <mahmutozcan65@yahoo.com>, 2018
+# Emin Huckleberry, 2019
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-21 15:51-0400\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: mahmut özcan <mahmutozcan65@yahoo.com>, 2018\n"
+"Last-Translator: Emin Huckleberry, 2019\n"
 "Language-Team: Turkish (https://www.transifex.com/anticapitalista/teams/10162/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +67,7 @@ msgstr ""
 
 #: ddm-mx:184
 msgid "No nvidia card found - exiting"
-msgstr ""
+msgstr "nvidia kartı bulunamadı - çıkılıyor"
 
 #: ddm-mx:201 ddm-mx:436
 msgid "ERROR: Unknown argument: "
@@ -86,7 +87,7 @@ msgstr ""
 
 #: ddm-mx:222
 msgid "             drivers: nvidia, open, fixbumblebee"
-msgstr ""
+msgstr "             sürücüler: nvidia, open, fixbumblebee"
 
 #: ddm-mx:224
 msgid "-p driver    Purge given driver."
@@ -129,6 +130,8 @@ msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
+"Lütfen  <sudo nvidia-install --uninstall> ile kaldırın ve devam etmek "
+"isterseniz bilgisayarı yeniden başlatın"
 
 #: ddm-mx:293
 msgid "nvidia-optimus detected"
@@ -136,7 +139,7 @@ msgstr "nvidia-optimus algılandı"
 
 #: ddm-mx:296
 msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr ""
+msgstr "Bu bir NVIDIA/INTEL Optimus sistemi mi?"
 
 #: ddm-mx:309 ddm-mx:327 ddm-mx:342 ddm-mx:349 ddm-mx:364
 msgid "Candidate is: "

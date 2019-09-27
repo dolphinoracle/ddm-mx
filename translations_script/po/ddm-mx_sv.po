@@ -248,7 +248,7 @@ msgstr "Öppna drivrutiner installerade"
 
 #: ddm-mx:540 ddm-mx:546
 msgid "Resetting sources"
-msgstr ""
+msgstr "Återställer källor"
 
 #: ddm-mx:550
 msgid "Press <Enter> to exit"

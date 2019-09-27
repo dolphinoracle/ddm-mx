@@ -6,6 +6,7 @@
 # Translators:
 # anticapitalista <anticapitalista@riseup.net>, 2017
 # Filip Bog <mxlinuxpl@gmail.com>, 2019
+# Przemek P <ppjg@dami.pl>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-21 15:51-0400\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Filip Bog <mxlinuxpl@gmail.com>, 2019\n"
+"Last-Translator: Przemek P <ppjg@dami.pl>, 2019\n"
 "Language-Team: Polish (https://www.transifex.com/anticapitalista/teams/10162/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -249,7 +250,7 @@ msgstr "Zainstalowano otwarte sterowniki"
 
 #: ddm-mx:540 ddm-mx:546
 msgid "Resetting sources"
-msgstr ""
+msgstr "Resetowanie źródeł"
 
 #: ddm-mx:550
 msgid "Press <Enter> to exit"
