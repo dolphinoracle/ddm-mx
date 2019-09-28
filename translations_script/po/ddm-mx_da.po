@@ -246,7 +246,7 @@ msgstr "Åbne drivere installeret"
 
 #: ddm-mx:540 ddm-mx:546
 msgid "Resetting sources"
-msgstr ""
+msgstr "Nulstiller kilder"
 
 #: ddm-mx:550
 msgid "Press <Enter> to exit"

@@ -25,64 +25,64 @@ msgstr ""
 
 #: ddm-mx:35
 msgid "Unknown error"
-msgstr ""
+msgstr "Neznana napaka"
 
 #: ddm-mx:36
 msgid "Option-"
-msgstr ""
+msgstr "Opcija-"
 
 #: ddm-mx:37
 msgid "requires an argument."
-msgstr ""
+msgstr "potrebuje argument."
 
 #: ddm-mx:38
 msgid "Run as root"
-msgstr ""
+msgstr "Izvedi kot root"
 
 #: ddm-mx:39
 msgid "Install drivers for: "
-msgstr ""
+msgstr "Namesti gonilnike za:"
 
 #: ddm-mx:49
 msgid "creating lock ..."
-msgstr ""
+msgstr "zaklepam ..."
 
 #: ddm-mx:91 ddm-mx:101
 msgid "Invalid option"
-msgstr ""
+msgstr "Napačna opcija"
 
 #: ddm-mx:138
 msgid "Purge drivers for: "
-msgstr ""
+msgstr "Počisti gonilnike za:"
 
 #: ddm-mx:139 ddm-mx:167
 msgid "Start at (m/d/y):"
-msgstr ""
+msgstr "Začni na (m/d/y):"
 
 #: ddm-mx:154
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
-msgstr ""
+msgstr "NAPAKA: neznan argument: $DRV"
 
 #: ddm-mx:184
 msgid "No nvidia card found - exiting"
-msgstr ""
+msgstr "Nisem našel nvidia kartice - zapiram"
 
 #: ddm-mx:201 ddm-mx:436
 msgid "ERROR: Unknown argument: "
-msgstr ""
+msgstr "NAPAKA: neznan argument:"
 
 #: ddm-mx:214
 msgid "Device Driver Manager Help:"
-msgstr ""
+msgstr "Pomoč za upravljalnik gonilnikov naprav:"
 
 #: ddm-mx:216
 msgid "The following options are allowed:"
-msgstr ""
+msgstr "Na voljo so naslednje opcije:"
 
 #: ddm-mx:220
 msgid "-i driver    Install given driver."
-msgstr ""
+msgstr "-i driver Namesti podani gonilnik."
 
 #: ddm-mx:222
 msgid "             drivers: nvidia, open, fixbumblebee"
@@ -90,78 +90,80 @@ msgstr "             gonilniki: nvidia, open, fixbumblebee"
 
 #: ddm-mx:224
 msgid "-p driver    Purge given driver."
-msgstr ""
+msgstr "-p driver    Pobriši podani gonilnik"
 
 #: ddm-mx:226
 msgid "             driver: nvidia"
-msgstr ""
+msgstr "             driver: nvidia"
 
 #: ddm-mx:228
 msgid "-f           Force DDM to start, even in a Live environment."
-msgstr ""
+msgstr "-f           Prisili DDM da se zažene, pa čeprav v živem okolju."
 
 #: ddm-mx:230
 msgid "-t           For development testing only!"
-msgstr ""
+msgstr "-t          Zgolj za testiranje pri razvoju!"
 
 #: ddm-mx:231
 msgid "             This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "To bo namestilo gonilnike za vnaprej določeno strojno opremo."
 
 #: ddm-mx:232
 msgid "             Use with -i."
-msgstr ""
+msgstr "             Uporabi z -i."
 
 #: ddm-mx:282
 msgid "Possible previous install from source or smxi/sgfxi detected."
-msgstr ""
+msgstr "Odkrite so bile možne predhodne namestitve iz vira ali smxi/sgfxi."
 
 #: ddm-mx:283
 msgid "Version detected: "
-msgstr ""
+msgstr "Najdena različica:"
 
 #: ddm-mx:284
 msgid "Latest possible with this script : "
-msgstr ""
+msgstr "Zadnja možna različica, ob uporabi te skripte:"
 
 #: ddm-mx:285
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
+"Prosimo, odstranite jo z <sudo nvidia-install --uninstall> in ponovno "
+"zaženite računalnik, če želite nadaljevati"
 
 #: ddm-mx:293
 msgid "nvidia-optimus detected"
-msgstr ""
+msgstr "nvidia-optimus zaznan"
 
 #: ddm-mx:296
 msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr ""
+msgstr "Ali gre za NVIDIA/INTEL Optimus sistem?"
 
 #: ddm-mx:309 ddm-mx:327 ddm-mx:342 ddm-mx:349 ddm-mx:364
 msgid "Candidate is: "
-msgstr ""
+msgstr "Kandidat je:"
 
 #: ddm-mx:310 ddm-mx:329 ddm-mx:336 ddm-mx:343 ddm-mx:351 ddm-mx:358
 #: ddm-mx:365
 msgid "Installed is: "
-msgstr ""
+msgstr "Nameščen je:"
 
 #: ddm-mx:328 ddm-mx:335
 msgid "Debian backports candidate is:  "
-msgstr ""
+msgstr "Debian backport kandidat je:"
 
 #: ddm-mx:334 ddm-mx:356
 msgid "Main repo candidate is:  "
-msgstr ""
+msgstr "Kandidat glavnega repozitorija je:"
 
 #: ddm-mx:350 ddm-mx:357
 msgid "MX Test repo candidate is:  "
-msgstr ""
+msgstr "Kandidat MX testnega repozitorija je:"
 
 #: ddm-mx:371
 msgid "nvidia driver already installed"
-msgstr ""
+msgstr "nvidia gonilnik je že nameščen"
 
 #: ddm-mx:373
 msgid "Reinstall or quit?"
@@ -169,7 +171,7 @@ msgstr "Ponovna namestitev ali končanje?"
 
 #: ddm-mx:375
 msgid "Reinstall"
-msgstr ""
+msgstr "Ponovno namesti"
 
 #: ddm-mx:376
 msgid "quit"
@@ -177,54 +179,56 @@ msgstr "končaj"
 
 #: ddm-mx:378 ddm-mx:654 ddm-mx:683
 msgid "Enter Number of selection"
-msgstr ""
+msgstr "Vnesite številko izbire"
 
 #: ddm-mx:382
 msgid "reinstalling"
-msgstr ""
+msgstr "ponovno nameščanje"
 
 #: ddm-mx:383 ddm-mx:384 ddm-mx:613 ddm-mx:637 ddm-mx:665 ddm-mx:667
 #: ddm-mx:698 ddm-mx:700
 msgid "exiting"
-msgstr ""
+msgstr "zapiram"
 
 #: ddm-mx:384 ddm-mx:613 ddm-mx:637 ddm-mx:667 ddm-mx:700
 msgid "invalid option."
-msgstr ""
+msgstr "napačna opcija."
 
 #: ddm-mx:394
 msgid "nvidia driver not available, check your repo sources"
-msgstr ""
+msgstr "nvidia gonilnik ni na voljo, preverite svoje vire repozitorija"
 
 #: ddm-mx:398
 msgid ""
 "Uh oh. Your card is only supported by older legacy drivers which are not in "
 "any current Debian suite."
 msgstr ""
+"Uh, oh. Vaša kartica je podprta zgolj s starejšimi legacy gonilniki, ki se "
+"trenutno ne nahajajo v nobenem Debian paketu."
 
 #: ddm-mx:404
 msgid "Need driver: "
-msgstr ""
+msgstr "Potreben gonilnik:"
 
 #: ddm-mx:446 ddm-mx:716
 msgid "Continue?"
-msgstr ""
+msgstr "Nadaljujem?"
 
 #: ddm-mx:458
 msgid "Nvidia command "
-msgstr ""
+msgstr "Nvidia ukaz"
 
 #: ddm-mx:481
 msgid "ERROR: Could not configure Bumblebee for user: "
-msgstr ""
+msgstr "NAPAKA: Nisem mogel konfigurirati Bumblebee za uporabnika:"
 
 #: ddm-mx:485
 msgid "test enabled, not creating xorg.conf file"
-msgstr ""
+msgstr "vključeno je testiranje, zato ne bom ustvaril xorg.conf datoteke"
 
 #: ddm-mx:489
 msgid "creating /etc/X11/xorg.conf file"
-msgstr ""
+msgstr "ustvarjam /etc/X11/xorg.conf datoteko"
 
 #: ddm-mx:495
 msgid "Finished"
@@ -232,7 +236,7 @@ msgstr "Končano"
 
 #: ddm-mx:510
 msgid "Proprietary drivers removed"
-msgstr ""
+msgstr "Proizvajalčevi gonilniki so bili odstranjeni"
 
 #: ddm-mx:522
 msgid "Open command "
@@ -244,35 +248,37 @@ msgstr "Nameščeni so odprtokodni gonilniki"
 
 #: ddm-mx:540 ddm-mx:546
 msgid "Resetting sources"
-msgstr ""
+msgstr "Ponastavitev virov"
 
 #: ddm-mx:550
 msgid "Press <Enter> to exit"
-msgstr ""
+msgstr "Pritisnite <Enter> za izhod"
 
 #: ddm-mx:564
 msgid "Enabling backports repo"
-msgstr ""
+msgstr "Vključi backport repozitorije"
 
 #: ddm-mx:565 ddm-mx:581
 msgid "Running apt-get update..."
-msgstr ""
+msgstr "Izvajam apt-get update..."
 
 #: ddm-mx:570 ddm-mx:586
 msgid "Installing latest nvidia-detect package"
-msgstr ""
+msgstr "Nameščam zadnjo različico paketa nvidida-detect"
 
 #: ddm-mx:580
 msgid "Enabling MX Test repo"
-msgstr ""
+msgstr "Omogočam MX Testni repozitorij"
 
 #: ddm-mx:595
 msgid "Would you like to check debian-backports for a later version?"
 msgstr ""
+"Ali naj preverim,  če obstaja kakšna kasnejša različica med debian-"
+"backporti?"
 
 #: ddm-mx:597 ddm-mx:621
 msgid "Yes or No?"
-msgstr ""
+msgstr "Da ali ne?"
 
 #: ddm-mx:599 ddm-mx:623
 msgid "Yes"
@@ -285,27 +291,29 @@ msgstr "Ne"
 #: ddm-mx:606 ddm-mx:610 ddm-mx:630 ddm-mx:634 ddm-mx:658 ddm-mx:662
 #: ddm-mx:687 ddm-mx:693
 msgid "Ok"
-msgstr ""
+msgstr "V redu"
 
 #: ddm-mx:619
 msgid "Would you like to check MX Test Repo for a later version?"
 msgstr ""
+"Ali naj preverim,  če obstaja kakšna kasnejša različica v MX testnem "
+"repozitoriju?"
 
 #: ddm-mx:644 ddm-mx:673
 msgid "Which driver do you wish to install"
-msgstr ""
+msgstr "Kateri gonilnik naj namestim?"
 
 #: ddm-mx:646
 msgid "Main repos or debian-backports?"
-msgstr ""
+msgstr "Glavni repozitorij ali debian-backporti?"
 
 #: ddm-mx:648 ddm-mx:677
 msgid "Main"
-msgstr ""
+msgstr "Glavni"
 
 #: ddm-mx:650
 msgid "debian-backports"
-msgstr ""
+msgstr "debian-backporti"
 
 #: ddm-mx:652 ddm-mx:681
 msgid "Exit"
@@ -313,13 +321,14 @@ msgstr "Končaj"
 
 #: ddm-mx:675
 msgid "Main repos or MX Test"
-msgstr ""
+msgstr "Glavni repozitoriji ali MX testni"
 
 #: ddm-mx:715
 msgid "Refreshing Sources with apt-get update"
-msgstr ""
+msgstr "Osveževanje virov z ukazom apt-get update"
 
 #: ddm-mx:722
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
+"Pojavila se je težava pri izvajanju apt-get update. Glej $LOG za podrobnosti"
