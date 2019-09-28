@@ -278,13 +278,13 @@ function install_nvidia {
   
   # Testing
   if $TEST; then
-    if [ -z "$FORCEDRIVER" ]; then
-		DRIVER='nvidia-driver'
-		else
-		DRIVER="$FORCEDRIVER"
-	fi	
+    DRIVER="$FORCEDRIVER"
     TESTSWITCH="-s"
   fi
+  
+  if [ -z "$FORCEDRIVER" ]; then
+		DRIVER="$FORCEDRIVER"
+  fi	
 
   update_sources
   check_cand
@@ -654,18 +654,18 @@ echo $"Would you like to check MX Test Repo for a later version?" | tee -a $LOG
         echo "" | tee -a $LOG
         echo $"Yes or No?" | tee -a $LOG
         echo "" | tee -a $LOG
-        echo 1: $"Yes" | tee -a $LOG
-        echo 2: $"No" | tee -a $LOG
+        echo 1: $"No" | tee -a $LOG
+        echo 2: $"Yes" | tee -a $LOG
         echo "" | tee -a $LOG
         echo "Enter Number of selection" | tee -a $LOG
         read -n 1 -e x
 
         case $x in
-           1)   echo $"Ok"...| tee -a $LOG 
+           2)   echo $"Ok"...| tee -a $LOG 
                 SWITCH=""
                 BP="" 
                 enable_mx_test_repo	;;
-           2)   echo $"Ok"... | tee -a $LOG
+           1)   echo $"Ok"... | tee -a $LOG
                 SWITCH=""
                 BP=""           ;;
            *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
