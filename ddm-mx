@@ -278,12 +278,14 @@ function install_nvidia {
   
   # Testing
   if $TEST; then
-    DRIVER="$FORCEDRIVER"
+    DRIVER="nvidia-driver"
     TESTSWITCH="-s"
+    echo "test for $DRIVER"
   fi
   
-  if [ -z "$FORCEDRIVER" ]; then
+  if [ -n "$FORCEDRIVER" ]; then
 		DRIVER="$FORCEDRIVER"
+		echo "test for $DRIVER"
   fi	
 
   update_sources
@@ -619,7 +621,7 @@ enable_mx_test_repo()
   if [ "$ARCH" = "amd64" ]; then
     echo $"Installing latest nvidia-detect package"|tee -a $LOG
     echo ""
-    apt-get install nvidia-detect |tee -a $LOG  
+    apt-get install $SWITCH "$BP" nvidia-detect |tee -a $LOG  
     echo ""
   fi
 }
@@ -662,8 +664,8 @@ echo $"Would you like to check MX Test Repo for a later version?" | tee -a $LOG
 
         case $x in
            2)   echo $"Ok"...| tee -a $LOG 
-                SWITCH=""
-                BP="" 
+                SWITCH="-t"
+                BP="a=mx,c=test"
                 enable_mx_test_repo	;;
            1)   echo $"Ok"... | tee -a $LOG
                 SWITCH=""
@@ -726,7 +728,7 @@ echo $"Which driver do you wish to install" | tee -a $LOG
                     ;;
            2)   echo $"Ok"... | tee -a $LOG
                 SWITCH="-t"
-                BP="\"a=mx,c=test\""
+                BP="a=mx,c=test"
                 #NVIDIA_XCONFIG=""
                      ;;
            3) echo $"exiting" |tee -a $LOG && exit 0;;
@@ -738,8 +740,8 @@ echo $"Which driver do you wish to install" | tee -a $LOG
 
 check_cand()
 {
-CANDIDATE=`env LANG=C apt-cache policy $SWITCH $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+CANDIDATE=$(LANG=C apt-cache policy $SWITCH $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' ')
+INSTALLED=$(env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' ')
 }
 
 update_sources()
