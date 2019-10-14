@@ -1,3 +1,28 @@
+ddm-mx (19.10.01) mx; urgency=medium
+
+  * fix some bugs in test repo routine 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 03 Oct 2019 22:06:22 -0400
+
+ddm-mx (19.09.03) mx; urgency=medium
+
+  * translation refresh 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 28 Sep 2019 14:56:01 -0400
+
+ddm-mx (19.09.02) mx; urgency=medium
+
+  * expanded test output
+  * added -f force driver switch 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 20 Sep 2019 22:42:49 -0400
+
+ddm-mx (19.09.01) mx; urgency=medium
+
+  * add experimental support for bumble-bee with nvidia-legacy-390xx-driver 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 14 Sep 2019 19:18:39 -0400
+
 ddm-mx (19.08.03) mx; urgency=medium
 
   * do not install nvidia-perisistenced 

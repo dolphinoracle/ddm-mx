@@ -61,8 +61,9 @@ echo
 BACKPORTS=false
 PURGE=''
 INSTALL=''
+FORCEDRIVER=''
 TEST=false
-while getopts ":bi:p:ht" opt; do
+while getopts ":f:bi:p:ht" opt; do
   case $opt in
     h)
       usage
@@ -70,7 +71,8 @@ while getopts ":bi:p:ht" opt; do
       ;;
     i)
       # Install
-      INSTALL="$INSTALL $OPTARG"
+      INSTALL="$INSTALL$OPTARG"
+      echo "INSTALL IS $INSTALL"
       ;;
     p)
       # Purge
@@ -78,11 +80,17 @@ while getopts ":bi:p:ht" opt; do
       ;;
     t)
       # Testing
+      echo "TEST Install"
       TEST=true
       ;;
     b)
       # Testing
       BACKPORTS_OVERRIDE=true
+      ;;
+    f)
+      # Testing
+      FORCEDRIVER="$FORCEDRIVER$OPTARG"
+      echo "FORCE DRIVER is $FORCEDRIVER"
       ;;
     \?)
       # Invalid option: start GUI
@@ -114,7 +122,7 @@ if [ $UID -ne 0 ]; then
   exit 1
 fi
 
-# Log file for traceback
+# Log file for tracebackBACKPORTS_OVERRIDE
 MAX_SIZE_KB=5120
 LOG_SIZE_KB=0
 LOG=/var/log/ddm.log
@@ -270,9 +278,15 @@ function install_nvidia {
   
   # Testing
   if $TEST; then
-    DRIVER='nvidia-driver'
+    DRIVER="nvidia-driver"
     TESTSWITCH="-s"
+    echo "test for $DRIVER"
   fi
+  
+  if [ -n "$FORCEDRIVER" ]; then
+		DRIVER="$FORCEDRIVER"
+		echo "test for $DRIVER"
+  fi	
 
   update_sources
   check_cand
@@ -304,6 +318,7 @@ echo ""
     fi
 
     if [ $OPTIMUS = 2 ]; then
+		BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
         DRIVER='bumblebee-nvidia'    
         check_cand
     fi
@@ -433,12 +448,19 @@ echo ""
                                        fi
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
+											NVIDIA_XCONFIG=""
                                        # Bumblebee drivers
-                                       DRIVER="$DRIVER nvidia-driver nvidia-kernel-dkms primus primus-libs-ia32:i386 nvidia-settings virtualgl virtualgl-libs:i386"
+                                            if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-390xx-driver" ]; then
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-390xx-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+											else
+												if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-driver" ]; then
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+												fi
+									       fi
                                        fi
                                        ;;
                                  *)
-                                       echo $"ERROR: Unknown argument: " $DRV | tee -a $LOG 
+                                       echo "2" $"ERROR: Unknown argument: " $DRV | tee -a $LOG 
                                        echo | tee -a $LOG 
                                        usage
                                        exit 2
@@ -455,6 +477,10 @@ YES_no $"Continue?"
  
   # Preseed debconf answers
   preseed_nvidia $CANDIDATE
+  INSTALL_RECOMMENDS="--install-recommends"
+  if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-390xx-driver" ]; then
+	INSTALL_RECOMMENDS=""
+  fi
   
   # Install the packages
   #apt-get update | tee -a $LOG 
@@ -462,7 +488,7 @@ YES_no $"Continue?"
 
   echo $"Nvidia command " "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
-  apt-get install --reinstall --install-recommends -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
+  apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
 
 # Configure
@@ -481,7 +507,7 @@ YES_no $"Continue?"
       fi
       # purge nvidia-xconfig and move xorg.conf away
       apt-get purge -y $FORCE nvidia-xconfig 2>&1 | tee -a $LOG
-      mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
+      #mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
     else
       echo $"ERROR: Could not configure Bumblebee for user: " $USER | tee -a $LOG
     fi
@@ -595,7 +621,7 @@ enable_mx_test_repo()
   if [ "$ARCH" = "amd64" ]; then
     echo $"Installing latest nvidia-detect package"|tee -a $LOG
     echo ""
-    apt-get install nvidia-detect |tee -a $LOG  
+    apt-get install $SWITCH "$BP" nvidia-detect |tee -a $LOG  
     echo ""
   fi
 }
@@ -630,18 +656,18 @@ echo $"Would you like to check MX Test Repo for a later version?" | tee -a $LOG
         echo "" | tee -a $LOG
         echo $"Yes or No?" | tee -a $LOG
         echo "" | tee -a $LOG
-        echo 1: $"Yes" | tee -a $LOG
-        echo 2: $"No" | tee -a $LOG
+        echo 1: $"No" | tee -a $LOG
+        echo 2: $"Yes" | tee -a $LOG
         echo "" | tee -a $LOG
         echo "Enter Number of selection" | tee -a $LOG
         read -n 1 -e x
 
         case $x in
-           1)   echo $"Ok"...| tee -a $LOG 
-                SWITCH=""
-                BP="" 
+           2)   echo $"Ok"...| tee -a $LOG 
+                SWITCH="-t"
+                BP="a=mx,c=test"
                 enable_mx_test_repo	;;
-           2)   echo $"Ok"... | tee -a $LOG
+           1)   echo $"Ok"... | tee -a $LOG
                 SWITCH=""
                 BP=""           ;;
            *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
@@ -702,7 +728,7 @@ echo $"Which driver do you wish to install" | tee -a $LOG
                     ;;
            2)   echo $"Ok"... | tee -a $LOG
                 SWITCH="-t"
-                BP="\"a=mx,c=test\""
+                BP="a=mx,c=test"
                 #NVIDIA_XCONFIG=""
                      ;;
            3) echo $"exiting" |tee -a $LOG && exit 0;;
@@ -714,8 +740,8 @@ echo $"Which driver do you wish to install" | tee -a $LOG
 
 check_cand()
 {
-CANDIDATE=`env LANG=C apt-cache policy $SWITCH $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' '`
-INSTALLED=`env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' '`
+CANDIDATE=$(LANG=C apt-cache policy $SWITCH $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' ')
+INSTALLED=$(env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' ')
 }
 
 update_sources()
