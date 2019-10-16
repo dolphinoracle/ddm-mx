@@ -323,11 +323,12 @@ echo ""
         check_cand
     fi
   echo ""
-  echo $"Candidate is: " $CANDIDATE | tee -a $LOG
-  echo $"Installed is: " $INSTALLED | tee -a $LOG
+  echo $"Candidate is: " $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
+  echo $"Installed is: " $DRIVER $INSTALLED $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_INSTALLED | tee -a $LOG
   echo ""
 
   MAIN_CAND=$CANDIDATE
+  MAIN_NVIDIA=$NVIDIA_VERSION
   if [ "$DISTRIB_ID" = "MX" ]; then
     if [ "$BACKPORTS_OVERRIDE" = "true" ]; then
         debian_backports_dialog
@@ -340,47 +341,47 @@ echo ""
   check_cand
 
   if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
-      if [ "$MAIN_CAND" = "$CANDIDATE" ]; then 
-       echo $"Candidate is: " $CANDIDATE | tee -a $LOG
-       echo $"Debian backports candidate is:  "  $CANDIDATE |tee -a $LOG
-       echo $"Installed is: " $INSTALLED | tee -a $LOG
-       echo ""
-       BP=""
-       SWITCH=""
-      else
+      #if [ "$MAIN_CAND" = "$CANDIDATE" ]; then 
+       #echo $"Candidate is: " $CANDIDATE | tee -a $LOG
+       #echo $"Debian backports candidate is:  "  $CANDIDATE |tee -a $LOG
+       #echo $"Installed is: " $INSTALLED | tee -a $LOG
+       #echo ""
+       #BP=""
+       #SWITCH=""
+      #else
        echo $"Main repo candidate is:  " $MAIN_CAND |tee -a $LOG
        echo $"Debian backports candidate is:  "  $CANDIDATE |tee -a $LOG
        echo $"Installed is: " $INSTALLED | tee -a $LOG
        echo ""
        which_driver
        echo ""
-      fi 
-  else
-      echo $"Candidate is: " $CANDIDATE | tee -a $LOG
-      echo $"Installed is: " $INSTALLED | tee -a $LOG
-      echo ""
+      #fi 
+  #else
+     # echo $"Candidate is: " $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
+	 # echo $"Installed is: " $DRIVER $INSTALLED $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_INSTALLED | tee -a $LOG
+     #  echo ""
   fi  
   
   if [ -f /etc/apt/sources.list.d/mx-test-repo-temp.list ]; then
-      if [ "$MAIN_CAND" = "$CANDIDATE" ]; then 
-       echo $"Candidate is: " $CANDIDATE | tee -a $LOG
-       echo $"MX Test repo candidate is:  "  $CANDIDATE |tee -a $LOG
-       echo $"Installed is: " $INSTALLED | tee -a $LOG
-       echo ""
-       BP=""
-       SWITCH=""
-      else
+      #if [ "$MAIN_CAND" = "$CANDIDATE" ]; then 
+       #echo $"Candidate is: " $CANDIDATE | tee -a $LOG
+       #echo $"MX Test repo candidate is:  "  $CANDIDATE |tee -a $LOG
+       #echo $"Installed is: " $INSTALLED | tee -a $LOG
+       #echo ""
+       #BP=""
+       #SWITCH=""
+      #else
        echo $"Main repo candidate is:  " $MAIN_CAND |tee -a $LOG
        echo $"MX Test repo candidate is:  "  $CANDIDATE |tee -a $LOG
        echo $"Installed is: " $INSTALLED | tee -a $LOG
        echo ""
        which_driver_mx
        echo ""
-      fi 
-  else
-      echo $"Candidate is: " $CANDIDATE | tee -a $LOG
-      echo $"Installed is: " $INSTALLED | tee -a $LOG
-      echo ""
+      #fi 
+  #else
+      #echo $"Candidate is: " $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
+      #echo $"Installed is: " $DRIVER $INSTALLED $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_INSTALLED | tee -a $LOG
+      #echo ""
   fi  
   
   if [ "$CANDIDATE" != "" ]; then
@@ -418,9 +419,8 @@ echo ""
   fi
   
   echo ""
-  echo $"Need driver: "$DRIVER "($CANDIDATE)" | tee -a $LOG
+  echo $"Need driver: "$DRIVER "$CANDIDATE" $BUMBLEBEE_NVIDIA_VERSION "$NVIDIA_VERSION" | tee -a $LOG
 
-  
   # Add additional packages
 
 
@@ -681,9 +681,9 @@ echo $"Which driver do you wish to install" | tee -a $LOG
         echo "" | tee -a $LOG
         echo $"Main repos or debian-backports?" | tee -a $LOG
         echo "" | tee -a $LOG
-        echo 1: $"Main" $MAIN_CAND| tee -a $LOG
+        echo 1: $"Main" $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
         echo "" | tee -a $LOG
-        echo 2: $"debian-backports" $CANDIDATE | tee -a $LOG
+        echo 2: "MX Test" $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
         echo "" | tee -a $LOG
 	echo 3: $"Exit" | tee -a $LOG
         echo "" | tee -a $LOG
@@ -710,9 +710,9 @@ echo $"Which driver do you wish to install" | tee -a $LOG
         echo "" | tee -a $LOG
         echo $"Main repos or MX Test" | tee -a $LOG
         echo "" | tee -a $LOG
-        echo 1: $"Main" $MAIN_CAND| tee -a $LOG
+        echo 1: $"Main" $DRIVER $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
         echo "" | tee -a $LOG
-        echo 2: "MX Test" $CANDIDATE | tee -a $LOG
+        echo 2: "MX Test" $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
         echo "" | tee -a $LOG
 	echo 3: $"Exit" | tee -a $LOG
         echo "" | tee -a $LOG
@@ -742,8 +742,12 @@ check_cand()
 {
 CANDIDATE=$(LANG=C apt-cache policy $SWITCH $BP $DRIVER | grep Candidate | awk '{print $2}' | tr -d ' ')
 INSTALLED=$(env LANG=C apt-cache policy $DRIVER | grep Installed | awk '{print $2}' | tr -d ' ')
-}
 
+if [ "$DRIVER" = "bumblebee-nvidia" ]; then 
+        NVIDIA_VERSION=$(LANG=C apt-cache policy $SWITCH $BP $BUMBLEBEE_NVIDIA_VERSION | grep Candidate | awk '{print $2}' | tr -d ' ')
+        NVIDIA_INSTALLED=$(env LANG=C apt-cache policy $BUMBLEBEE_NVIDIA_VERSION | grep Installed | awk '{print $2}' | tr -d ' ')
+fi
+}
 update_sources()
 {
     local ret
