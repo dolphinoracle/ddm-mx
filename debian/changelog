@@ -1,3 +1,10 @@
+ddm-mx (19.04.05) mx; urgency=medium
+
+  * fix backports_override
+  * adjust so install from test repo possible 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 16 Oct 2019 22:58:00 -0400
+
 ddm-mx (19.04.04) mx; urgency=medium
 
   * added -b backports override 

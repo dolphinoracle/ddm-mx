@@ -322,7 +322,7 @@ echo ""
 
   MAIN_CAND=$CANDIDATE
   if [ "$DISTRIB_ID" = "MX" ]; then
-    if [ BACKPORTS_OVERRIDE ]; then
+    if [ "$BACKPORTS_OVERRIDE" = "true" ]; then
         debian_backports_dialog
     else
         mx_test_repo_dialog
@@ -641,8 +641,8 @@ echo $"Would you like to check MX Test Repo for a later version?" | tee -a $LOG
 
         case $x in
            1)   echo $"Ok"...| tee -a $LOG 
-                SWITCH=""
-                BP="" 
+                SWITCH="-t"
+                BP="a=mx,c=test" 
                 enable_mx_test_repo	;;
            2)   echo $"Ok"... | tee -a $LOG
                 SWITCH=""
@@ -704,8 +704,8 @@ echo $"Which driver do you wish to install" | tee -a $LOG
                 apt-get update
                     ;;
            2)   echo $"Ok"... | tee -a $LOG
-                SWITCH=""
-                BP=""
+                SWITCH="-t"
+                BP="a=mx,c=test"
                 #NVIDIA_XCONFIG=""
                      ;;
            3) echo $"exiting" |tee -a $LOG && exit 0;;
