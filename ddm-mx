@@ -235,9 +235,9 @@ function usage() {
 #  echo "             driver: ati, nvidia, broadcom, pae"
   echo $"             driver: nvidia"
   echo
-  echo $"-f           Force DDM to start, even in a Live environment."
+  echo $"-f           force specific nvidia driver package.  nvidia-driver, nvidia-legacy-390xx-driver, nvidia-legacy-340xx-driver"
   echo
-  echo $"-t           For development testing only!"
+  echo $"-t           For development testing only!  simulate installs"
   echo $"             This will install drivers for pre-defined hardware."
   echo $"             Use with -i."
   echo
