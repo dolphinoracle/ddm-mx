@@ -160,7 +160,7 @@ if [ -z "$1" ]; then
 		exit 1
 	fi
 
-	NV_DEVICES=$(lspci -mn | awk '{ gsub("\"",""); if ($2 == "0300" && ($3 == "10de" || $3 == "12d2")) { print $1 } }')
+	NV_DEVICES=$(lspci -mn | awk '{ gsub("\"",""); if (($2 ~ "030[0-2]") && ($3 == "10de" || $3 == "12d2")) { print $1 } }')
 
 	if [ -z "$NV_DEVICES" ]; then
 		echo "No NVIDIA GPU detected."
