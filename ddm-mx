@@ -319,13 +319,18 @@ echo ""
 
     if [ $OPTIMUS = 2 ]; then
 		BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
-        DRIVER='bumblebee-nvidia'    
+        DRIVER='bumblebee-nvidia' 
         check_cand
     fi
   echo ""
   echo $"Candidate is: " $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
   echo $"Installed is: " $DRIVER $INSTALLED $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_INSTALLED | tee -a $LOG
   echo ""
+  
+  if [ "$BUMBLEBEE_NVIDIA_VERSION" = "nvidia-legacy-340xx-driver" ] ; then   
+		echo $"Unsupported configuration.  bumblebee only works with 390xx drivers and up."
+		my_exit
+  fi
 
   MAIN_CAND=$CANDIDATE
   MAIN_NVIDIA=$NVIDIA_VERSION

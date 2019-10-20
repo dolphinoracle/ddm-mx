@@ -1,3 +1,9 @@
+ddm-mx (19.10.05) mx; urgency=medium
+
+  * add warning if nvidia-legacy-340xx-driver is found in conjunction with bumbleebee-nvidia 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 20 Oct 2019 13:12:31 -0400
+
 ddm-mx (19.10.04) mx; urgency=medium
 
   * revised nvidia-detect-mx again (fehlix) 
