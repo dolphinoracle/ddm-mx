@@ -116,10 +116,10 @@ if [ "$INSTALL" == "" ]; then
   TEST=false
 fi
 
-# From here onward: be root
+	# From here onward: be root
 if [ $UID -ne 0 ]; then
-  echo $RUN_AS_ROOT | tee -a $LOG
-  exit 1
+	echo $RUN_AS_ROOT | tee -a $LOG
+	exit 1
 fi
 
 # Log file for tracebackBACKPORTS_OVERRIDE
@@ -127,6 +127,7 @@ MAX_SIZE_KB=5120
 LOG_SIZE_KB=0
 LOG=/var/log/ddm.log
 LOG2=/var/log/ddm.log.1
+
 if [ -f $LOG ]; then
   LOG_SIZE_KB=$(ls -s $LOG | awk '{print $1}')
   if [ $LOG_SIZE_KB -gt $MAX_SIZE_KB ]; then
@@ -170,12 +171,15 @@ for DRV in $PURGE; do
 done
 ####removed certain options for mx
 # Loop through drivers to install
+
 for DRV in $INSTALL; do
   # Start the log
   echo "===================================" | tee -a $LOG
   echo $INSTALL_DRIVERS_FOR $DRV | tee -a $LOG
   echo $"Start at (m/d/y):" $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
   echo "===================================" | tee -a $LOG
+#  echo ""
+  purge_message
   
   case $DRV in
     
@@ -527,8 +531,9 @@ YES_no $"Continue?"
         fi
     fi
   fi
-  
   echo $"Finished" | tee -a $LOG
+  echo ""
+  finish_purge_message
   
 }
 
@@ -657,18 +662,11 @@ echo $"Would you like to check debian-backports for a later version?" | tee -a $
 
 mx_test_repo_dialog()
 {
-echo $"Would you like to check MX Test Repo for a later version?" | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo $"Yes or No?" | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo 1: $"No" | tee -a $LOG
-        echo 2: $"Yes" | tee -a $LOG
-        echo "" | tee -a $LOG
-        echo "Enter Number of selection" | tee -a $LOG
-        read -n 1 -e x
+echo $"Would you like to check MX Test Repo for a later version?" >> $LOG
+yes_NO $"Would you like to check MX Test Repo for a later version?"
 
-        case $x in
-           2)   echo $"Ok"...| tee -a $LOG 
+        case $? in
+           0)   echo $"Ok"...| tee -a $LOG 
                 SWITCH="-t"
                 BP="a=mx,c=test"
                 enable_mx_test_repo	;;
@@ -771,6 +769,45 @@ update_sources()
         fi
     fi
 }
+
+purge_message()
+{
+local PURGE_MESSAGE=$"To restore open source drivers use:  " 
+echo ""| tee -a $LOG
+echo "========================================"| tee -a $LOG
+echo "========================================"| tee -a $LOG
+echo ""| tee -a $LOG
+echo "$PURGE_MESSAGE"  | tee -a $LOG
+echo "sudo ddm-mx -p nvidia"| tee -a $LOG
+echo ""| tee -a $LOG
+echo "========================================"| tee -a $LOG
+echo "========================================"| tee -a $LOG
+echo ""| tee -a $LOG
+}
+
+finish_purge_message()
+{
+local USER="$(logname)"
+local USER_HOME_PATH="/home/$USER/ddm-mx-nvidia_removal_command.txt"
+local PURGE_MESSAGE=$"To restore open source drivers later use:  " 
+echo ""| tee $USER_HOME_PATH
+echo "========================================"| tee -a $USER_HOME_PATH
+echo "========================================"| tee -a $USER_HOME_PATH
+echo ""| tee -a $USER_HOME_PATH
+echo "$PURGE_MESSAGE"  | tee -a $USER_HOME_PATH
+echo "sudo ddm-mx -p nvidia"| tee -a $USER_HOME_PATH
+echo ""| tee -a $USER_HOME_PATH
+echo "========================================"| tee -a $USER_HOME_PATH
+echo "========================================"| tee -a $USER_HOME_PATH
+echo ""| tee -a $USER_HOME_PATH
+echo ""| tee -a $USER_HOME_PATH
+echo $"For recovery help see " | tee -a $USER_HOME_PATH
+echo "https://mxlinux.org/wiki/hardware/nvidia-driver-install-recovery" | tee -a $USER_HOME_PATH
+echo ""
+echo $"Information written to ""$USER_HOME_PATH"
+
+}
+
 
 main "$@"
 
