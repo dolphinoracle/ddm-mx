@@ -1,3 +1,9 @@
+ddm-mx (19.10.06) mx; urgency=medium
+
+  *  added purge message, save to home
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 03 Nov 2019 18:58:32 -0500
+
 ddm-mx (19.10.05) mx; urgency=medium
 
   * add warning if nvidia-legacy-340xx-driver is found in conjunction with bumbleebee-nvidia 
