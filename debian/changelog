@@ -1,3 +1,34 @@
+ddm-mx (19.10.06) mx; urgency=medium
+
+  *  added purge message, save to home
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 03 Nov 2019 18:58:32 -0500
+
+ddm-mx (19.10.05) mx; urgency=medium
+
+  * add warning if nvidia-legacy-340xx-driver is found in conjunction with bumbleebee-nvidia 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 20 Oct 2019 13:12:31 -0400
+
+ddm-mx (19.10.04) mx; urgency=medium
+
+  * revised nvidia-detect-mx again (fehlix) 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 19 Oct 2019 11:52:39 -0400
+
+ddm-mx (19.10.03) mx; urgency=medium
+
+  * update nvidia-detec-mx function 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 18 Oct 2019 19:08:23 -0400
+
+ddm-mx (19.10.02) mx; urgency=medium
+
+  * add additional output
+  * always ask which_driver when using non-main repos 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 16 Oct 2019 19:51:57 -0400
+
 ddm-mx (19.10.01) mx; urgency=medium
 
   * fix some bugs in test repo routine 
