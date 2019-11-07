@@ -784,19 +784,23 @@ nvidia-340-fix()
 # backup libglx.so
 local lib_version
 lib_version=$(apt-cache policy nvidia-legacy-340xx-driver |grep Candidate |cut -d: -f2|cut -d. -f2|cut -d- -f1)
-if [ -e /usr/lib/xorg/modules/extensions/libglx.so ]; then
-	mv /usr/lib/xorg/modules/extensions/libglx.so /usr/lib/xorg/modules/extensions/libglx.so.bak | tee -a $LOG
-	ln -s /usr/lib/nvidia/legacy-340xx/libglx.so.340.$lib_version /usr/lib/xorg/modules/extensions/libglx.so | tee -a $LOG
+if [ -f /usr/lib/nvidia/legacy-340xx/libglx.so.340.$lib_version ]; then
+	if [ -f /usr/lib/xorg/modules/extensions/libglx.so ]; then
+		mv /usr/lib/xorg/modules/extensions/libglx.so /usr/lib/xorg/modules/extensions/libglx.so.bak | tee -a $LOG
+		ln -s /usr/lib/nvidia/legacy-340xx/libglx.so.340.$lib_version /usr/lib/xorg/modules/extensions/libglx.so | tee -a $LOG
+	fi
 fi
 }
 
 nvidia-340-reverse-fix()
 {
 	# if backup libglx.so exists, then revert it back.  this will take place just before reinstallation of the open drivers.
-	if [ -e /usr/lib/xorg/modules/extensions/libglx.so.bak ]; then
+if [ -L /usr/lib/xorg/modules/extensions/libglx.so ]; then
+	if [ -f /usr/lib/xorg/modules/extensions/libglx.so.bak ]; then
 		rm /usr/lib/xorg/modules/extensions/libglx.so | tee -a $LOG
 		mv /usr/lib/xorg/modules/extensions/libglx.so.bak /usr/lib/xorg/modules/extensions/libglx.so | tee -a $LOG
 	fi
+fi
 }
 
 main "$@"
