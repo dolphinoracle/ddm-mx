@@ -192,11 +192,13 @@ for DRV in $INSTALL; do
         DEVICEIDS='0a74'
       fi
 
-      if [ "$DEVICEIDS" == "" ]; then
-	echo $"No nvidia card found - exiting" | tee -a $LOG
-	exit 0
-      fi
-
+    if [ -z "$FORCEDRIVER" ]; then
+		if [ "$DEVICEIDS" == "" ]; then
+			echo $"No nvidia card found - exiting" | tee -a $LOG
+			exit 0
+		fi
+    fi
+    
       # Install the Nvidia drivers
       install_nvidia
       ;;
@@ -270,7 +272,10 @@ function preseed_nvidia {
 function install_nvidia {
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
-  DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+  if [ -z "$FORCEDRIVER" ]; then
+	DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+  fi
+  
   UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86)
   
   # Testing
@@ -400,8 +405,11 @@ echo ""
   echo ""
   echo $"Need driver: "$DRIVER "$CANDIDATE" $BUMBLEBEE_NVIDIA_VERSION "$NVIDIA_VERSION" | tee -a $LOG
 
-  # Add additional packages
 
+  
+  # Add additional packages
+  
+  DRIVER_ORIGINAL=$DRIVER
 
   case $DRIVER in 
                      nvidia-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
@@ -465,8 +473,8 @@ YES_no $"Continue?"
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
   echo $"Nvidia command " "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
-  apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
-  apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
+#  apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
+#  apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
 
 # Configure
@@ -492,11 +500,11 @@ YES_no $"Continue?"
     #nvidia-xconfig | tee -a $LOG
     else
         if [ "$NVIDIA_XCONFIG" = "nvidia-xconfig" ]; then
-            $"creating /etc/X11/xorg.conf file"
+            echo $"creating /etc/X11/xorg.conf file"
             nvidia-xconfig | tee -a $LOG
         fi
         #340 nvidia fixes
-        if [ "$DRIVER" = "nvidia-legacy-340xx-driver" || "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-340xx-driver" ]; then
+        if [ "$DRIVER_ORIGINAL" == "nvidia-legacy-340xx-driver" ] || [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-340xx-driver" ]; then
         nvidia-340-fix
         fi
     fi
@@ -783,10 +791,12 @@ nvidia-340-fix()
 {
 # backup libglx.so
 local lib_version
-lib_version=$(apt-cache policy nvidia-legacy-340xx-driver |grep Candidate |cut -d: -f2|cut -d. -f2|cut -d- -f1)
+lib_version=$(LANG=C apt-cache policy nvidia-legacy-340xx-driver |grep Candidate |cut -d: -f2|cut -d. -f2|cut -d- -f1)
 if [ -f /usr/lib/nvidia/legacy-340xx/libglx.so.340.$lib_version ]; then
 	if [ -f /usr/lib/xorg/modules/extensions/libglx.so ]; then
+	    echo "mv /usr/lib/xorg/modules/extensions/libglx.so /usr/lib/xorg/modules/extensions/libglx.so.bak" | tee -a $LOG
 		mv /usr/lib/xorg/modules/extensions/libglx.so /usr/lib/xorg/modules/extensions/libglx.so.bak | tee -a $LOG
+		echo "ln -s /usr/lib/nvidia/legacy-340xx/libglx.so.340.$lib_version /usr/lib/xorg/modules/extensions/libglx.so" | tee -a $LOG
 		ln -s /usr/lib/nvidia/legacy-340xx/libglx.so.340.$lib_version /usr/lib/xorg/modules/extensions/libglx.so | tee -a $LOG
 	fi
 fi
@@ -797,11 +807,14 @@ nvidia-340-reverse-fix()
 	# if backup libglx.so exists, then revert it back.  this will take place just before reinstallation of the open drivers.
 if [ -L /usr/lib/xorg/modules/extensions/libglx.so ]; then
 	if [ -f /usr/lib/xorg/modules/extensions/libglx.so.bak ]; then
+	    echo "remove symlink libglx.so"
 		rm /usr/lib/xorg/modules/extensions/libglx.so | tee -a $LOG
+		echo "restore original libglx.so"
 		mv /usr/lib/xorg/modules/extensions/libglx.so.bak /usr/lib/xorg/modules/extensions/libglx.so | tee -a $LOG
 	fi
 fi
 }
+
 
 main "$@"
 
