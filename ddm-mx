@@ -465,8 +465,10 @@ YES_no $"Continue?"
   # Preseed debconf answers
   preseed_nvidia $CANDIDATE
   INSTALL_RECOMMENDS="--install-recommends"
-  if [ "$BUMBLEBEE_NVIDIA_VERSION" != "nvidia-driver" ]; then
-	INSTALL_RECOMMENDS=""
+  if [ -n "$BUMBLEBEE_NVIDIA_VERSION" ]; then
+    if [ "$BUMBLEBEE_NVIDIA_VERSION" != "nvidia-driver" ]; then
+        INSTALL_RECOMMENDS=""
+    fi 
   fi
   
   # Install the packages
@@ -771,21 +773,22 @@ finish_purge_message()
 local USER="$(logname)"
 local USER_HOME_PATH="/home/$USER/ddm-mx-nvidia_removal_command.txt"
 local PURGE_MESSAGE=$"To restore open source drivers later use:  " 
-echo ""| tee $USER_HOME_PATH
-echo "========================================"| tee -a $USER_HOME_PATH
-echo "========================================"| tee -a $USER_HOME_PATH
+echo ""| tee "$USER_HOME_PATH"
+echo "========================================"| tee -a "$USER_HOME_PATH"
+echo "========================================"| tee -a "$USER_HOME_PATH"
+echo ""| tee -a "$USER_HOME_PATH"
+echo "$PURGE_MESSAGE"  | tee -a "$USER_HOME_PATH"
+echo "sudo ddm-mx -p nvidia"| tee -a "$USER_HOME_PATH"
 echo ""| tee -a $USER_HOME_PATH
-echo "$PURGE_MESSAGE"  | tee -a $USER_HOME_PATH
-echo "sudo ddm-mx -p nvidia"| tee -a $USER_HOME_PATH
-echo ""| tee -a $USER_HOME_PATH
-echo "========================================"| tee -a $USER_HOME_PATH
-echo "========================================"| tee -a $USER_HOME_PATH
-echo ""| tee -a $USER_HOME_PATH
-echo ""| tee -a $USER_HOME_PATH
-echo $"For recovery help see " | tee -a $USER_HOME_PATH
-echo "https://mxlinux.org/wiki/hardware/nvidia-driver-install-recovery" | tee -a $USER_HOME_PATH
+echo "========================================"| tee -a "$USER_HOME_PATH"
+echo "========================================"| tee -a "$USER_HOME_PATH"
+echo ""| tee -a "$USER_HOME_PATH"
+echo ""| tee -a "$USER_HOME_PATH"
+echo $"For recovery help see " | tee -a "$USER_HOME_PATH"
+echo "https://mxlinux.org/wiki/hardware/nvidia-driver-install-recovery" | tee -a "$USER_HOME_PATH"
 echo ""
 echo $"Information written to ""$USER_HOME_PATH"
+chown $USER:$USER "$USER_HOME_PATH"
 
 }
 
