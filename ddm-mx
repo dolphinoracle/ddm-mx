@@ -52,6 +52,13 @@ echo
 
 # -------------------------------------------------------------------------
 
+BUMBLEBEE_EXTRA_LIBS="primus primus-libs-ia32:i386"
+
+if [ "$DISTRIB_ID" = "MX" ]; then
+     BUMBLEBEE_EXTRA_LIBS="virtualgl virtualgl-libs:i386"
+fi
+
+
 BACKPORTS=false
 PURGE=''
 INSTALL=''
@@ -438,13 +445,13 @@ echo ""
 											NVIDIA_XCONFIG=""
                                        # Bumblebee drivers
                                             if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-390xx-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-390xx-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-390xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-340xx-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-340xx-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-340xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
                                        fi
                                        ;;
@@ -465,16 +472,18 @@ YES_no $"Continue?"
   # Preseed debconf answers
   preseed_nvidia $CANDIDATE
   INSTALL_RECOMMENDS="--install-recommends"
-  if [ "$BUMBLEBEE_NVIDIA_VERSION" != "nvidia-driver" ]; then
-	INSTALL_RECOMMENDS=""
+  if [ -n "$BUMBLEBEE_NVIDIA_VERSION" ]; then
+    if [ "$BUMBLEBEE_NVIDIA_VERSION" != "nvidia-driver" ]; then
+        INSTALL_RECOMMENDS=""
+    fi 
   fi
   
   # Install the packages
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
   echo $"Nvidia command " "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
-#  apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
-#  apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
+  apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
+  apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
 
 # Configure
@@ -676,6 +685,7 @@ echo $"Which driver do you wish to install" | tee -a $LOG
            1) echo $"Ok"...| tee -a $LOG 
 	      SWITCH=""
               BP=""
+              NVIDIA_VERSION=$MAIN_NVIDIA
 	      ;;
            2) echo $"Ok"... | tee -a $LOG
                 #NVIDIA_XCONFIG=""
@@ -705,6 +715,7 @@ echo $"Which driver do you wish to install" | tee -a $LOG
            1) echo $"Ok"...| tee -a $LOG 
                 SWITCH=""
                 BP=""
+                NVIDIA_VERSION=$MAIN_NVIDIA
                 rm /etc/apt/sources.list.d/mx-test-repo-temp.list
                 apt-get update
                     ;;
@@ -769,21 +780,22 @@ finish_purge_message()
 local USER="$(logname)"
 local USER_HOME_PATH="/home/$USER/ddm-mx-nvidia_removal_command.txt"
 local PURGE_MESSAGE=$"To restore open source drivers later use:  " 
-echo ""| tee $USER_HOME_PATH
-echo "========================================"| tee -a $USER_HOME_PATH
-echo "========================================"| tee -a $USER_HOME_PATH
+echo ""| tee "$USER_HOME_PATH"
+echo "========================================"| tee -a "$USER_HOME_PATH"
+echo "========================================"| tee -a "$USER_HOME_PATH"
+echo ""| tee -a "$USER_HOME_PATH"
+echo "$PURGE_MESSAGE"  | tee -a "$USER_HOME_PATH"
+echo "sudo ddm-mx -p nvidia"| tee -a "$USER_HOME_PATH"
 echo ""| tee -a $USER_HOME_PATH
-echo "$PURGE_MESSAGE"  | tee -a $USER_HOME_PATH
-echo "sudo ddm-mx -p nvidia"| tee -a $USER_HOME_PATH
-echo ""| tee -a $USER_HOME_PATH
-echo "========================================"| tee -a $USER_HOME_PATH
-echo "========================================"| tee -a $USER_HOME_PATH
-echo ""| tee -a $USER_HOME_PATH
-echo ""| tee -a $USER_HOME_PATH
-echo $"For recovery help see " | tee -a $USER_HOME_PATH
-echo "https://mxlinux.org/wiki/hardware/nvidia-driver-install-recovery" | tee -a $USER_HOME_PATH
+echo "========================================"| tee -a "$USER_HOME_PATH"
+echo "========================================"| tee -a "$USER_HOME_PATH"
+echo ""| tee -a "$USER_HOME_PATH"
+echo ""| tee -a "$USER_HOME_PATH"
+echo $"For recovery help see " | tee -a "$USER_HOME_PATH"
+echo "https://mxlinux.org/wiki/hardware/nvidia-driver-install-recovery" | tee -a "$USER_HOME_PATH"
 echo ""
 echo $"Information written to ""$USER_HOME_PATH"
+chown $USER:$USER "$USER_HOME_PATH"
 
 }
 

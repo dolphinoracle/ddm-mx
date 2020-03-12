@@ -1,8 +1,28 @@
+ddm-mx (20.03.01) mx; urgency=medium
+
+  * update control file 
+  * drop primus on MX (keep on antiX)
+  
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 11 Mar 2020 22:51:22 -0400
+
+ddm-mx (19.11.03) mx; urgency=medium
+
+  * install recommended packages 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 05 Dec 2019 20:37:35 -0500
+
+ddm-mx (19.11.02) mx; urgency=medium
+
+  * fix disabling of apt 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 09 Nov 2019 14:02:59 -0500
+
 ddm-mx (19.11.01) mx; urgency=medium
 
   * add and remove symlinks for libglx0 for 340xx install and purge routines
   * fix checks for what driver was installed 
   * allow non-nvidia users to install with -f forcedriver switch
+  * remove root check if just getting usage help
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 07 Nov 2019 19:13:11 -0500
 
