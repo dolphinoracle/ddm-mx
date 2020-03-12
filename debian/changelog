@@ -1,3 +1,10 @@
+ddm-mx (20.03.01) mx; urgency=medium
+
+  * update control file 
+  * drop primus on MX (keep on antiX)
+  
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 11 Mar 2020 22:51:22 -0400
+
 ddm-mx (19.11.03) mx; urgency=medium
 
   * install recommended packages 

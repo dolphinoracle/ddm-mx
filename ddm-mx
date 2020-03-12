@@ -52,6 +52,13 @@ echo
 
 # -------------------------------------------------------------------------
 
+BUMBLEBEE_EXTRA_LIBS="primus primus-libs-ia32:i386"
+
+if [ "$DISTRIB_ID" = "MX" ]; then
+     BUMBLEBEE_EXTRA_LIBS="virtualgl virtualgl-libs:i386"
+fi
+
+
 BACKPORTS=false
 PURGE=''
 INSTALL=''
@@ -438,13 +445,13 @@ echo ""
 											NVIDIA_XCONFIG=""
                                        # Bumblebee drivers
                                             if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-390xx-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-390xx-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-390xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-340xx-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-340xx-kernel-dkms primus primus-libs-ia32:i386 virtualgl virtualgl-libs:i386"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-340xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
                                        fi
                                        ;;
