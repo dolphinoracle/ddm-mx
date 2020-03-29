@@ -27,7 +27,6 @@ translations_script/mo/id/ddm-mx.mo     /usr/share/locale/id/LC_MESSAGES
 translations_script/mo/is/ddm-mx.mo     /usr/share/locale/is/LC_MESSAGES
 translations_script/mo/it/ddm-mx.mo     /usr/share/locale/it/LC_MESSAGES
 translations_script/mo/ja/ddm-mx.mo     /usr/share/locale/ja/LC_MESSAGES
-translations_script/mo/ja_JP/ddm-mx.mo     /usr/share/locale/ja_JP/LC_MESSAGES
 translations_script/mo/kk/ddm-mx.mo     /usr/share/locale/kk/LC_MESSAGES
 translations_script/mo/ko/ddm-mx.mo     /usr/share/locale/ko/LC_MESSAGES
 translations_script/mo/lt/ddm-mx.mo     /usr/share/locale/lt/LC_MESSAGES
