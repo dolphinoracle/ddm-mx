@@ -482,7 +482,7 @@ YES_no $"Continue?"
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
   echo $"Nvidia command " "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
-  apt-get install --reinstall -y linux-headers-$(uname -r) build-essential firmware-linux-nonfree $TESTSWITCH 2>&1 | tee -a $LOG
+  apt-get install --reinstall -y linux-headers-$(uname -r) build-essential $TESTSWITCH 2>&1 | tee -a $LOG
   apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
 
