@@ -6,6 +6,7 @@
 # 2 - Wrong parameters
 # 3 - No driver available
 # 7 - Card not supported
+# 8 - No nvidia card found
 # 10 - Source install detected
 
 ###original code from the solydXK project.
@@ -125,7 +126,7 @@ echo $"creating lock ..." | tee -a $LOG
 trap clean_up EXIT
 do_flock 
 
-# Log file for tracebackBACKPORTS_OVERRIDE
+# Log file for traceback
 MAX_SIZE_KB=5120
 LOG_SIZE_KB=0
 LOG=/var/log/ddm.log
@@ -151,15 +152,8 @@ for DRV in $PURGE; do
   echo "===================================" | tee -a $LOG
   
   case $DRV in
-    ati)
-      install_open
-      ;;
     nvidia)
       install_open
-      ;;
-    open)
-      ;;
-    fixbumblebee)
       ;;
     *)
       echo $"ERROR: Unknown argument: $DRV" | tee -a $LOG
@@ -184,22 +178,8 @@ for DRV in $INSTALL; do
   case $DRV in
     
     nvidia)
-      # Bumblebee: https://wiki.debian.org/Bumblebee
-      # Get device ids for Nvidia
-      BCID='10de'
-      DEVICEIDS=$(lspci -n -d $BCID: | awk '{print $3}' | cut -d':' -f2)
-      
-      # Testing
-      if $TEST; then
-        DEVICEIDS='0a74'
-      fi
-
-    if [ -z "$FORCEDRIVER" ]; then
-		if [ "$DEVICEIDS" == "" ]; then
-			echo $"No nvidia card found - exiting" | tee -a $LOG
-			exit 0
-		fi
-    fi
+	  # make sure nvidia card exists
+      check_for_nvidia_card
     
       # Install the Nvidia drivers
       install_nvidia
@@ -207,11 +187,6 @@ for DRV in $INSTALL; do
     open)
       # Install the open drivers
       install_open
-      ;;
-    fixbumblebee)
-      # purge nvidia-xconfig and move xorg.conf away
-      apt-get purge -y $FORCE nvidia-xconfig 2>&1 | tee -a $LOG
-      mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
       ;;
     *)
       echo $"ERROR: Unknown argument: " $DRV | tee -a $LOG
@@ -324,6 +299,7 @@ function install_nvidia {
   else
     debian_backports_dialog
   fi
+  
   check_cand
 
   choose_cand
@@ -557,7 +533,7 @@ echo $"Which driver do you wish to install" | tee -a $LOG
         echo "" | tee -a $LOG
         echo 1: $"Main" $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
         echo "" | tee -a $LOG
-        echo 2: "MX Test" $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
+        echo 2: "debian-backports" $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
         echo "" | tee -a $LOG
 	echo 3: $"Exit" | tee -a $LOG
         echo "" | tee -a $LOG
@@ -569,6 +545,8 @@ echo $"Which driver do you wish to install" | tee -a $LOG
 	      SWITCH=""
               BP=""
               NVIDIA_VERSION=$MAIN_NVIDIA
+              rm /etc/apt/sources.list.d/debian-backports-temp.list
+              apt-get update            
 	      ;;
            2) echo $"Ok"... | tee -a $LOG
                 #NVIDIA_XCONFIG=""
@@ -726,9 +704,9 @@ check_source_install(){
 
 # Check for Optimus
 check_optimus(){
-   
+    local OPTIMUS MIN_XORG_VERSION MIN_NVIDIA_VERSION MAJOR_NVIDIA_VERSION
     OPTIMUS=1
-    if [ -n "$FORCEDRIVER" ]; then
+    if [ -z "$FORCEDRIVER" ]; then
 		if lspci -vnn | grep Intel |grep -q 0300 ; then
 			if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
 				echo $"nvidia-optimus detected"
@@ -871,7 +849,8 @@ confirm_reinstall(){
       if [ "$INSTALLED" = "$CANDIDATE" ]; then
         echo $"nvidia driver already installed" | tee -a $LOG
         echo "" | tee -a $LOG
-        echo $"Reinstall or quit?" | tee -a $LOGecho "$NVIDIA packages to install are " $DRIVER | tee -a $LOG
+        echo $"Reinstall or quit?" | tee -a $LOG
+        echo "$NVIDIA packages to install are " $DRIVER | tee -a $LOG
         echo "" | tee -a $LOG
         echo 1: $"Reinstall" | tee -a $LOG
         echo 2: $"quit" | tee -a $LOG
@@ -888,6 +867,25 @@ confirm_reinstall(){
   fi
 }
 
+check_for_nvidia_card(){
+	# Bumblebee: https://wiki.debian.org/Bumblebee
+      # Get device ids for Nvidia
+      local BCID DEVICEIDS
+      BCID='10de'
+      DEVICEIDS=$(lspci -n -d $BCID: | awk '{print $3}' | cut -d':' -f2)
+      
+      # Testing
+      if $TEST; then
+        DEVICEIDS='0a74'
+      fi
+
+    if [ -z "$FORCEDRIVER" ]; then
+		if [ "$DEVICEIDS" == "" ]; then
+			echo $"No nvidia card found - exiting" | tee -a $LOG
+			exit 8
+		fi
+    fi
+}
 
 main "$@"
 
