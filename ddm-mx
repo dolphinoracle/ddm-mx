@@ -315,18 +315,21 @@ echo ""
   fi
 
   # Check for Optimus
+   
     OPTIMUS=1
-    if lspci -vnn | grep Intel |grep -q 0300 ; then
-        if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
-            echo $"nvidia-optimus detected"
-            OPTIMUS=2
-        else
-            YES_no $"Is this a NVIDIA/INTEL Optimus system?"
-            if [ $? = 0 ]; then
-                OPTIMUS=2
-            fi
+    if [ -z "$FORCEDRIVER" ]; then
+		if lspci -vnn | grep Intel |grep -q 0300 ; then
+			if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
+				echo $"nvidia-optimus detected"
+				OPTIMUS=2
+			else
+				YES_no $"Is this a NVIDIA/INTEL Optimus system?"
+				if [ $? = 0 ]; then
+					OPTIMUS=2
+				fi
             
-        fi
+			fi
+		fi
     fi
 
     if [ $OPTIMUS = 2 ]; then
@@ -347,15 +350,19 @@ echo ""
         then
            if [ "$MAJOR_NVIDIA_VERSION" -ge "$MIN_NVIDIA_VERSION" ]
            then
-                echo "You can use the new PRIMUS driver."
+				echo ""
+                echo $"You can use the new PRIMUS driver built in to the nvidia drivers."
+                echo ""
+                printf $"If you want to force the older bumblebee optimus drivers,\n quit and restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
+                echo ""
                 DRIVER='nvidia-driver'    
             else
-                echo "You need to use the bumblebee-nvidia driver."
+                echo $"You need to use the bumblebee-nvidia driver."
                 # For nvidia-driver versions below 450 we must still use Bumblebee
                 DRIVER='bumblebee-nvidia'
             fi
         else
-            echo "You need to use the bumblebee-nvidia driver."
+            echo $"You need to use the bumblebee-nvidia driver."
             # For xorg versions below 1.20.8 we must still use Bumblebee
             DRIVER='bumblebee-nvidia'
         fi
