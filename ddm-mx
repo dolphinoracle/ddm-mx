@@ -351,7 +351,7 @@ echo ""
            if [ "$MAJOR_NVIDIA_VERSION" -ge "$MIN_NVIDIA_VERSION" ]
            then
 				echo ""
-                echo $"You can use the new PRIMUS driver."
+                echo $"You can use the new PRIMUS driver built in to the nvidia drivers."
                 echo ""
                 printf $"If you want to force the older bumblebee optimus drivers,\n quit and restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
                 echo ""
