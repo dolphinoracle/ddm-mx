@@ -342,6 +342,10 @@ function install_nvidia {
   apt-get install --reinstall -y linux-headers-$(uname -r) build-essential $TESTSWITCH 2>&1 | tee -a $LOG
   apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
   
+  #install certain 32 bit libs that don't like --install-recommends
+  #if [ -n "$LIB32" ]; then
+	#apt-get install --reinstall -y $SWITCH $BP $TESTSWITCH $LIB32 2>&1 | tee -a $LOG  
+  #fi
 
 # Configure
   if [[ "$DRIVER" =~ "bumblebee-nvidia" ]]; then
@@ -709,10 +713,10 @@ check_optimus(){
     if [ -z "$FORCEDRIVER" ]; then
 		if lspci -vnn | grep Intel |grep -q 0300 ; then
 			if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
-				echo $"nvidia-optimus detected"
+				echo $"nvidia-optimus detected" | tee -a $LOG
 				OPTIMUS=2
 			else
-				YES_no $"Is this a NVIDIA/INTEL Optimus system?"
+				YES_no $"Is this a NVIDIA/INTEL Optimus system?" | tee -a $LOG
 				if [ $? = 0 ]; then
 					OPTIMUS=2
 				fi
@@ -740,19 +744,19 @@ check_optimus(){
            if [ "$MAJOR_NVIDIA_VERSION" -ge "$MIN_NVIDIA_VERSION" ]
            then
 				echo ""
-                echo $"You can use the new PRIMUS driver built in to the nvidia drivers."
+                echo $"You can use the new PRIMUS driver built in to the nvidia drivers." | tee -a $LOG
                 echo ""
-                printf $"If you want to force the older bumblebee optimus drivers,\n quit and restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia"
+                printf $"If you want to force the older bumblebee optimus drivers,\n quit and restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia" | tee -a $LOG
                 echo ""
                 DRIVER='nvidia-driver'    
             else
-                echo $"You need to use the bumblebee-nvidia driver."
+                echo $"You need to use the bumblebee-nvidia driver." | tee -a $LOG
                 # For nvidia-driver versions below 450 we must still use Bumblebee
                 BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
                 DRIVER='bumblebee-nvidia'
             fi
         else
-            echo $"You need to use the bumblebee-nvidia driver."
+            echo $"You need to use the bumblebee-nvidia driver." | tee -a $LOG
             # For xorg versions below 1.20.8 we must still use Bumblebee
             BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
             DRIVER='bumblebee-nvidia'
@@ -805,6 +809,7 @@ set_packages(){
                                        ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
 											NVIDIA_XCONFIG=""
+											
                                        # Bumblebee drivers
                                             if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-390xx-driver" ]; then
 												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
