@@ -13,6 +13,8 @@
 ####MODIFICATIONS FOR MX by dolphin oracle
 ##depends: nvidia-detect-mx, nvidia-detect and cli-shell-utils
 ##modifications assume MX repos for the nvidia drivers
+##legacy detection and substantial command assistance from kmathern & fehlix
+##PRIMUS additions by farius and dolphin oracel
 ##
 
 #add BitJam's soure cli-shell-utils
