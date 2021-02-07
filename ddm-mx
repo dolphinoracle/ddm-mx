@@ -807,13 +807,13 @@ set_packages(){
 											NVIDIA_XCONFIG=""
                                        # Bumblebee drivers
                                             if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-390xx-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-390xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings-legacy-390xx nvidia-legacy-390xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings nvidia-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
 											if [ "$BUMBLEBEE_NVIDIA_VERSION" == "nvidia-legacy-340xx-driver" ]; then
-												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-legacy-340xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
+												DRIVER="$DRIVER $BUMBLEBEE_NVIDIA_VERSION nvidia-settings-legacy-340xx nvidia-legacy-340xx-kernel-dkms $BUMBLEBEE_EXTRA_LIBS"
 											fi
                                        fi
                                        ;;
