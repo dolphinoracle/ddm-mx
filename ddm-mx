@@ -315,7 +315,7 @@ function install_nvidia {
 
   set_packages 
   
-  echo "$NVIDIA packages to install are " $DRIVER | tee -a $LOG
+  echo $"NVIDIA packages to install are " $DRIVER | tee -a $LOG
 
   YES_no $"Continue?"
     if [ "$?" = "1" ]; then 
@@ -748,11 +748,13 @@ check_optimus(){
             else
                 echo $"You need to use the bumblebee-nvidia driver."
                 # For nvidia-driver versions below 450 we must still use Bumblebee
+                BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
                 DRIVER='bumblebee-nvidia'
             fi
         else
             echo $"You need to use the bumblebee-nvidia driver."
             # For xorg versions below 1.20.8 we must still use Bumblebee
+            BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
             DRIVER='bumblebee-nvidia'
         fi
         check_cand
