@@ -1,3 +1,11 @@
+ddm-mx (21.02.01) mx; urgency=medium
+
+  * allow for PRIMUS driver installs (farius)
+  * reorder script into logical blocks
+  * nvidia-run-mx wrapper script
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 07 Feb 2021 19:19:08 -0500
+
 ddm-mx (20.05.01) mx; urgency=medium
 
   * remove firmware-linux-nonfree from install list 
