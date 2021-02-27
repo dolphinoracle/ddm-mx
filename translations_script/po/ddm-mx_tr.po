@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Caner Başaran <basaran.caner@protonmail.com>, 2017
+# Caner Başaran <basaran.caner@gmail.com>, 2017
 # anticapitalista <anticapitalista@riseup.net>, 2017
-# mahmut özcan <mahmutozcan65@yahoo.com>, 2018
-# Emin Huckleberry, 2019
+# e0360fc3c0afcd70e5aed1cfc885bac6, 2019
+# mahmut özcan <mahmutozcan@protonmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-21 15:51-0400\n"
+"POT-Creation-Date: 2021-02-07 21:28-0600\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Emin Huckleberry, 2019\n"
+"Last-Translator: mahmut özcan <mahmutozcan@protonmail.com>, 2020\n"
 "Language-Team: Turkish (https://www.transifex.com/anticapitalista/teams/10162/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,108 +24,264 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ddm-mx:35
+#: ddm-mx:36
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
 
-#: ddm-mx:36
+#: ddm-mx:37
 msgid "Option-"
 msgstr "Seçenek-"
 
-#: ddm-mx:37
+#: ddm-mx:38
 msgid "requires an argument."
 msgstr "Bir sav gerekli."
 
-#: ddm-mx:38
+#: ddm-mx:39
 msgid "Run as root"
 msgstr "Kök olarak çalıştır"
 
-#: ddm-mx:39
+#: ddm-mx:40
 msgid "Install drivers for: "
-msgstr ""
+msgstr "Şunun için sürücüleri yükle:"
 
-#: ddm-mx:49
-msgid "creating lock ..."
-msgstr ""
-
-#: ddm-mx:91 ddm-mx:101
+#: ddm-mx:99 ddm-mx:109
 msgid "Invalid option"
 msgstr "Geçersiz seçenek"
 
-#: ddm-mx:138
+#: ddm-mx:127
+msgid "creating lock ..."
+msgstr "kilit oluşturulryor ..."
+
+#: ddm-mx:152
 msgid "Purge drivers for: "
-msgstr ""
+msgstr "Şunun için sürücüleri temizle:"
 
-#: ddm-mx:139 ddm-mx:167
+#: ddm-mx:153 ddm-mx:175
 msgid "Start at (m/d/y):"
-msgstr ""
+msgstr "(m/d/y) ile başla:"
 
-#: ddm-mx:154
+#: ddm-mx:161
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
-msgstr ""
+msgstr "ERROR: Bilinmeyen sav: $DRV"
 
-#: ddm-mx:184
-msgid "No nvidia card found - exiting"
-msgstr "nvidia kartı bulunamadı - çıkılıyor"
-
-#: ddm-mx:201 ddm-mx:436
+#: ddm-mx:194
 msgid "ERROR: Unknown argument: "
-msgstr ""
+msgstr "HATA: Bilinmeyen sav:"
 
-#: ddm-mx:214
+#: ddm-mx:207
 msgid "Device Driver Manager Help:"
-msgstr ""
+msgstr "Aygıt Sürücü Yöneticisi Yardımı:"
 
-#: ddm-mx:216
+#: ddm-mx:209
 msgid "The following options are allowed:"
 msgstr "Aşağıdaki seçeneklere izin veriliyor:"
 
-#: ddm-mx:220
+#: ddm-mx:213
 msgid "-i driver    Install given driver."
-msgstr ""
+msgstr "-i driver   Verilen sürücüyü yükleyin "
 
-#: ddm-mx:222
+#: ddm-mx:214
 msgid "             drivers: nvidia, open, fixbumblebee"
 msgstr "             sürücüler: nvidia, open, fixbumblebee"
 
-#: ddm-mx:224
+#: ddm-mx:216
 msgid "-p driver    Purge given driver."
-msgstr ""
+msgstr "-p driver    Verilen sürücüyü temizleyin."
 
-#: ddm-mx:226
+#: ddm-mx:217
 msgid "             driver: nvidia"
 msgstr "             sürücü: nvidia"
 
-#: ddm-mx:228
-msgid "-f           Force DDM to start, even in a Live environment."
+#: ddm-mx:219
+msgid ""
+"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
 
-#: ddm-mx:230
-msgid "-t           For development testing only!"
+#: ddm-mx:221
+msgid "-t           For development testing only!  simulate installs"
 msgstr ""
 
-#: ddm-mx:231
+#: ddm-mx:222
 msgid "             This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "Bu, önceden tanımlanmış donanım için sürücüleri yükleyecektir."
 
-#: ddm-mx:232
+#: ddm-mx:223
 msgid "             Use with -i."
+msgstr "             -i ile kullan."
+
+#: ddm-mx:312
+msgid "Need driver: "
+msgstr "Sürücü gerekli:"
+
+#: ddm-mx:316
+msgid "NVIDIA packages to install are "
 msgstr ""
 
-#: ddm-mx:282
+#: ddm-mx:318 ddm-mx:618
+msgid "Continue?"
+msgstr "Devam mı? "
+
+#: ddm-mx:339
+msgid "Nvidia command "
+msgstr "Nvidia komutu"
+
+#: ddm-mx:363
+msgid "ERROR: Could not configure Bumblebee for user: "
+msgstr "HATA: Kullanıcı için Bumblebee yapılandırılamadı:"
+
+#: ddm-mx:367
+msgid "test enabled, not creating xorg.conf file"
+msgstr "sınama etkin, xorg.conf dosyası oluşturulmuyor"
+
+#: ddm-mx:371
+msgid "creating /etc/X11/xorg.conf file"
+msgstr " /etc/X11/xorg.conf dosyası oluşturuluyor"
+
+#: ddm-mx:380
+msgid "Finished"
+msgstr "Bitti"
+
+#: ddm-mx:397
+msgid "Proprietary drivers removed"
+msgstr "Tescilli sürücüler kaldırıldı"
+
+#: ddm-mx:410
+msgid "Open command "
+msgstr "Komutu aç"
+
+#: ddm-mx:414
+msgid "Open drivers installed"
+msgstr "Kurulu sürücüleri aç"
+
+#: ddm-mx:428 ddm-mx:434
+msgid "Resetting sources"
+msgstr "Kaynaklar sıfırlanıyor"
+
+#: ddm-mx:445
+msgid "Press <Enter> to exit"
+msgstr "çıkmak için <Enter>'e basın"
+
+#: ddm-mx:459
+msgid "Enabling backports repo"
+msgstr "Backports deposu etkinleştirme"
+
+#: ddm-mx:460 ddm-mx:476
+msgid "Running apt-get update..."
+msgstr "apt-get update çalışıyor..."
+
+#: ddm-mx:465 ddm-mx:481
+msgid "Installing latest nvidia-detect package"
+msgstr "En son nvidia algılama paketi kuruluyor"
+
+#: ddm-mx:475
+msgid "Enabling MX Test repo"
+msgstr "MX Test deposu etkinleştirme"
+
+#: ddm-mx:490
+msgid "Would you like to check debian-backports for a later version?"
+msgstr "Daha sonraki sürüm içindebian-backports'u incelemek ister misiniz?"
+
+#: ddm-mx:492
+msgid "Yes or No?"
+msgstr "Evet mi Hayır mı?"
+
+#: ddm-mx:494
+msgid "Yes"
+msgstr "Evet"
+
+#: ddm-mx:495
+msgid "No"
+msgstr "Hayır"
+
+#: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
+#: ddm-mx:578 ddm-mx:585
+msgid "Ok"
+msgstr "Tamam"
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
+msgid "invalid option."
+msgstr "Geçersiz seçenek"
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
+msgid "exiting"
+msgstr "çıkılıyor"
+
+#: ddm-mx:514 ddm-mx:515
+msgid "Would you like to check MX Test Repo for a later version?"
+msgstr "Daha sonraki sürüm için MX Sınama Deposunu denemek ister misiniz?"
+
+#: ddm-mx:532 ddm-mx:564
+msgid "Which driver do you wish to install"
+msgstr "Hangi sürücüyü yüklemek istersiniz?"
+
+#: ddm-mx:534
+msgid "Main repos or debian-backports?"
+msgstr "Ana depolar mı debian-backports mu?"
+
+#: ddm-mx:536 ddm-mx:568
+msgid "Main"
+msgstr "Ana"
+
+#: ddm-mx:540 ddm-mx:572
+msgid "Exit"
+msgstr "Çıkış"
+
+#: ddm-mx:542 ddm-mx:574
+msgid "Enter Number of selection"
+msgstr "Seçim sayısını girin"
+
+#: ddm-mx:566
+msgid "Main repos or MX Test"
+msgstr "Ana depolar veya MX sınama deposu"
+
+#: ddm-mx:608
+msgid "Candidate is: "
+msgstr "Aday:"
+
+#: ddm-mx:609
+msgid "Installed is: "
+msgstr "Yüklendi:"
+
+#: ddm-mx:617
+msgid "Refreshing Sources with apt-get update"
+msgstr "apt-get update ile Kaynakları Yenileme"
+
+#: ddm-mx:624
+#, sh-format
+msgid "There was a problem with the apt-get update.  See $LOG for details"
+msgstr "Apt-get güncellemesinde bir sorun var. Ayrıntılar için $LOG'a bakın"
+
+#: ddm-mx:634
+msgid "To restore open source drivers use:  "
+msgstr ""
+
+#: ddm-mx:651
+msgid "To restore open source drivers later use:  "
+msgstr ""
+
+#: ddm-mx:663
+msgid "For recovery help see "
+msgstr ""
+
+#: ddm-mx:666
+msgid "Information written to "
+msgstr ""
+
+#: ddm-mx:702
 msgid "Possible previous install from source or smxi/sgfxi detected."
-msgstr ""
+msgstr "Kaynaktan veya smxi/sgfxi'den olası önceki yükleme algılandı."
 
-#: ddm-mx:283
+#: ddm-mx:703
 msgid "Version detected: "
 msgstr "Sürüm algılandı:"
 
-#: ddm-mx:284
+#: ddm-mx:704
 msgid "Latest possible with this script : "
-msgstr ""
+msgstr "Bu betik ile olabilecek en son"
 
-#: ddm-mx:285
+#: ddm-mx:705
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
@@ -133,196 +289,18 @@ msgstr ""
 "Lütfen  <sudo nvidia-install --uninstall> ile kaldırın ve devam etmek "
 "isterseniz bilgisayarı yeniden başlatın"
 
-#: ddm-mx:293
+#: ddm-mx:720
 msgid "nvidia-optimus detected"
 msgstr "nvidia-optimus algılandı"
 
-#: ddm-mx:296
+#: ddm-mx:723
 msgid "Is this a NVIDIA/INTEL Optimus system?"
 msgstr "Bu bir NVIDIA/INTEL Optimus sistemi mi?"
 
-#: ddm-mx:309 ddm-mx:327 ddm-mx:342 ddm-mx:349 ddm-mx:364
-msgid "Candidate is: "
+#: ddm-mx:759
+msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
 msgstr ""
 
-#: ddm-mx:310 ddm-mx:329 ddm-mx:336 ddm-mx:343 ddm-mx:351 ddm-mx:358
-#: ddm-mx:365
-msgid "Installed is: "
-msgstr ""
-
-#: ddm-mx:328 ddm-mx:335
-msgid "Debian backports candidate is:  "
-msgstr ""
-
-#: ddm-mx:334 ddm-mx:356
-msgid "Main repo candidate is:  "
-msgstr ""
-
-#: ddm-mx:350 ddm-mx:357
-msgid "MX Test repo candidate is:  "
-msgstr ""
-
-#: ddm-mx:371
-msgid "nvidia driver already installed"
-msgstr "nvidia sürücüsü zaten kurulu"
-
-#: ddm-mx:373
-msgid "Reinstall or quit?"
-msgstr "Yeniden mi kursun yoksa çıksın mı? "
-
-#: ddm-mx:375
-msgid "Reinstall"
-msgstr "Yeniden kur"
-
-#: ddm-mx:376
-msgid "quit"
-msgstr "çıkış"
-
-#: ddm-mx:378 ddm-mx:654 ddm-mx:683
-msgid "Enter Number of selection"
-msgstr "Seçim sayısını girin"
-
-#: ddm-mx:382
-msgid "reinstalling"
-msgstr "yeniden kuruluyor"
-
-#: ddm-mx:383 ddm-mx:384 ddm-mx:613 ddm-mx:637 ddm-mx:665 ddm-mx:667
-#: ddm-mx:698 ddm-mx:700
-msgid "exiting"
-msgstr "çıkılıyor"
-
-#: ddm-mx:384 ddm-mx:613 ddm-mx:637 ddm-mx:667 ddm-mx:700
-msgid "invalid option."
-msgstr "Geçersiz seçenek"
-
-#: ddm-mx:394
-msgid "nvidia driver not available, check your repo sources"
-msgstr "nvidia sürücüsü mevcut değil, depo kaynaklarınızı gözden geçirin"
-
-#: ddm-mx:398
-msgid ""
-"Uh oh. Your card is only supported by older legacy drivers which are not in "
-"any current Debian suite."
-msgstr ""
-
-#: ddm-mx:404
-msgid "Need driver: "
-msgstr ""
-
-#: ddm-mx:446 ddm-mx:716
-msgid "Continue?"
-msgstr "Devam mı? "
-
-#: ddm-mx:458
-msgid "Nvidia command "
-msgstr "Nvidia komutu"
-
-#: ddm-mx:481
-msgid "ERROR: Could not configure Bumblebee for user: "
-msgstr ""
-
-#: ddm-mx:485
-msgid "test enabled, not creating xorg.conf file"
-msgstr ""
-
-#: ddm-mx:489
-msgid "creating /etc/X11/xorg.conf file"
-msgstr " /etc/X11/xorg.conf dosyası oluşturuluyor"
-
-#: ddm-mx:495
-msgid "Finished"
-msgstr "Bitti"
-
-#: ddm-mx:510
-msgid "Proprietary drivers removed"
-msgstr "Tescilli sürücüler kaldırıldı"
-
-#: ddm-mx:522
-msgid "Open command "
-msgstr "Komutu aç"
-
-#: ddm-mx:526
-msgid "Open drivers installed"
-msgstr "Kurulu sürücüleri aç"
-
-#: ddm-mx:540 ddm-mx:546
-msgid "Resetting sources"
-msgstr ""
-
-#: ddm-mx:550
-msgid "Press <Enter> to exit"
-msgstr "çıkmak için <Enter>'e basın"
-
-#: ddm-mx:564
-msgid "Enabling backports repo"
-msgstr ""
-
-#: ddm-mx:565 ddm-mx:581
-msgid "Running apt-get update..."
-msgstr "apt-get update çalışıyor..."
-
-#: ddm-mx:570 ddm-mx:586
-msgid "Installing latest nvidia-detect package"
-msgstr "En son nvidia algılama paketi kuruluyor"
-
-#: ddm-mx:580
-msgid "Enabling MX Test repo"
-msgstr ""
-
-#: ddm-mx:595
-msgid "Would you like to check debian-backports for a later version?"
-msgstr ""
-
-#: ddm-mx:597 ddm-mx:621
-msgid "Yes or No?"
-msgstr "Evet mi Hayır mı?"
-
-#: ddm-mx:599 ddm-mx:623
-msgid "Yes"
-msgstr "Evet"
-
-#: ddm-mx:600 ddm-mx:624
-msgid "No"
-msgstr "Hayır"
-
-#: ddm-mx:606 ddm-mx:610 ddm-mx:630 ddm-mx:634 ddm-mx:658 ddm-mx:662
-#: ddm-mx:687 ddm-mx:693
-msgid "Ok"
-msgstr "Tamam"
-
-#: ddm-mx:619
-msgid "Would you like to check MX Test Repo for a later version?"
-msgstr ""
-
-#: ddm-mx:644 ddm-mx:673
-msgid "Which driver do you wish to install"
-msgstr "Hangi sürücüyü yüklemek istersiniz?"
-
-#: ddm-mx:646
-msgid "Main repos or debian-backports?"
-msgstr ""
-
-#: ddm-mx:648 ddm-mx:677
-msgid "Main"
-msgstr ""
-
-#: ddm-mx:650
-msgid "debian-backports"
-msgstr ""
-
-#: ddm-mx:652 ddm-mx:681
-msgid "Exit"
-msgstr "Çıkış"
-
-#: ddm-mx:675
-msgid "Main repos or MX Test"
-msgstr ""
-
-#: ddm-mx:715
-msgid "Refreshing Sources with apt-get update"
-msgstr ""
-
-#: ddm-mx:722
-#, sh-format
-msgid "There was a problem with the apt-get update.  See $LOG for details"
+#: ddm-mx:760
+msgid "Use \\"
 msgstr ""

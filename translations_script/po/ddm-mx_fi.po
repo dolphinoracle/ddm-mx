@@ -5,17 +5,19 @@
 # 
 # Translators:
 # anticapitalista <anticapitalista@riseup.net>, 2017
-# LinuxIRC Darude <linux@disroot.org>, 2018
+# Kalevipoeg <linux@disroot.org>, 2018
 # En Kerro <inactive+ekeimaja@transifex.com>, 2018
+# Oi Suomi On! <oisuomion@protonmail.com>, 2020
+# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-21 15:51-0400\n"
+"POT-Creation-Date: 2021-02-07 21:28-0600\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: En Kerro <inactive+ekeimaja@transifex.com>, 2018\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2021\n"
 "Language-Team: Finnish (https://www.transifex.com/anticapitalista/teams/10162/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,306 +25,289 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ddm-mx:35
+#: ddm-mx:36
 msgid "Unknown error"
 msgstr "Tuntematon virhe"
 
-#: ddm-mx:36
-msgid "Option-"
-msgstr ""
-
 #: ddm-mx:37
-msgid "requires an argument."
-msgstr ""
+msgid "Option-"
+msgstr "Valinta-"
 
 #: ddm-mx:38
+msgid "requires an argument."
+msgstr "vaatii argumentin."
+
+#: ddm-mx:39
 msgid "Run as root"
 msgstr "Suorita pääkäyttäjänä"
 
-#: ddm-mx:39
+#: ddm-mx:40
 msgid "Install drivers for: "
-msgstr ""
+msgstr "Asenna ajurit laitteelle:"
 
-#: ddm-mx:49
-msgid "creating lock ..."
-msgstr ""
-
-#: ddm-mx:91 ddm-mx:101
+#: ddm-mx:99 ddm-mx:109
 msgid "Invalid option"
 msgstr "Virheellinen valinta"
 
-#: ddm-mx:138
+#: ddm-mx:127
+msgid "creating lock ..."
+msgstr "luodaan lukitusta ..."
+
+#: ddm-mx:152
 msgid "Purge drivers for: "
-msgstr ""
+msgstr "Poista tämän laitteen ajurit:"
 
-#: ddm-mx:139 ddm-mx:167
+#: ddm-mx:153 ddm-mx:175
 msgid "Start at (m/d/y):"
-msgstr ""
+msgstr "Aloita aikaan (k/p/v):"
 
-#: ddm-mx:154
+#: ddm-mx:161
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
-msgstr ""
+msgstr "VIRHE: tuntematon argumentti: $DRV"
 
-#: ddm-mx:184
-msgid "No nvidia card found - exiting"
-msgstr "Nvidia ohjainta ei löytynyt - poistutaan"
-
-#: ddm-mx:201 ddm-mx:436
+#: ddm-mx:194
 msgid "ERROR: Unknown argument: "
-msgstr ""
+msgstr "VIRHE: tuntematon argumentti:"
+
+#: ddm-mx:207
+msgid "Device Driver Manager Help:"
+msgstr "Ajurien laitehallinnan apuopas:"
+
+#: ddm-mx:209
+msgid "The following options are allowed:"
+msgstr "Seuraavat vaihtoehdot sallitaan:"
+
+#: ddm-mx:213
+msgid "-i driver    Install given driver."
+msgstr "-i ajuri     Asenna annettu ajuri."
 
 #: ddm-mx:214
-msgid "Device Driver Manager Help:"
-msgstr ""
+msgid "             drivers: nvidia, open, fixbumblebee"
+msgstr "ajurit: nvidia, open, fixbumblebee"
 
 #: ddm-mx:216
-msgid "The following options are allowed:"
-msgstr ""
-
-#: ddm-mx:220
-msgid "-i driver    Install given driver."
-msgstr ""
-
-#: ddm-mx:222
-msgid "             drivers: nvidia, open, fixbumblebee"
-msgstr ""
-
-#: ddm-mx:224
 msgid "-p driver    Purge given driver."
-msgstr ""
+msgstr "-p ajuri     Pura annettu ajuri."
 
-#: ddm-mx:226
+#: ddm-mx:217
 msgid "             driver: nvidia"
 msgstr "             ajuri: nvidia"
 
-#: ddm-mx:228
-msgid "-f           Force DDM to start, even in a Live environment."
+#: ddm-mx:219
+msgid ""
+"-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
+"legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
+"-f           pakota valittu nvidia ajuri.  nvidia-driver, nvidia-legacy-"
+"390xx-driver, nvidia-legacy-340xx-driver"
 
-#: ddm-mx:230
-msgid "-t           For development testing only!"
-msgstr ""
+#: ddm-mx:221
+msgid "-t           For development testing only!  simulate installs"
+msgstr "-t           Vain kehittäjien testauksessa! Simuloi asennusia"
 
-#: ddm-mx:231
+#: ddm-mx:222
 msgid "             This will install drivers for pre-defined hardware."
-msgstr ""
+msgstr "Tämä asentaa ajurit ennakkoon määritetyille laitteille."
 
-#: ddm-mx:232
+#: ddm-mx:223
 msgid "             Use with -i."
-msgstr ""
+msgstr "Käytä -i kanssa."
 
-#: ddm-mx:282
-msgid "Possible previous install from source or smxi/sgfxi detected."
-msgstr ""
-
-#: ddm-mx:283
-msgid "Version detected: "
-msgstr "Versio havaittu: "
-
-#: ddm-mx:284
-msgid "Latest possible with this script : "
-msgstr ""
-
-#: ddm-mx:285
-msgid ""
-"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
-" to proceed"
-msgstr ""
-
-#: ddm-mx:293
-msgid "nvidia-optimus detected"
-msgstr "nvidia-optimus havaittu"
-
-#: ddm-mx:296
-msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr "Onko tämä NVIDIA/INTEL Optimus järjestelmä?"
-
-#: ddm-mx:309 ddm-mx:327 ddm-mx:342 ddm-mx:349 ddm-mx:364
-msgid "Candidate is: "
-msgstr ""
-
-#: ddm-mx:310 ddm-mx:329 ddm-mx:336 ddm-mx:343 ddm-mx:351 ddm-mx:358
-#: ddm-mx:365
-msgid "Installed is: "
-msgstr ""
-
-#: ddm-mx:328 ddm-mx:335
-msgid "Debian backports candidate is:  "
-msgstr ""
-
-#: ddm-mx:334 ddm-mx:356
-msgid "Main repo candidate is:  "
-msgstr ""
-
-#: ddm-mx:350 ddm-mx:357
-msgid "MX Test repo candidate is:  "
-msgstr ""
-
-#: ddm-mx:371
-msgid "nvidia driver already installed"
-msgstr "Nvidia-ajuri on jo asennettu"
-
-#: ddm-mx:373
-msgid "Reinstall or quit?"
-msgstr "Asenna uudelleen tai lopeta?"
-
-#: ddm-mx:375
-msgid "Reinstall"
-msgstr "Asenna uudelleen"
-
-#: ddm-mx:376
-msgid "quit"
-msgstr "lopeta"
-
-#: ddm-mx:378 ddm-mx:654 ddm-mx:683
-msgid "Enter Number of selection"
-msgstr ""
-
-#: ddm-mx:382
-msgid "reinstalling"
-msgstr "asennetaan uudelleen"
-
-#: ddm-mx:383 ddm-mx:384 ddm-mx:613 ddm-mx:637 ddm-mx:665 ddm-mx:667
-#: ddm-mx:698 ddm-mx:700
-msgid "exiting"
-msgstr "poistutaan"
-
-#: ddm-mx:384 ddm-mx:613 ddm-mx:637 ddm-mx:667 ddm-mx:700
-msgid "invalid option."
-msgstr "Virheellinen valinta."
-
-#: ddm-mx:394
-msgid "nvidia driver not available, check your repo sources"
-msgstr ""
-
-#: ddm-mx:398
-msgid ""
-"Uh oh. Your card is only supported by older legacy drivers which are not in "
-"any current Debian suite."
-msgstr ""
-"Voi ei. Näytönohjaimesi on vanhaa mallia eikä sille enää löydy ajureita "
-"nykyisestä Debianin versiosta."
-
-#: ddm-mx:404
+#: ddm-mx:312
 msgid "Need driver: "
-msgstr ""
+msgstr "Tarvittava ajuri:"
 
-#: ddm-mx:446 ddm-mx:716
+#: ddm-mx:316
+msgid "NVIDIA packages to install are "
+msgstr "Asennettavat NVIDIA-paketit ovat"
+
+#: ddm-mx:318 ddm-mx:618
 msgid "Continue?"
 msgstr "Jatka?"
 
-#: ddm-mx:458
+#: ddm-mx:339
 msgid "Nvidia command "
-msgstr ""
+msgstr "Nvidia käsky"
 
-#: ddm-mx:481
+#: ddm-mx:363
 msgid "ERROR: Could not configure Bumblebee for user: "
-msgstr ""
+msgstr "VIRHE: Bumblebee:tä ei voitu määritellä käyttäjälle:"
 
-#: ddm-mx:485
+#: ddm-mx:367
 msgid "test enabled, not creating xorg.conf file"
-msgstr ""
+msgstr "testaus on päällä, tiedostoa xorg.conf ei luoda"
 
-#: ddm-mx:489
+#: ddm-mx:371
 msgid "creating /etc/X11/xorg.conf file"
-msgstr ""
+msgstr "luodaan tiedosto /etc/X11/xorg.conf"
 
-#: ddm-mx:495
+#: ddm-mx:380
 msgid "Finished"
 msgstr "Viimeistelty"
 
-#: ddm-mx:510
+#: ddm-mx:397
 msgid "Proprietary drivers removed"
-msgstr ""
+msgstr "Omisteiset ajurit poistettu"
 
-#: ddm-mx:522
+#: ddm-mx:410
 msgid "Open command "
-msgstr ""
+msgstr "Avaa-käsky"
 
-#: ddm-mx:526
+#: ddm-mx:414
 msgid "Open drivers installed"
 msgstr "Avoimet ajurit asennettu"
 
-#: ddm-mx:540 ddm-mx:546
+#: ddm-mx:428 ddm-mx:434
 msgid "Resetting sources"
-msgstr ""
+msgstr "Nollataan lähteitä"
 
-#: ddm-mx:550
+#: ddm-mx:445
 msgid "Press <Enter> to exit"
 msgstr "Paina <Enter> poistuaksesi"
 
-#: ddm-mx:564
+#: ddm-mx:459
 msgid "Enabling backports repo"
 msgstr "Otetaan backports-pakettivarasto käyttöön"
 
-#: ddm-mx:565 ddm-mx:581
+#: ddm-mx:460 ddm-mx:476
 msgid "Running apt-get update..."
 msgstr "Suoritetaan apt-get update..."
 
-#: ddm-mx:570 ddm-mx:586
+#: ddm-mx:465 ddm-mx:481
 msgid "Installing latest nvidia-detect package"
 msgstr "Asennetaan viimeisintä nvidia-detect pakettia"
 
-#: ddm-mx:580
+#: ddm-mx:475
 msgid "Enabling MX Test repo"
-msgstr ""
+msgstr "Kytketään päälle MX Testi-ohjelmavarasto"
 
-#: ddm-mx:595
+#: ddm-mx:490
 msgid "Would you like to check debian-backports for a later version?"
 msgstr ""
+"Haluatko käydä läpi Debian:in takaporttiohjelmistolähteet etsien uudempaa "
+"versiota?"
 
-#: ddm-mx:597 ddm-mx:621
+#: ddm-mx:492
 msgid "Yes or No?"
 msgstr "Kyllä vai ei?"
 
-#: ddm-mx:599 ddm-mx:623
+#: ddm-mx:494
 msgid "Yes"
 msgstr "Kyllä"
 
-#: ddm-mx:600 ddm-mx:624
+#: ddm-mx:495
 msgid "No"
 msgstr "Ei"
 
-#: ddm-mx:606 ddm-mx:610 ddm-mx:630 ddm-mx:634 ddm-mx:658 ddm-mx:662
-#: ddm-mx:687 ddm-mx:693
+#: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
+#: ddm-mx:578 ddm-mx:585
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
-#: ddm-mx:619
+#: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
+msgid "invalid option."
+msgstr "Virheellinen valinta."
+
+#: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
+msgid "exiting"
+msgstr "poistutaan"
+
+#: ddm-mx:514 ddm-mx:515
 msgid "Would you like to check MX Test Repo for a later version?"
 msgstr ""
+"Haluatko käydä läpi MX Testi-ohjelmistolähteen etsien uudempaa versiota?"
 
-#: ddm-mx:644 ddm-mx:673
+#: ddm-mx:532 ddm-mx:564
 msgid "Which driver do you wish to install"
 msgstr "Minkä ajurin haluat asentaa"
 
-#: ddm-mx:646
+#: ddm-mx:534
 msgid "Main repos or debian-backports?"
-msgstr ""
+msgstr "Pää-ohjelmalähteet vaiko Debian:in takaporttiohjelmistolähteet?"
 
-#: ddm-mx:648 ddm-mx:677
+#: ddm-mx:536 ddm-mx:568
 msgid "Main"
-msgstr ""
+msgstr "Päälähteet"
 
-#: ddm-mx:650
-msgid "debian-backports"
-msgstr ""
-
-#: ddm-mx:652 ddm-mx:681
+#: ddm-mx:540 ddm-mx:572
 msgid "Exit"
 msgstr "Lopeta"
 
-#: ddm-mx:675
+#: ddm-mx:542 ddm-mx:574
+msgid "Enter Number of selection"
+msgstr "Syötä valinnan numero"
+
+#: ddm-mx:566
 msgid "Main repos or MX Test"
-msgstr ""
+msgstr "Pää-ohjelmavarastot vaiko MX Testi"
 
-#: ddm-mx:715
+#: ddm-mx:608
+msgid "Candidate is: "
+msgstr "Ehdokas on:"
+
+#: ddm-mx:609
+msgid "Installed is: "
+msgstr "Asennettuna on:"
+
+#: ddm-mx:617
 msgid "Refreshing Sources with apt-get update"
-msgstr ""
+msgstr "Virkistetään lähteet apt-get update komennon kautta"
 
-#: ddm-mx:722
+#: ddm-mx:624
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
 msgstr ""
 "Tapahtui virhe suoritettaessa apt-get update.  Katso tarkemmat tiedot $LOG "
+
+#: ddm-mx:634
+msgid "To restore open source drivers use:  "
+msgstr "Palauttaa avoimen lähdekoodin ohjaimet: "
+
+#: ddm-mx:651
+msgid "To restore open source drivers later use:  "
+msgstr "Palauttaa avoimen lähdekoodin ohjaimet myöhemmin:"
+
+#: ddm-mx:663
+msgid "For recovery help see "
+msgstr "Palautusapua varten katso"
+
+#: ddm-mx:666
+msgid "Information written to "
+msgstr "Tiedot kirjoitettu osoitteeseen"
+
+#: ddm-mx:702
+msgid "Possible previous install from source or smxi/sgfxi detected."
+msgstr "Mahdollinen aiempi asennus suoraan lähteestä tai smxi/sgfxi havaittu."
+
+#: ddm-mx:703
+msgid "Version detected: "
+msgstr "Versio havaittu: "
+
+#: ddm-mx:704
+msgid "Latest possible with this script : "
+msgstr "Tuorein mahdollinen tämän ohjelmakoodisyötteen avulla:"
+
+#: ddm-mx:705
+msgid ""
+"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
+" to proceed"
+msgstr ""
+"Ole hyvä ja poista käskyn <sudo nvidia-install --uninstall> kautta ja "
+"uudelleenkäynnistä mikäli haluat jatkaa"
+
+#: ddm-mx:720
+msgid "nvidia-optimus detected"
+msgstr "nvidia-optimus havaittu"
+
+#: ddm-mx:723
+msgid "Is this a NVIDIA/INTEL Optimus system?"
+msgstr "Onko tämä NVIDIA/INTEL Optimus järjestelmä?"
+
+#: ddm-mx:759
+msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
+msgstr "Voit käyttää uutta nvidiaan sisäänrakennettua PRIMUS-ohjainta."
+
+#: ddm-mx:760
+msgid "Use \\"
+msgstr "Käytä \\"

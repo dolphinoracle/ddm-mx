@@ -3,12 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Pierluigi Mario <pierluigimariomail@gmail.com>, 2019
-# Tommaso Polloni <tompollon28398@gmail.com>, 2019
-# Guybrush88 <erpizzo@alice.it>, 2021
-# Davide Carli <dede.carli.drums@gmail.com>, 2021
-# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,296 +10,288 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-07 21:28-0600\n"
 "PO-Revision-Date: 2016-11-29 14:08+0000\n"
-"Last-Translator: Davide Carli <dede.carli.drums@gmail.com>, 2021\n"
-"Language-Team: Italian (https://www.transifex.com/anticapitalista/teams/10162/it/)\n"
+"Language-Team: Bengali (https://www.transifex.com/anticapitalista/teams/10162/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
+"Language: bn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ddm-mx:36
 msgid "Unknown error"
-msgstr "Errore sconosciuto"
+msgstr ""
 
 #: ddm-mx:37
 msgid "Option-"
-msgstr "Opzione-"
+msgstr ""
 
 #: ddm-mx:38
 msgid "requires an argument."
-msgstr " richiede un argomento."
+msgstr ""
 
 #: ddm-mx:39
 msgid "Run as root"
-msgstr "Avvia come root"
+msgstr ""
 
 #: ddm-mx:40
 msgid "Install drivers for: "
-msgstr "Installa drivers per:"
+msgstr ""
 
 #: ddm-mx:99 ddm-mx:109
 msgid "Invalid option"
-msgstr "Opzione non valida"
+msgstr ""
 
 #: ddm-mx:127
 msgid "creating lock ..."
-msgstr "creazione lock ..."
+msgstr ""
 
 #: ddm-mx:152
 msgid "Purge drivers for: "
-msgstr "Eliminazione completa dei drivers per:"
+msgstr ""
 
 #: ddm-mx:153 ddm-mx:175
 msgid "Start at (m/d/y):"
-msgstr "Avvia il (m/g/anno):"
+msgstr ""
 
 #: ddm-mx:161
 #, sh-format
 msgid "ERROR: Unknown argument: $DRV"
-msgstr "ERRORE: Argomento sconosciuto: $DRV"
+msgstr ""
 
 #: ddm-mx:194
 msgid "ERROR: Unknown argument: "
-msgstr "ERRORE: Argomento sconosciuto:"
+msgstr ""
 
 #: ddm-mx:207
 msgid "Device Driver Manager Help:"
-msgstr "Aiuto su Manager Driver Dispositivi:"
+msgstr ""
 
 #: ddm-mx:209
 msgid "The following options are allowed:"
-msgstr "Sono consentite le seguenti opzioni:"
+msgstr ""
 
 #: ddm-mx:213
 msgid "-i driver    Install given driver."
-msgstr "-i driver    Installa il driver ottenuto."
+msgstr ""
 
 #: ddm-mx:214
 msgid "             drivers: nvidia, open, fixbumblebee"
-msgstr "             drivers: nvidia, open, fixbumblebee"
+msgstr ""
 
 #: ddm-mx:216
 msgid "-p driver    Purge given driver."
-msgstr "-p driver    Elimina completamente il driver ottenuto."
+msgstr ""
 
 #: ddm-mx:217
 msgid "             driver: nvidia"
-msgstr "             driver: nvidia"
+msgstr ""
 
 #: ddm-mx:219
 msgid ""
 "-f           force specific nvidia driver package.  nvidia-driver, nvidia-"
 "legacy-390xx-driver, nvidia-legacy-340xx-driver"
 msgstr ""
-"-f   forza un pacchetto specifico di driver nvidia. nvidia-driver, nvidia-"
-"legacy-390xx-driver, nvidia-legacy-340xx-driver"
 
 #: ddm-mx:221
 msgid "-t           For development testing only!  simulate installs"
-msgstr "-t   Solo per test di sviluppo! Simula installazioni"
+msgstr ""
 
 #: ddm-mx:222
 msgid "             This will install drivers for pre-defined hardware."
-msgstr "Questo installerà i drivers per l'hardware pre-definito."
+msgstr ""
 
 #: ddm-mx:223
 msgid "             Use with -i."
-msgstr "Usa con -i."
+msgstr ""
 
 #: ddm-mx:312
 msgid "Need driver: "
-msgstr "E' necessario il driver:"
+msgstr ""
 
 #: ddm-mx:316
 msgid "NVIDIA packages to install are "
-msgstr "I pacchetti NVIDIA da installare sono"
+msgstr ""
 
 #: ddm-mx:318 ddm-mx:618
 msgid "Continue?"
-msgstr "Continuare?"
+msgstr ""
 
 #: ddm-mx:339
 msgid "Nvidia command "
-msgstr "Comando Nvidia"
+msgstr ""
 
 #: ddm-mx:363
 msgid "ERROR: Could not configure Bumblebee for user: "
-msgstr "ERRORE: Non è possibile configurare Bumblebee per l'utente: "
+msgstr ""
 
 #: ddm-mx:367
 msgid "test enabled, not creating xorg.conf file"
-msgstr "test abilitato, non verrà creato il file xorg.conf"
+msgstr ""
 
 #: ddm-mx:371
 msgid "creating /etc/X11/xorg.conf file"
-msgstr "creazione del file /etc/X11/xorg.conf in corso"
+msgstr ""
 
 #: ddm-mx:380
 msgid "Finished"
-msgstr "Finito"
+msgstr ""
 
 #: ddm-mx:397
 msgid "Proprietary drivers removed"
-msgstr "Drivers proprietari rimossi"
+msgstr ""
 
 #: ddm-mx:410
 msgid "Open command "
-msgstr "Apri comando"
+msgstr ""
 
 #: ddm-mx:414
 msgid "Open drivers installed"
-msgstr "Apertura drivers installati"
+msgstr ""
 
 #: ddm-mx:428 ddm-mx:434
 msgid "Resetting sources"
-msgstr "Ripristino delle risorse"
+msgstr ""
 
 #: ddm-mx:445
 msgid "Press <Enter> to exit"
-msgstr "Premi <Enter> per uscire "
+msgstr ""
 
 #: ddm-mx:459
 msgid "Enabling backports repo"
-msgstr "Abilitazione del repo backports"
+msgstr ""
 
 #: ddm-mx:460 ddm-mx:476
 msgid "Running apt-get update..."
-msgstr "Esecuzione di apt-get update in corso..."
+msgstr ""
 
 #: ddm-mx:465 ddm-mx:481
 msgid "Installing latest nvidia-detect package"
-msgstr "Si installa l'ultimo pacchetto nvidia-detect"
+msgstr ""
 
 #: ddm-mx:475
 msgid "Enabling MX Test repo"
-msgstr "Abilitare il repository MX Test"
+msgstr ""
 
 #: ddm-mx:490
 msgid "Would you like to check debian-backports for a later version?"
-msgstr "Vuoi controllare i debian-backports per una versione successiva?"
+msgstr ""
 
 #: ddm-mx:492
 msgid "Yes or No?"
-msgstr "Si o No?"
+msgstr ""
 
 #: ddm-mx:494
 msgid "Yes"
-msgstr "Sì"
+msgstr ""
 
 #: ddm-mx:495
 msgid "No"
-msgstr "No"
+msgstr ""
 
 #: ddm-mx:501 ddm-mx:505 ddm-mx:518 ddm-mx:522 ddm-mx:546 ddm-mx:553
 #: ddm-mx:578 ddm-mx:585
 msgid "Ok"
-msgstr "Ok"
+msgstr ""
 
 #: ddm-mx:508 ddm-mx:525 ddm-mx:558 ddm-mx:592
 msgid "invalid option."
-msgstr "opzione non valida."
+msgstr ""
 
 #: ddm-mx:508 ddm-mx:525 ddm-mx:556 ddm-mx:558 ddm-mx:590 ddm-mx:592
 msgid "exiting"
-msgstr "si esce"
+msgstr ""
 
 #: ddm-mx:514 ddm-mx:515
 msgid "Would you like to check MX Test Repo for a later version?"
-msgstr "Volete controllare il repo MX Test per una versione successiva?"
+msgstr ""
 
 #: ddm-mx:532 ddm-mx:564
 msgid "Which driver do you wish to install"
-msgstr "Quale driver vuoi installare"
+msgstr ""
 
 #: ddm-mx:534
 msgid "Main repos or debian-backports?"
-msgstr "dai repo Main o debian-backports?"
+msgstr ""
 
 #: ddm-mx:536 ddm-mx:568
 msgid "Main"
-msgstr "Main"
+msgstr ""
 
 #: ddm-mx:540 ddm-mx:572
 msgid "Exit"
-msgstr "Esci"
+msgstr ""
 
 #: ddm-mx:542 ddm-mx:574
 msgid "Enter Number of selection"
-msgstr "Inserisci il numero di selezione"
+msgstr ""
 
 #: ddm-mx:566
 msgid "Main repos or MX Test"
-msgstr "Repository Main (principali) o MX Test"
+msgstr ""
 
 #: ddm-mx:608
 msgid "Candidate is: "
-msgstr "Candidato è:"
+msgstr ""
 
 #: ddm-mx:609
 msgid "Installed is: "
-msgstr "Installato é:"
+msgstr ""
 
 #: ddm-mx:617
 msgid "Refreshing Sources with apt-get update"
-msgstr "Aggiorna le fonti dei repository con apt-get update"
+msgstr ""
 
 #: ddm-mx:624
 #, sh-format
 msgid "There was a problem with the apt-get update.  See $LOG for details"
-msgstr "C'è stato un problema con l'apt-get update.  Vedi $LOG per i dettagli"
+msgstr ""
 
 #: ddm-mx:634
 msgid "To restore open source drivers use:  "
-msgstr "Per ripristinare i driver open source usare:"
+msgstr ""
 
 #: ddm-mx:651
 msgid "To restore open source drivers later use:  "
-msgstr "Per ripristinare i driver open source in un secondo momento usare:"
+msgstr ""
 
 #: ddm-mx:663
 msgid "For recovery help see "
-msgstr "Per aiuto sul recupero vedere"
+msgstr ""
 
 #: ddm-mx:666
 msgid "Information written to "
-msgstr "Informazione scritta a"
+msgstr ""
 
 #: ddm-mx:702
 msgid "Possible previous install from source or smxi/sgfxi detected."
 msgstr ""
-"Rilevata precedente installazione probabilmente da sorgente o attraverso "
-"smxi/sgfxi."
 
 #: ddm-mx:703
 msgid "Version detected: "
-msgstr "Versione rilevata:"
+msgstr ""
 
 #: ddm-mx:704
 msgid "Latest possible with this script : "
-msgstr "L'ultima possibile con questo script :"
+msgstr ""
 
 #: ddm-mx:705
 msgid ""
 "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish"
 " to proceed"
 msgstr ""
-"Prego, rimuovi con <sudo nvidia-install --uninstall> e poi fai il reboot se "
-"desideri continuare"
 
 #: ddm-mx:720
 msgid "nvidia-optimus detected"
-msgstr "rilevata nvidia-optimus"
+msgstr ""
 
 #: ddm-mx:723
 msgid "Is this a NVIDIA/INTEL Optimus system?"
-msgstr "Questo è un sistema NVIDIA/INTEL Optimus?"
+msgstr ""
 
 #: ddm-mx:759
 msgid "You can use the new PRIMUS driver built in to the nvidia drivers."
 msgstr ""
-"E' possibile utilizzare il nuovo driver PRIMUS integrato nei driver nvidia."
 
 #: ddm-mx:760
 msgid "Use \\"
-msgstr "Usare \\"
+msgstr ""
