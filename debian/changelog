@@ -1,3 +1,10 @@
+ddm-mx (21.02.02mx19) mx; urgency=medium
+
+  * update translations
+  * change location of nvidia-run-mx wrapper script
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 26 Feb 2021 20:56:20 -0500
+
 ddm-mx (21.02.01) mx; urgency=medium
 
   * allow for PRIMUS driver installs (farius)
